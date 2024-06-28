@@ -24,6 +24,9 @@ export default {
 			dropShadow: {
 				'custom': '0 0 10px rgba(0,0,0,0.5)',
 			},
+			fontFamily: {
+				'dm-sans': ['DMSans', 'sans-serif']
+			},
 			colors: {
 				current: "currentColor",
 				transparent: "transparent",
