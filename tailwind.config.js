@@ -17,6 +17,9 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'dm-sans': ['DMSans', 'sans-serif']
+			},
 			colors: {
 				current: "currentColor",
 				transparent: "transparent",
