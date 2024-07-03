@@ -1,5 +1,6 @@
 /* eslint-disable prettier/prettier */
 /** @type {import('tailwindcss').Config} */
+
 export default {
 	content: [
 		"./index.html",
@@ -20,12 +21,16 @@ export default {
 			
 			backgroundImage: {
 				'custom-image': "url('/portal.png')",
+				'gradient-overlay': "radial-gradient(circle at center, #FAFAFA 0%, #000000 100%)",
+				'about-section': "linear-gradient(to bottom, #297F8B 0%, #0D0D0D 30%), radial-gradient(at center, #632B89 0%, transparent 50%, #0D0D0D 80%), linear-gradient(to bottom, #EF3E72 0%, #0D0D0D 30%)",
+
 			},
 			dropShadow: {
 				'custom': '0 0 10px rgba(0,0,0,0.5)',
 			},
 			fontFamily: {
-				'dm-sans': ['DMSans', 'sans-serif']
+				'dm-sans': ['DMSans', 'sans-serif'],
+				'geist': ['Geist', 'sans-serif'],
 			},
 			colors: {
 				current: "currentColor",
