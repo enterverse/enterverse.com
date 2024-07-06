@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import { Foldout, FoldoutTrigger, FoldoutContent } from "../foldout";
 
@@ -174,12 +174,25 @@ export default function Home() {
 	const vrchatNavigator = useImageNavigator(vrchatImages);
 	const coreTeamNavigator = useImageNavigator(coreTeamImages);
 	const associateTeamNavigator = useImageNavigator(associateTeamImages);
+	const [isScrolled, setIsScrolled] = useState(false);
+
+	useEffect(() => {
+		const handleScroll = () => {
+			setIsScrolled(window.scrollY > 0);
+		};
+
+		window.addEventListener("scroll", handleScroll);
+
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, []);
 
 	return (
 		<body className="bg-overall-gradient">
 			<main className="flex min-h-screen flex-col items-center justify-between">
 				<section className="relative flex min-h-screen w-full flex-col items-center gap-16 space-x-0 bg-section1-gradient bg-cover px-32">
-					<header className="sticky top-0 z-50 flex h-32 w-full items-center justify-center bg-black/0 px-32 pt-8 backdrop-blur-md">
+					<header
+						className={`sticky top-0 z-50 flex h-32 w-full items-center justify-center bg-black/0 px-32 pt-8 ${isScrolled ? "backdrop-blur-md" : ""} `}
+					>
 						<div className="absolute left-1/2 -translate-x-1/2 gap-6">
 							<img
 								className="h-16 w-60"
