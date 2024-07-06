@@ -254,10 +254,13 @@ export default function Home() {
 					</div>
 				</section>
 
-				<section className="flex min-h-screen w-full flex-col items-start justify-center bg-section2-gradient bg-cover px-32 pt-32">
-					<div className="flex h-96 w-full flex-col items-start justify-center">
+				<section className="flex min-h-screen w-full flex-col items-start justify-center bg-section2-gradient bg-cover p-32">
+					<div className="flex h-24 flex-row gap-8">
+						<h1 className="font-geist text-5xl font-bold">enterlink</h1>
+					</div>
+					<div className="flex w-full flex-col items-start justify-center">
 						<div className="flex h-80 w-1/2 flex-col gap-8">
-							<h2 className="text-4xl font-bold text-white">
+							<h2 className="text-5xl font-bold text-white">
 								Let&apos;s navigate the <br />
 								chaos of virtual worlds <br /> with ease
 							</h2>
@@ -267,7 +270,7 @@ export default function Home() {
 								and communities.
 							</p>
 						</div>
-						<div className="flex flex-col gap-8">
+						<div className="flex h-72 flex-col gap-8">
 							<p className="font-geist text-white">
 								Stay updated with our latest developments! Join our community
 								and receive <br /> exclusive news and updates on Enterlink,
@@ -314,7 +317,7 @@ export default function Home() {
 					</div>
 				</section>
 
-				<section className="flex w-full flex-col items-start justify-center gap-16 bg-section3-gradient px-32 pt-32">
+				<section className="flex w-full flex-col items-start justify-center gap-16 bg-section3-gradient p-32">
 					<div className="flex w-full flex-col items-start justify-center">
 						<div className="flex h-72 w-2/3 flex-col gap-8">
 							<h2 className="font-dm-sans text-4xl font-bold  text-white">
@@ -355,7 +358,7 @@ export default function Home() {
 						</div>
 						<div className="flex flex-col gap-16">
 							<div className="flex h-full w-2/3 flex-col gap-8">
-								<h1 className="font-dm-sans text-4xl font-bold text-white">
+								<h1 className="font-dm-sans text-5xl font-bold text-white">
 									Meet the team
 								</h1>
 								<p className="font-geist text-white">
@@ -426,7 +429,9 @@ export default function Home() {
 									</p>
 								</div>
 							</div>
-							<h1 className="font-dm-sans text-white">Core Team</h1>
+							<h1 className="font-dm-sans text-4xl font-bold text-white">
+								Core Team
+							</h1>
 							<div className="flex flex-row">
 								<div className="flex flex-col">
 									<Foldout defaultOpen={true}>
@@ -539,7 +544,9 @@ export default function Home() {
 									<p className="text-white">Lead Unreal Technical Artist</p>
 								</div>
 							</div>
-							<h1 className="text-white">Associate developers and creators</h1>
+							<h1 className="font-dm-sans text-4xl font-bold text-white">
+								Associate developers and creators
+							</h1>
 							<div className="flex flex-row">
 								<Foldout defaultOpen={true}>
 									<div className="">
