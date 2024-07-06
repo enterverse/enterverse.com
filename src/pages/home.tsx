@@ -176,24 +176,24 @@ export default function Home() {
 	const associateTeamNavigator = useImageNavigator(associateTeamImages);
 
 	return (
-		<main className="bg-overall-gradient">
-			<header className="sticky top-0 z-50 flex h-32 w-full items-center justify-center bg-black/0 px-32 pt-8 backdrop-blur-md">
-				<div className="absolute left-1/2 -translate-x-1/2 gap-6">
-					<img
-						className="h-16 w-60"
-						src="\Logos\Enterverse logo v2.8_whitetext with shadow for BLACK AND COLOR BACKGROUNDS.png"
-					/>
-				</div>
-				<nav className="ml-auto flex h-24 w-96 flex-row items-center justify-between">
-					<Link to="/home">Home</Link>
-					<Link to="/Enterlink">Enterlink</Link>
-					<Link to="/about">About</Link>
-					<Link to="/contact">Contact</Link>
-				</nav>
-			</header>
-			<body className="flex min-h-screen flex-col items-center justify-between">
-				<section className="relative flex min-h-screen w-full flex-col items-center justify-center gap-16 space-x-0 bg-section1-gradient px-32 pt-32">
-					<div className="flex w-full flex-col justify-center gap-32">
+		<body className="bg-overall-gradient">
+			<main className="flex min-h-screen flex-col items-center justify-between">
+				<section className="relative flex min-h-screen w-full flex-col items-center gap-16 space-x-0 bg-section1-gradient px-32">
+					<header className="sticky top-0 z-50 flex h-32 w-full items-center justify-center bg-black/0 px-32 pt-8 backdrop-blur-md">
+						<div className="absolute left-1/2 -translate-x-1/2 gap-6">
+							<img
+								className="h-16 w-60"
+								src="\Logos\Enterverse logo v2.8_whitetext with shadow for BLACK AND COLOR BACKGROUNDS.png"
+							/>
+						</div>
+						<nav className="ml-auto flex h-24 w-96 flex-row items-center justify-between">
+							<Link to="/home">Home</Link>
+							<Link to="/Enterlink">Enterlink</Link>
+							<Link to="/about">About</Link>
+							<Link to="/contact">Contact</Link>
+						</nav>
+					</header>
+					<div className="flex w-full flex-col justify-center gap-32 pt-32">
 						<div className="flex flex-col gap-4 ">
 							<h1 className="mb-4 w-full font-dm-sans text-7xl font-bold text-white">
 								Bridging reality with <br />
@@ -724,7 +724,7 @@ export default function Home() {
 						</div>
 					</footer>
 				</section>
-			</body>
-		</main>
+			</main>
+		</body>
 	);
 }
