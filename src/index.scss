@@ -36,8 +36,9 @@
     @apply scrollbar-thin scrollbar-track-transparent scrollbar-thumb-neutral-800 scrollbar-corner-transparent;
   }
 }
-.bg-gradient-overlay {
-  background-image: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 100%);
-  background-blend-mode: overlay;
+.gradient-overlay::before {
+  @apply absolute inset-0 bg-gradient-to-r from-transparent to-black opacity-50;
+  content: '';
+  z-index: 10;
 }
 

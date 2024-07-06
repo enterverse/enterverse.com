@@ -178,7 +178,7 @@ export default function Home() {
 	return (
 		<body className="bg-overall-gradient">
 			<main className="flex min-h-screen flex-col items-center justify-between">
-				<section className="relative flex min-h-screen w-full flex-col items-center gap-16 space-x-0 bg-section1-gradient px-32">
+				<section className="relative flex min-h-screen w-full flex-col items-center gap-16 space-x-0 bg-section1-gradient bg-cover px-32">
 					<header className="sticky top-0 z-50 flex h-32 w-full items-center justify-center bg-black/0 px-32 pt-8 backdrop-blur-md">
 						<div className="absolute left-1/2 -translate-x-1/2 gap-6">
 							<img
@@ -193,7 +193,11 @@ export default function Home() {
 							<Link to="/contact">Contact</Link>
 						</nav>
 					</header>
-					<div className="flex w-full flex-col justify-center gap-32 pt-32">
+					<img
+						className="absolute size-full object-cover mix-blend-overlay"
+						src="/concept/portal.png"
+					/>
+					<div className="relative flex w-full flex-col justify-center gap-32 pt-32">
 						<div className="flex flex-col gap-4 ">
 							<h1 className="mb-4 w-full font-dm-sans text-7xl font-bold text-white">
 								Bridging reality with <br />
