@@ -167,6 +167,7 @@ function useImageNavigator<T extends string | { url: string }>(
 }
 
 // move images from public to src so that images vite will help the images
+// video where?
 
 export default function Home() {
 	const promoNavigator = useImageNavigator(promoImages);
@@ -175,7 +176,7 @@ export default function Home() {
 	const associateTeamNavigator = useImageNavigator(associateTeamImages);
 
 	return (
-		<main className="">
+		<main className="bg-overall-gradient">
 			<header className="sticky top-0 z-50 flex h-32 w-full items-center justify-center bg-black/0 px-32 pt-8 backdrop-blur-md">
 				<div className="absolute left-1/2 -translate-x-1/2 gap-6">
 					<img
@@ -190,7 +191,7 @@ export default function Home() {
 					<Link to="/contact">Contact</Link>
 				</nav>
 			</header>
-			<body className="flex min-h-screen flex-col items-center justify-between bg-overall-gradient">
+			<body className="flex min-h-screen flex-col items-center justify-between">
 				<section className="relative flex min-h-screen w-full flex-col items-center justify-center gap-16 space-x-0 bg-section1-gradient px-32 pt-32">
 					<div className="flex w-full flex-col justify-center gap-32">
 						<div className="flex flex-col gap-4 ">
@@ -225,6 +226,8 @@ export default function Home() {
 							</div>
 						</div>
 					</div>
+				</section>
+				<section className="flex w-full flex-col items-center justify-center gap-16 p-32">
 					<div className="flex w-full flex-col items-start justify-center gap-16">
 						<Foldout defaultOpen={true}>
 							<div className="">
@@ -311,9 +314,9 @@ export default function Home() {
 					</div>
 				</section>
 
-				<section className="flex w-full flex-col items-start justify-center gap-16  bg-section3-gradient px-32 pt-32">
+				<section className="flex w-full flex-col items-start justify-center gap-16 bg-section3-gradient px-32 pt-32">
 					<div className="flex w-full flex-col items-start justify-center">
-						<div className="flex h-96 w-2/3 flex-col gap-8">
+						<div className="flex h-72 w-2/3 flex-col gap-8">
 							<h2 className="font-dm-sans text-4xl font-bold  text-white">
 								We&apos;re building a digital community
 							</h2>
@@ -324,7 +327,7 @@ export default function Home() {
 								Virtual Reality easily accessible to everyone.
 							</p>
 						</div>
-						<div className="flex h-96 flex-col justify-center gap-8">
+						<div className="flex flex-col justify-center gap-8 pb-32">
 							<Foldout defaultOpen={true}>
 								<div className="">
 									<FoldoutTrigger asChild>
@@ -362,7 +365,9 @@ export default function Home() {
 									around communities and creators.
 								</p>
 							</div>
-							<h1 className="font-dm-sans text-4xl  text-white">Founders</h1>
+							<h1 className="font-dm-sans text-4xl font-bold text-white">
+								Founders
+							</h1>
 							<div className="flex flex-row gap-4 pb-16">
 								<div className="flex w-1/3 flex-col gap-4">
 									<img
