@@ -36,9 +36,5 @@
     @apply scrollbar-thin scrollbar-track-transparent scrollbar-thumb-neutral-800 scrollbar-corner-transparent;
   }
 }
-.gradient-overlay::before {
-  @apply absolute inset-0 bg-gradient-to-r from-transparent to-black opacity-50;
-  content: '';
-  z-index: 10;
-}
+
 
