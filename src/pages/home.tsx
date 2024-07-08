@@ -337,7 +337,7 @@ export default function Home() {
 				<section className="flex w-full flex-col items-start justify-center gap-16 bg-section3-gradient p-32">
 					<div className="flex w-full flex-col items-start justify-center">
 						<div className="flex h-72 w-2/3 flex-col gap-8">
-							<h2 className="font-dm-sans text-4xl font-bold  text-white">
+							<h2 className="font-dm-sans text-5xl font-bold  text-white">
 								We&apos;re building a digital community
 							</h2>
 							<p className="font-geist text-white">
