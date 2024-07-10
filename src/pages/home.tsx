@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import { Foldout, FoldoutTrigger, FoldoutContent } from "../foldout";
 
@@ -170,6 +170,8 @@ function useImageNavigator<T extends string | { url: string }>(
 // video where?
 // header notes. *see figma notes*
 // white light on beginning feels a bit bright?
+// add the butterfly
+// icons and buttons need to actually do something
 
 export default function Home() {
 	const promoNavigator = useImageNavigator(promoImages);
@@ -177,22 +179,44 @@ export default function Home() {
 	const coreTeamNavigator = useImageNavigator(coreTeamImages);
 	const associateTeamNavigator = useImageNavigator(associateTeamImages);
 	const [isScrolled, setIsScrolled] = useState(false);
+	const [showHeader, setShowHeader] = useState(true);
+	const lastScrollY = useRef(window.scrollY);
 
 	useEffect(() => {
 		const handleScroll = () => {
-			setIsScrolled(window.scrollY > 0);
+			const currentScrollY = window.scrollY;
+			const scrolled = currentScrollY > 0;
+			setIsScrolled(scrolled);
+
+			const shouldShowHeader =
+				currentScrollY <= lastScrollY.current || !scrolled;
+			setShowHeader(shouldShowHeader);
+
+			lastScrollY.current = currentScrollY < 0 ? 0 : currentScrollY;
+		};
+
+		const handleMouseMove = (event: MouseEvent) => {
+			if (event.clientY < 100) {
+				setShowHeader(true);
+			}
 		};
 
 		window.addEventListener("scroll", handleScroll);
+		window.addEventListener("mousemove", handleMouseMove);
 
-		return () => window.removeEventListener("scroll", handleScroll);
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+			window.removeEventListener("mousemove", handleMouseMove);
+		};
 	}, []);
 
 	return (
 		<body className="bg-overall-gradient">
 			<main className="flex min-h-screen flex-col items-center justify-between">
 				<header
-					className={`fixed top-0 z-50 flex h-32 w-full items-center justify-center bg-black/0 px-32 pt-8 ${isScrolled ? "backdrop-blur-md" : ""} `}
+					className={`fixed top-0 z-50 flex h-32 w-full items-center justify-center bg-black/0 px-32 pt-8 transition-all duration-500 ${
+						isScrolled ? "backdrop-blur-md" : ""
+					} ${showHeader ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"}`}
 				>
 					<div className="absolute left-1/2 -translate-x-1/2 gap-6">
 						<img
