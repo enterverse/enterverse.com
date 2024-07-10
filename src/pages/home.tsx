@@ -168,7 +168,6 @@ function useImageNavigator<T extends string | { url: string }>(
 
 // move images from public to src so that images vite will help the images
 // video where?
-// fixed for header
 
 export default function Home() {
 	const promoNavigator = useImageNavigator(promoImages);
@@ -211,16 +210,16 @@ export default function Home() {
 						className="absolute size-full object-cover mix-blend-overlay"
 						src="/concept/portal.png"
 					/>
-					<div className="relative flex w-full flex-col justify-center gap-32 pt-32">
-						<div className="flex flex-col gap-4 ">
+					<div className="relative flex w-full flex-col justify-center gap-32 pt-56">
+						<div className="flex w-full flex-col gap-4">
 							<h1 className="mb-4 w-full font-dm-sans text-7xl font-bold text-white">
-								Bridging reality with <br />
-								the digital future
+								Find Meetups and Events <br /> in all your Virtual Realities
 							</h1>
 							<p className="font-geist text-white">
 								Enterverse&apos;s soon-to-launch service, Enterlink, makes
-								virtual world accessible, <br /> connecting you to events,
-								experiences, and communities.
+								virtual social games and <br /> experiences accessible,
+								connecting you to events, experiences, worlds, and <br />{" "}
+								communities.
 							</p>
 						</div>
 						<div className="flex flex-col gap-8">
@@ -273,19 +272,19 @@ export default function Home() {
 				</section>
 
 				<section className="flex min-h-screen w-full flex-col items-start justify-center bg-section2-gradient bg-cover p-32">
-					<div className="flex h-24 flex-row gap-8">
+					<div className="mb-14 flex h-24 flex-row items-center gap-8">
+						<img className="size-20" src="\Logos\enterlink logo.png" />
 						<h1 className="font-geist text-5xl font-bold">enterlink</h1>
 					</div>
 					<div className="flex w-full flex-col items-start justify-center">
-						<div className="flex h-80 w-1/2 flex-col gap-8">
+						<div className="flex h-72 w-1/2 flex-col gap-8">
 							<h2 className="text-5xl font-bold text-white">
-								Let&apos;s navigate the <br />
-								chaos of virtual worlds <br /> with ease
+								Make plans and <br /> share with friends
 							</h2>
 							<p className="font-dm-sans text-white">
 								Enterlink is our soon-to-launch service that makes virtual
-								worlds accessible, <br /> connecting you to events, experiences,
-								and communities.
+								social games and <br /> experiences accessible, connecting you
+								to events, experiences, worlds and <br /> communities.
 							</p>
 						</div>
 						<div className="flex h-72 flex-col gap-8">
