@@ -169,6 +169,7 @@ function useImageNavigator<T extends string | { url: string }>(
 // move images from public to src so that images vite will help the images
 // video where?
 // input at bottom is still not paragraph
+// header notes. *see figma notes*
 
 export default function Home() {
 	const promoNavigator = useImageNavigator(promoImages);
@@ -211,7 +212,7 @@ export default function Home() {
 						className="absolute size-full object-cover mix-blend-overlay"
 						src="/concept/portal.png"
 					/>
-					<div className="relative flex w-full flex-col justify-center gap-32 pt-56">
+					<div className="relative flex w-full flex-col justify-center gap-16 pt-56">
 						<div className="flex w-full flex-col gap-4">
 							<h1 className="mb-4 w-full font-dm-sans text-7xl font-bold leading-snug text-white">
 								Find Meetups and Events <br /> in all your Virtual Realities
@@ -276,21 +277,21 @@ export default function Home() {
 				<section className="flex min-h-screen w-full flex-col items-start justify-center bg-section2-gradient bg-cover p-32">
 					<div className="mb-14 flex h-24 flex-row items-center gap-8">
 						<img className="size-20" src="\Logos\enterlink logo.png" />
-						<h1 className="font-geist text-5xl font-bold">enterlink</h1>
+						<h1 className="font-geist text-6xl font-bold">enterlink</h1>
 					</div>
-					<div className="flex w-full flex-col items-start justify-center">
-						<div className="flex h-72 w-1/2 flex-col gap-8">
-							<h2 className="text-5xl font-bold leading-snug text-white">
+					<div className="flex w-full flex-col items-start justify-center gap-16">
+						<div className="flex flex-col gap-8">
+							<h2 className="font-dm-sans text-6xl font-bold leading-tight text-white">
 								Make plans and <br /> share with friends
 							</h2>
-							<p className="font-dm-sans leading-9 text-white">
+							<p className="font-geist text-xl leading-9 text-white">
 								Enterlink is our soon-to-launch service that makes virtual
 								social games and <br /> experiences accessible, connecting you
 								to events, experiences, worlds and <br /> communities.
 							</p>
 						</div>
 						<div className="flex h-72 flex-col gap-8">
-							<p className="font-geist leading-9 text-white">
+							<p className="font-geist text-xl leading-9 text-white">
 								Stay updated with our latest developments! Join our community
 								and receive <br /> exclusive news and updates on Enterlink,
 								Enterverse, and more.
@@ -324,25 +325,27 @@ export default function Home() {
 					</div>
 					<div className="flex h-auto w-full flex-row items-start justify-center gap-16">
 						<div className="flex flex-col gap-4">
-							<p className="font-dm-sans text-white">
+							<p className="font-dm-sans text-2xl font-bold text-white">
 								Here&apos;s the issue we saw
 							</p>
-							<h1 className="font-dm-sans text-4xl  text-white">
+							<h1 className="font-dm-sans text-4xl font-bold leading-tight text-white">
 								It&apos;s not easy finding events, worlds, and experiences
 							</h1>
-							<p className="font-geist leading-7 text-white">
+							<p className="font-geist text-base leading-7 text-white">
 								VR platforms offer exciting spaces but finding events, worlds,
 								experiences and communities is like navigating the early,
 								chaotic internet.
 							</p>
 						</div>
 						<div className="flex flex-col gap-4  font-dm-sans">
-							<p className="text-white">Here&apos;s our solution </p>
-							<h1 className="font-dm-sans text-4xl text-white">
+							<p className="font-dm-sans text-2xl font-bold text-white">
+								Here&apos;s our solution{" "}
+							</p>
+							<h1 className="font-dm-sans text-4xl font-bold leading-tight text-white">
 								An easy-to-navigate platform for VR events and community
 								building
 							</h1>
-							<p className="font-geist leading-7 text-white">
+							<p className="font-geist text-base leading-7 text-white">
 								Enterlink maps and organizes virtual worlds, making it easy to
 								find and join events across different platforms.
 							</p>
@@ -352,15 +355,15 @@ export default function Home() {
 
 				<section className="flex w-full flex-col items-start justify-center gap-16 bg-section3-gradient p-32">
 					<div className="flex w-full flex-col items-start justify-center">
-						<div className="flex h-72 w-1/2 flex-col gap-8">
-							<h2 className="font-dm-sans text-5xl font-bold  text-white">
-								We&apos;re building a digital community
+						<div className="flex w-1/2 flex-col gap-8">
+							<h2 className="font-dm-sans text-6xl font-bold leading-tight text-white">
+								We&apos;re helping you build your digital community
 							</h2>
-							<p className="font-geist leading-9 text-white">
+							<p className="font-geist text-xl leading-9 text-white">
 								Our goal is to help build authentic social connections by
-								bringing people together through a shared love of virtual
-								entertainment and culture. We aim to make communities within
-								Virtual Reality easily accessible to everyone.
+								bringing people together <br /> through a shared love of virtual
+								entertainment and culture. We aim to make <br /> communities
+								within Virtual Reality easily accessible to everyone.
 							</p>
 						</div>
 						<div className="flex flex-col justify-center gap-8 pb-32">
@@ -391,10 +394,10 @@ export default function Home() {
 						</div>
 						<div className="flex flex-col gap-16">
 							<div className="flex h-full w-2/3 flex-col gap-8">
-								<h1 className="font-dm-sans text-5xl font-bold text-white">
+								<h1 className="font-dm-sans text-6xl font-bold leading-tight text-white">
 									Meet the team
 								</h1>
-								<p className="font-geist leading-9 text-white">
+								<p className="font-geist text-xl leading-9 text-white">
 									We&apos;re a team of developers and community contributors
 									bridging the gap <br /> between today&apos;s reality and our
 									shared vision of an ethical digital future centered <br />{" "}
@@ -405,7 +408,7 @@ export default function Home() {
 								Founders
 							</h1>
 							<div className="flex flex-row gap-4 pb-16">
-								<div className="flex w-1/3 flex-col gap-4">
+								<div className="flex w-1/3 flex-col gap-6">
 									<img
 										className="rounded"
 										src="\profiles\matthew_profile.png"
@@ -423,7 +426,7 @@ export default function Home() {
 										company towards groundbreaking VR experiences.
 									</p>
 								</div>
-								<div className="flex w-1/3 flex-col gap-4">
+								<div className="flex w-1/3 flex-col gap-6">
 									<img
 										className="rounded"
 										src="\profiles\raf-3+copy.jpg"
@@ -442,7 +445,7 @@ export default function Home() {
 										concepts.
 									</p>
 								</div>
-								<div className="flex w-1/3 flex-col gap-4">
+								<div className="flex w-1/3 flex-col gap-6">
 									<img
 										className="rounded"
 										src="\profiles\nuno-2-1+copy.jpg"
@@ -662,13 +665,13 @@ export default function Home() {
 					</div>
 				</section>
 
-				<section className="flex w-full flex-col items-start justify-center  bg-footer-gradient px-24 pt-32">
-					<h2 className="font-dm-sans text-5xl font-bold text-white">
+				<section className="flex w-full flex-col items-start justify-center  bg-footer-gradient px-32 pt-32">
+					<h2 className="font-dm-sans text-6xl font-bold leading-tight text-white">
 						Interested in more?
 					</h2>
-					<div className="flex flex-row items-start justify-center gap-16">
+					<div className="flex flex-row items-start justify-center gap-32">
 						<div className="flex w-full flex-col gap-16 pr-32">
-							<div className="my-16 flex flex-col gap-4">
+							<div className="my-16 flex flex-col gap-6">
 								<h3 className="font-dm-sans text-4xl font-bold leading-7 text-white">
 									Join the adventure
 								</h3>
@@ -706,8 +709,8 @@ export default function Home() {
 							</h1>
 							<p className="font-geist text-base font-normal leading-7 text-white">
 								Stay updated with our latest developments! Enter your email to
-								join our community and receive <br /> exclusive news and updates
-								on Enterlink, Enterverse, and more.
+								join our community and receive exclusive news and updates on
+								Enterlink, Enterverse, and more.
 							</p>
 							<p className="font-geist text-white">
 								We look forward to staying in touch!
