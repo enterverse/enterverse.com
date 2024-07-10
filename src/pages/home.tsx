@@ -168,6 +168,7 @@ function useImageNavigator<T extends string | { url: string }>(
 
 // move images from public to src so that images vite will help the images
 // video where?
+// fixed for header
 
 export default function Home() {
 	const promoNavigator = useImageNavigator(promoImages);
