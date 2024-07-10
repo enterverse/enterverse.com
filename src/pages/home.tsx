@@ -190,23 +190,23 @@ export default function Home() {
 	return (
 		<body className="bg-overall-gradient">
 			<main className="flex min-h-screen flex-col items-center justify-between">
+				<header
+					className={`fixed top-0 z-50 flex h-32 w-full items-center justify-center bg-black/0 px-32 pt-8 ${isScrolled ? "backdrop-blur-md" : ""} `}
+				>
+					<div className="absolute left-1/2 -translate-x-1/2 gap-6">
+						<img
+							className="h-16 w-60"
+							src="\Logos\Enterverse logo v2.8_whitetext with shadow for BLACK AND COLOR BACKGROUNDS.png"
+						/>
+					</div>
+					<nav className="ml-auto flex h-24 w-96 flex-row items-center justify-between">
+						<Link to="/home">Home</Link>
+						<Link to="/Enterlink">Enterlink</Link>
+						<Link to="/about">About</Link>
+						<Link to="/contact">Contact</Link>
+					</nav>
+				</header>
 				<section className="relative flex min-h-screen w-full flex-col items-center gap-16 space-x-0 bg-section1-gradient bg-cover px-32">
-					<header
-						className={`sticky top-0 z-50 flex h-32 w-full items-center justify-center bg-black/0 px-32 pt-8 ${isScrolled ? "backdrop-blur-md" : ""} `}
-					>
-						<div className="absolute left-1/2 -translate-x-1/2 gap-6">
-							<img
-								className="h-16 w-60"
-								src="\Logos\Enterverse logo v2.8_whitetext with shadow for BLACK AND COLOR BACKGROUNDS.png"
-							/>
-						</div>
-						<nav className="ml-auto flex h-24 w-96 flex-row items-center justify-between">
-							<Link to="/home">Home</Link>
-							<Link to="/Enterlink">Enterlink</Link>
-							<Link to="/about">About</Link>
-							<Link to="/contact">Contact</Link>
-						</nav>
-					</header>
 					<img
 						className="absolute size-full object-cover mix-blend-overlay"
 						src="/concept/portal.png"
