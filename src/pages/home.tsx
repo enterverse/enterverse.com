@@ -168,6 +168,7 @@ function useImageNavigator<T extends string | { url: string }>(
 
 // move images from public to src so that images vite will help the images
 // video where?
+// input at bottom is still not paragraph
 
 export default function Home() {
 	const promoNavigator = useImageNavigator(promoImages);
@@ -215,7 +216,7 @@ export default function Home() {
 							<h1 className="mb-4 w-full font-dm-sans text-7xl font-bold text-white">
 								Find Meetups and Events <br /> in all your Virtual Realities
 							</h1>
-							<p className="font-geist text-white">
+							<p className="font-geist text-xl text-white">
 								Enterverse&apos;s soon-to-launch service, Enterlink, makes
 								virtual social games and <br /> experiences accessible,
 								connecting you to events, experiences, worlds, and <br />{" "}
@@ -223,22 +224,23 @@ export default function Home() {
 							</p>
 						</div>
 						<div className="flex flex-col gap-8">
-							<p className="font-geist text-white">
+							<p className="font-geist text-xl text-white">
 								Interested in more? Join our community to stay updated with{" "}
 								<br /> the latest updates on Enterlink.
 							</p>
-							<div className="flex flex-row space-x-2">
+							<div className="flex w-full flex-row space-x-4">
 								<button
-									className="rounded-lg bg-pink px-4 py-2 font-dm-sans text-white"
+									className="flex h-16 w-64 items-center justify-center space-x-4 rounded-lg bg-pink px-4 py-2 font-dm-sans text-white"
 									type="button"
 								>
-									Join our Discord
+									<p className="font-semibold">Join our Discord</p>
+									<img className="size-8" src="\Logos\discord.svg" />
 								</button>
 								<button
-									className="rounded-lg border-2 border-white px-4 py-2 font-dm-sans text-white"
+									className="h-16 w-64 rounded-lg border-2 border-white px-4 py-2 font-dm-sans text-white"
 									type="button"
 								>
-									What&apos;s Enterlink?
+									<p className="font-semibold">What&apos;s Enterlink?</p>
 								</button>
 							</div>
 						</div>
@@ -293,16 +295,30 @@ export default function Home() {
 								and receive <br /> exclusive news and updates on Enterlink,
 								Enterverse, and more.
 							</p>
-							<form className="flex rounded border-2">
+
+							<form className="flex h-16 w-96 items-center overflow-hidden rounded-l-lg rounded-r-full border-2">
 								<input
-									className="rounded-lg bg-transparent px-4 py-2"
-									placeholder="Email your email"
+									className="flex-1 rounded-l-lg bg-transparent px-4 py-2"
+									placeholder="Email your email to join"
 									type="email"
 								/>
 								<button
-									className="rounded-lg bg-pink px-4 py-2 text-white"
+									className="m-1 flex size-12 items-center justify-center rounded-full bg-pink text-white"
 									type="submit"
-								/>
+								>
+									<svg
+										fill="currentColor"
+										height="24"
+										viewBox="0 0 16 16"
+										width="24"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+											fillRule="evenodd"
+										/>
+									</svg>
+								</button>
 							</form>
 						</div>
 					</div>
