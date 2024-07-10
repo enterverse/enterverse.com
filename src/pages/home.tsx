@@ -703,15 +703,15 @@ export default function Home() {
 							<h1 className="font-dm-sans text-4xl font-bold text-white">
 								Stay Connected
 							</h1>
-							<p className="font-geist text-white">
+							<p className="font-geist text-base font-normal text-white">
 								Stay updated with our latest developments! Enter your email to
-								join our community and receive exclusive news and updates on
-								Enterlink, Enterverse, and more.
+								join our community and receive <br /> exclusive news and updates
+								on Enterlink, Enterverse, and more.
 							</p>
 							<p className="font-geist text-white">
 								We look forward to staying in touch!
 							</p>
-							<form className="flex w-1/2 flex-col gap-8 pt-6">
+							<form className="flex w-2/3 flex-col gap-8 pt-6">
 								<input
 									required
 									className="h-16 rounded-lg bg-gray-700 px-4 py-2"
