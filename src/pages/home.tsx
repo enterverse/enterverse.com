@@ -168,7 +168,6 @@ function useImageNavigator<T extends string | { url: string }>(
 
 // move images from public to src so that images vite will help the images
 // video where?
-// input at bottom is still not paragraph
 // header notes. *see figma notes*
 // white light on beginning feels a bit bright?
 
