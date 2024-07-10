@@ -213,10 +213,10 @@ export default function Home() {
 					/>
 					<div className="relative flex w-full flex-col justify-center gap-32 pt-56">
 						<div className="flex w-full flex-col gap-4">
-							<h1 className="mb-4 w-full font-dm-sans text-7xl font-bold text-white">
+							<h1 className="mb-4 w-full font-dm-sans text-7xl font-bold leading-snug text-white">
 								Find Meetups and Events <br /> in all your Virtual Realities
 							</h1>
-							<p className="font-geist text-xl text-white">
+							<p className="font-geist text-xl leading-9 text-white">
 								Enterverse&apos;s soon-to-launch service, Enterlink, makes
 								virtual social games and <br /> experiences accessible,
 								connecting you to events, experiences, worlds, and <br />{" "}
@@ -224,7 +224,7 @@ export default function Home() {
 							</p>
 						</div>
 						<div className="flex flex-col gap-8">
-							<p className="font-geist text-xl text-white">
+							<p className="font-geist text-xl leading-9 text-white">
 								Interested in more? Join our community to stay updated with{" "}
 								<br /> the latest updates on Enterlink.
 							</p>
@@ -280,17 +280,17 @@ export default function Home() {
 					</div>
 					<div className="flex w-full flex-col items-start justify-center">
 						<div className="flex h-72 w-1/2 flex-col gap-8">
-							<h2 className="text-5xl font-bold text-white">
+							<h2 className="text-5xl font-bold leading-snug text-white">
 								Make plans and <br /> share with friends
 							</h2>
-							<p className="font-dm-sans text-white">
+							<p className="font-dm-sans leading-9 text-white">
 								Enterlink is our soon-to-launch service that makes virtual
 								social games and <br /> experiences accessible, connecting you
 								to events, experiences, worlds and <br /> communities.
 							</p>
 						</div>
 						<div className="flex h-72 flex-col gap-8">
-							<p className="font-geist text-white">
+							<p className="font-geist leading-9 text-white">
 								Stay updated with our latest developments! Join our community
 								and receive <br /> exclusive news and updates on Enterlink,
 								Enterverse, and more.
@@ -330,7 +330,7 @@ export default function Home() {
 							<h1 className="font-dm-sans text-4xl  text-white">
 								It&apos;s not easy finding events, worlds, and experiences
 							</h1>
-							<p className="font-geist text-white">
+							<p className="font-geist leading-7 text-white">
 								VR platforms offer exciting spaces but finding events, worlds,
 								experiences and communities is like navigating the early,
 								chaotic internet.
@@ -342,7 +342,7 @@ export default function Home() {
 								An easy-to-navigate platform for VR events and community
 								building
 							</h1>
-							<p className="font-geist text-white">
+							<p className="font-geist leading-7 text-white">
 								Enterlink maps and organizes virtual worlds, making it easy to
 								find and join events across different platforms.
 							</p>
@@ -356,7 +356,7 @@ export default function Home() {
 							<h2 className="font-dm-sans text-5xl font-bold  text-white">
 								We&apos;re building a digital community
 							</h2>
-							<p className="font-geist text-white">
+							<p className="font-geist leading-9 text-white">
 								Our goal is to help build authentic social connections by
 								bringing people together through a shared love of virtual
 								entertainment and culture. We aim to make communities within
@@ -394,7 +394,7 @@ export default function Home() {
 								<h1 className="font-dm-sans text-5xl font-bold text-white">
 									Meet the team
 								</h1>
-								<p className="font-geist text-white">
+								<p className="font-geist leading-9 text-white">
 									We&apos;re a team of developers and community contributors
 									bridging the gap <br /> between today&apos;s reality and our
 									shared vision of an ethical digital future centered <br />{" "}
@@ -417,7 +417,7 @@ export default function Home() {
 									<p className="font-dm-sans text-2xl text-white">
 										Co-Founder, CEO
 									</p>
-									<p className="font-geist text-white">
+									<p className="font-geist leading-7 text-white">
 										Matthew Brewbaker melds his film production savvy with a
 										mastery of gaming and software workflows, steering the
 										company towards groundbreaking VR experiences.
@@ -435,7 +435,7 @@ export default function Home() {
 									<p className="font-dm-sans text-2xl text-white">
 										Co-Founder, CCO
 									</p>
-									<p className="font-geist text-white">
+									<p className="font-geist leading-7 text-white">
 										Raphael Arkera leverages his creative direction prowess,
 										honed with giants like Marvel, Netflix, and Imaginarium
 										Studios, to infuse VEU Inc. with innovative VR event
@@ -454,7 +454,7 @@ export default function Home() {
 									<p className="font-dm-sans text-2xl text-white">
 										Co-Founder, CPO
 									</p>
-									<p className="font-geist text-white">
+									<p className="font-geist leading-7 text-white">
 										Nuno Rivotti blends insights from film, games, and
 										blockchain, enriching VEU&apos;s product strategy with
 										experience from founding the Trojan Horse Was a Unicorn
@@ -662,48 +662,49 @@ export default function Home() {
 					</div>
 				</section>
 
-				<section className="flex w-full flex-col items-start justify-center  bg-footer-gradient px-32 pt-32">
+				<section className="flex w-full flex-col items-start justify-center  bg-footer-gradient px-24 pt-32">
 					<h2 className="font-dm-sans text-5xl font-bold text-white">
 						Interested in more?
 					</h2>
-					<div className="flex flex-row items-start justify-center">
+					<div className="flex flex-row items-start justify-center gap-16">
 						<div className="flex w-full flex-col gap-16 pr-32">
 							<div className="my-16 flex flex-col gap-4">
-								<h3 className="font-dm-sans text-4xl font-bold text-white">
+								<h3 className="font-dm-sans text-4xl font-bold leading-7 text-white">
 									Join the adventure
 								</h3>
-								<p className="font-geist text-white">
+								<p className="font-geist leading-7 text-white">
 									VR platforms offer exciting spaces but finding events, worlds,
-									experiences and communities is like navigating the early,
-									chaotic internet.
+									experiences and <br /> communities is like navigating the
+									early, chaotic internet.
 								</p>
-								<p className="font-geist text-white">
+								<p className="font-geist leading-7 text-white">
 									Interested in collaborating, want to learn more, or want to
 									make a recommendation?
 								</p>
-								<p className="font-geist text-white">
+								<p className="font-geist leading-7 text-white">
 									Share your insights and help us craft the ideal digital
-									future. Together, let&apos;s make the future we all want
-									happen.
+									future. Together, let&apos;s make the <br /> future we all
+									want happen.
 								</p>
 							</div>
 							<div className="my-16 flex flex-col gap-4">
 								<h2 className="font-dm-sans text-4xl font-bold text-white">
 									Get rewarded for subscribing
 								</h2>
-								<p className="font-geist text-white">
+								<p className="font-geist leading-7 text-white">
 									Our associate developers, supporters, and community
-									contributors gain free access to early feature releases,
-									exclusive behind-the-scenes content, and a community of
+									contributors gain free access to <br /> early feature
+									releases, exclusive behind-the-scenes content, and a community
+									of <br />
 									visionaries shaping the future of entertainment.
 								</p>
 							</div>
 						</div>
 						<div className="my-16 flex size-full flex-col gap-4">
-							<h1 className="font-dm-sans text-4xl font-bold text-white">
+							<h1 className="font-dm-sans text-4xl font-bold leading-7 text-white">
 								Stay Connected
 							</h1>
-							<p className="font-geist text-base font-normal text-white">
+							<p className="font-geist text-base font-normal leading-7 text-white">
 								Stay updated with our latest developments! Enter your email to
 								join our community and receive <br /> exclusive news and updates
 								on Enterlink, Enterverse, and more.
@@ -733,7 +734,7 @@ export default function Home() {
 						</div>
 					</div>
 
-					<footer className="flex h-48 w-full flex-row items-center justify-between gap-2 px-32 pb-24 pt-16">
+					<footer className="flex h-48 w-full flex-row items-center justify-between gap-2 pb-24 pt-16">
 						<div className="flex flex-col gap-4">
 							<div className="flex flex-row">
 								<img
@@ -742,12 +743,12 @@ export default function Home() {
 								/>
 								<div className="flex flex-col">
 									<div className="flex flex-col">
-										<p className="font-dm-sans text-sm text-gray-200">
+										<p className="font-dm-sans text-sm text-gray-500">
 											© VEU Inc. 2024 - All Rights Reserved
 										</p>
 									</div>
 									<div className="flex flex-col">
-										<p className="font-dm-sans text-sm text-gray-200">
+										<p className="font-dm-sans text-sm text-gray-500">
 											Terms of Service and Privacy Policy
 										</p>
 									</div>
@@ -755,12 +756,12 @@ export default function Home() {
 							</div>
 						</div>
 						<div className="absolute left-1/2 flex -translate-x-1/2 flex-row gap-6">
-							<img className="size-7" src="\Logos\discord.svg" />
-							<img className="size-7" src="\Logos\twitter.svg" />
-							<img className="size-7" src="\Logos\instagram.svg" />
-							<img className="size-7" src="\Logos\facebook.svg" />
-							<img className="size-7" src="\Logos\linkedin.svg" />
-							<img className="size-7" src="\Logos\medium.svg" />
+							<img className="size-6" src="\Logos\discord.svg" />
+							<img className="size-6" src="\Logos\twitter.svg" />
+							<img className="size-6" src="\Logos\instagram.svg" />
+							<img className="size-6" src="\Logos\facebook.svg" />
+							<img className="size-6" src="\Logos\linkedin.svg" />
+							<img className="size-6" src="\Logos\medium.svg" />
 						</div>
 					</footer>
 				</section>
