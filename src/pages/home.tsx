@@ -716,10 +716,9 @@ export default function Home() {
 									placeholder="Email"
 									type="email"
 								/>
-								<input
-									className="h-40 rounded-lg bg-gray-700 px-6 py-2"
+								<textarea
+									className="h-40 rounded-lg bg-gray-700 px-4 py-2"
 									placeholder="Share your thoughts, interest or feedback (optional)"
-									type="text"
 								/>
 								<button
 									className="h-16 w-64 rounded-lg bg-pink px-4 py-2 text-white"
