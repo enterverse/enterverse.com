@@ -307,45 +307,52 @@ export default function Home() {
 				</section>
 
 				<section className="flex min-h-screen w-full flex-col items-start justify-center bg-section2-gradient bg-cover p-32">
-					<div className="mb-14 flex h-24 flex-row items-center gap-8">
-						<img className="size-20" src="\Logos\enterlink logo.png" />
-						<h1 className="font-geist text-6xl font-bold">enterlink</h1>
-					</div>
-					<div className="flex w-full flex-col items-start justify-center gap-16">
-						<div className="flex flex-col gap-8">
-							<h2 className="font-dm-sans text-6xl font-bold leading-tight text-white">
-								Make plans and <br /> share with friends
-							</h2>
-							<p className="font-geist text-xl leading-9 text-white">
-								Enterlink is our soon-to-launch service that makes virtual
-								social games and <br /> experiences accessible, connecting you
-								to events, experiences, worlds and <br /> communities.
-							</p>
-						</div>
-						<div className="flex h-72 flex-col gap-8">
-							<p className="font-geist text-xl leading-9 text-white">
-								Stay updated with our latest developments! Join our community
-								and receive <br /> exclusive news and updates on Enterlink,
-								Enterverse, and more.
-							</p>
+					<div className="flex w-full flex-row items-center justify-center">
+						<div className="flex w-full flex-col items-start justify-center">
+							<div className="mb-14 flex h-24 flex-row items-center gap-8">
+								<img className="size-20" src="\Logos\enterlink logo.png" />
+								<h1 className="font-geist text-6xl font-bold">enterlink</h1>
+							</div>
+							<div className="flex w-full flex-col items-start justify-center gap-16">
+								<div className="flex flex-col gap-8">
+									<h2 className="font-dm-sans text-6xl font-bold leading-tight text-white">
+										Make plans and <br /> share with friends
+									</h2>
+									<p className="font-geist text-xl leading-9 text-white">
+										Enterlink is our soon-to-launch service that makes virtual
+										social games and <br /> experiences accessible, connecting
+										you to events, experiences, worlds and <br /> communities.
+									</p>
+								</div>
+								<div className="flex h-72 flex-col gap-8">
+									<p className="font-geist text-xl leading-9 text-white">
+										Stay updated with our latest developments! Join our
+										community and receive <br /> exclusive news and updates on
+										Enterlink, Enterverse, and more.
+									</p>
 
-							<form className="flex h-16 w-96 items-center overflow-hidden rounded-l-lg rounded-r-full border-2">
-								<input
-									className="flex-1 rounded-l-lg bg-transparent px-4 py-2"
-									placeholder="Email your email to join"
-									type="email"
-								/>
-								<button
-									className="m-1 flex size-12 items-center justify-center rounded-full bg-pink text-white"
-									type="submit"
-								>
-									<img
-										alt="Submit"
-										className="size-6"
-										src="/Logos/arrow-right.svg"
-									/>
-								</button>
-							</form>
+									<form className="flex h-16 w-96 items-center overflow-hidden rounded-l-lg rounded-r-full border-2">
+										<input
+											className="flex-1 rounded-l-lg bg-transparent px-4 py-2"
+											placeholder="Email your email to join"
+											type="email"
+										/>
+										<button
+											className="m-1 flex size-12 items-center justify-center rounded-full bg-pink text-white"
+											type="submit"
+										>
+											<img
+												alt="Submit"
+												className="size-6"
+												src="/Logos/arrow-right.svg"
+											/>
+										</button>
+									</form>
+								</div>
+							</div>
+						</div>
+						<div className="flex w-1/2 items-center justify-center">
+							<img alt="Vea Butterfly" src="VEA butterfly 512.png" />
 						</div>
 					</div>
 					<div className="flex h-auto w-full flex-row items-start justify-center gap-16">
