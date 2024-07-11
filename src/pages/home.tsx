@@ -256,6 +256,15 @@ export default function Home() {
 								<button
 									className="flex h-16 w-64 items-center justify-center space-x-4 rounded-lg bg-pink px-4 py-2 font-dm-sans text-white"
 									type="button"
+									onClick={() => {
+										if (
+											window.confirm(
+												"Are you sure you want to navigate to Discord?"
+											)
+										) {
+											window.open("https://discord.enterverse.com/", "_blank");
+										}
+									}}
 								>
 									<p className="font-semibold">Join our Discord</p>
 									<img className="size-8" src="\Logos\discord.svg" />
@@ -774,12 +783,49 @@ export default function Home() {
 							</div>
 						</div>
 						<div className="absolute left-1/2 flex -translate-x-1/2 flex-row gap-6">
-							<img className="size-6" src="\Logos\discord.svg" />
-							<img className="size-6" src="\Logos\twitter.svg" />
-							<img className="size-6" src="\Logos\instagram.svg" />
-							<img className="size-6" src="\Logos\facebook.svg" />
-							<img className="size-6" src="\Logos\linkedin.svg" />
-							<img className="size-6" src="\Logos\medium.svg" />
+							<a
+								href="https://discord.enterverse.com/"
+								rel="noopener noreferrer"
+								target="_blank"
+							>
+								<img className="size-6" src="\Logos\discord.svg" />
+							</a>
+							<a
+								href="https://twitter.com/VEUverse"
+								rel="noopener noreferrer"
+								target="_blank"
+							>
+								<img className="size-6" src="\Logos\twitter.svg" />
+							</a>
+							<a
+								href="https://www.instagram.com/veuverse/"
+								rel="noopener noreferrer"
+								target="_blank"
+							>
+								<img className="size-6" src="\Logos\instagram.svg" />
+							</a>
+							<a
+								href="https://www.facebook.com/VEUverse"
+								rel="noopener noreferrer"
+								target="_blank"
+							>
+								<img className="size-6" src="\Logos\facebook.svg" />
+							</a>
+							<a
+								href="https://www.linkedin.com/company/veu-inc/"
+								rel="noopener noreferrer"
+								target="_blank"
+							>
+								<img className="size-6" src="\Logos\linkedin.svg" />
+							</a>
+
+							<a
+								href="https://medium.com/@veuverse"
+								rel="noopener noreferrer"
+								target="_blank"
+							>
+								<img className="size-6" src="\Logos\medium.svg" />
+							</a>
 						</div>
 					</footer>
 				</section>
