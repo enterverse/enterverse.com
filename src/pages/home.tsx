@@ -233,6 +233,7 @@ export default function Home() {
 						loop
 						muted
 						className="absolute size-full object-cover mix-blend-overlay"
+						poster="/concept/portal.png"
 						src="/Enterverse Playable-POC Teaser 1080P.mp4"
 					/>
 					<div className="relative flex w-full flex-col justify-center gap-16 pt-56">
