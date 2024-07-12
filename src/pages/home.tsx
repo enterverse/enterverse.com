@@ -167,8 +167,7 @@ function useImageNavigator<T extends string | { url: string }>(
 }
 
 // move images from public to src so that images vite will help the images
-// video where?
-// white light on beginning feels a bit bright?
+// which image for video still-shot?
 
 export default function Home() {
 	const promoNavigator = useImageNavigator(promoImages);
@@ -229,9 +228,12 @@ export default function Home() {
 					</nav>
 				</header>
 				<section className="relative flex min-h-screen w-full flex-col items-center gap-16 space-x-0 bg-section1-gradient-darkened bg-cover px-32">
-					<img
+					<video
+						autoPlay
+						loop
+						muted
 						className="absolute size-full object-cover mix-blend-overlay"
-						src="/concept/portal.png"
+						src="/Enterverse Playable-POC Teaser 1080P.mp4"
 					/>
 					<div className="relative flex w-full flex-col justify-center gap-16 pt-56">
 						<div className="flex w-full flex-col gap-4">
