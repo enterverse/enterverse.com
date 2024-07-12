@@ -169,8 +169,6 @@ function useImageNavigator<T extends string | { url: string }>(
 // move images from public to src so that images vite will help the images
 // video where?
 // white light on beginning feels a bit bright?
-// add the butterfly
-// icons and buttons need to actually do something
 
 export default function Home() {
 	const promoNavigator = useImageNavigator(promoImages);
@@ -230,17 +228,17 @@ export default function Home() {
 						<Link to="/contact">Contact</Link>
 					</nav>
 				</header>
-				<section className="relative flex min-h-screen w-full flex-col items-center gap-16 space-x-0 bg-section1-gradient bg-cover px-32">
+				<section className="relative flex min-h-screen w-full flex-col items-center gap-16 space-x-0 bg-section1-gradient-darkened bg-cover px-32">
 					<img
 						className="absolute size-full object-cover mix-blend-overlay"
 						src="/concept/portal.png"
 					/>
 					<div className="relative flex w-full flex-col justify-center gap-16 pt-56">
 						<div className="flex w-full flex-col gap-4">
-							<h1 className="mb-4 w-full font-dm-sans text-7xl font-bold leading-snug text-white">
+							<h1 className="mb-4 w-full font-dm-sans text-7xl font-bold leading-snug text-white drop-shadow-section1">
 								Find Meetups and Events <br /> in all your Virtual Realities
 							</h1>
-							<p className="font-geist text-xl leading-9 text-white">
+							<p className="font-geist text-xl leading-9 text-white drop-shadow-section1">
 								Enterverse&apos;s soon-to-launch service, Enterlink, makes
 								virtual social games and <br /> experiences accessible,
 								connecting you to events, experiences, worlds, and <br />{" "}
@@ -248,7 +246,7 @@ export default function Home() {
 							</p>
 						</div>
 						<div className="flex flex-col gap-8">
-							<p className="font-geist text-xl leading-9 text-white">
+							<p className="font-geist text-xl leading-9 text-white drop-shadow-section1">
 								Interested in more? Join our community to stay updated with{" "}
 								<br /> the latest updates on Enterlink.
 							</p>

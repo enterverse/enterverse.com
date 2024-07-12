@@ -29,10 +29,14 @@ export default {
 				'footer-gradient': "radial-gradient(53.45% 89.17% at 50% 50%, rgba(0, 0, 0, 0.00) 0%, #000 100%);",
 				'gradient-overlay': "radial-gradient(circle at center, #FAFAFA 0%, #000000 100%)",
 				'about-section': "linear-gradient(to bottom, #297F8B 0%, #0D0D0D 30%), radial-gradient(at center, #632B89 0%, transparent 50%, #0D0D0D 80%), linear-gradient(to bottom, #EF3E72 0%, #0D0D0D 30%)",
-
+				'section1-gradient-darkened': "radial-gradient(41.31% 89.17% at 50% 50%, rgba(0, 0, 0, 0.30) 0%, #000 100%), linear-gradient(180deg, #FFF 10%, rgba(0, 0, 0, 0.00) 100%);",
 			},
 			dropShadow: {
 				'custom': '0 0 10px rgba(0,0,0,0.5)',
+				'section1': '0px 0px 24px rgba(0, 0, 0, 0.25)',
+			},
+			textShadow: {
+				'text-shadow': '0px 0px 24px rgba(0, 0, 0, 0.25)',
 			},
 			fontFamily: {
 				'dm-sans': ['DMSans', 'sans-serif'],
