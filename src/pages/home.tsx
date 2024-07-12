@@ -229,6 +229,7 @@ export default function Home() {
 				</header>
 				<section className="relative flex min-h-screen w-full flex-col items-center gap-16 space-x-0 bg-section1-gradient-darkened bg-cover px-32">
 					<video
+						autoPlay
 						loop
 						muted
 						className="absolute size-full object-cover mix-blend-overlay"
