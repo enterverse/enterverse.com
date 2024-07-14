@@ -167,7 +167,7 @@ function useImageNavigator<T extends string | { url: string }>(
 }
 
 // vite image algorithm from logan
-// which image for video still-shot?
+// 67% top section
 
 export default function Home() {
 	const promoNavigator = useImageNavigator(promoImages);
