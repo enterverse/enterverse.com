@@ -291,7 +291,7 @@ export default function Home() {
 					<ErrorBoundary>
 						<Carousel defaultCurrent={0} gap={1}>
 							<CarouselBackButton className="carousel-back-button" />
-							<div className="flex size-full overflow-hidden">
+							<div className="flex size-full space-x-5 overflow-hidden">
 								{promoImages.map((image, index) => (
 									<CarouselItem className="w-2/3 shrink-0" key={index}>
 										<img

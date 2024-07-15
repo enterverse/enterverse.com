@@ -16,20 +16,20 @@ export class ErrorBoundary extends Component<
 	ErrorBoundaryProps,
 	ErrorBoundaryState
 > {
-	constructor(props: ErrorBoundaryProps) {
+	public constructor(props: ErrorBoundaryProps) {
 		super(props);
 		this.state = { hasError: false, error: null };
 	}
 
-	static getDerivedStateFromError(error: Error) {
+	public static getDerivedStateFromError(error: Error) {
 		return { hasError: true, error };
 	}
 
-	componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
+	public componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
 		console.error("ErrorBoundary caught an error", error, errorInfo);
 	}
 
-	render() {
+	public render() {
 		if (this.state.hasError) {
 			return (
 				<div>

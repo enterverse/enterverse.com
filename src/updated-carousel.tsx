@@ -63,29 +63,39 @@ export const Carousel = withRef<
 		const itemReferences = useRef<Array<HTMLDivElement>>([]);
 
 		useEffect(() => {
-			if (
-				!itemReferences.current ||
-				state === undefined ||
-				state >= itemReferences.current.length ||
-				!itemReferences.current[state]
-			)
-				return;
-			// calculating pixels from rem.
-			const rootFontSize = Number.parseFloat(
-				getComputedStyle(document.documentElement).fontSize
-			);
-			let accum = (gap ?? 0) * rootFontSize * state;
+			try {
+				if (
+					!itemReferences.current ||
+					state === undefined ||
+					state >= itemReferences.current.length ||
+					!itemReferences.current[state]
+				) {
+					console.error("Invalid state or item reference", {
+						state,
+						itemReferences: itemReferences.current
+					});
+					return;
+				}
 
-			for (let index = 0; index < state; index++) {
-				accum += itemReferences.current[index].getBoundingClientRect().width;
+				// calculating pixels from rem.
+				const rootFontSize = Number.parseFloat(
+					getComputedStyle(document.documentElement).fontSize
+				);
+				let accum = (gap ?? 0) * rootFontSize * state;
+
+				for (let index = 0; index < state; index++) {
+					accum += itemReferences.current[index].getBoundingClientRect().width;
+				}
+
+				console.log("Current goto", state, accum);
+				itemReferences.current[state]?.scrollIntoView({
+					behavior: "smooth",
+					inline: "start",
+					block: "nearest"
+				});
+			} catch (reason) {
+				console.error("Error in carousel", reason);
 			}
-
-			console.log("Current goto", state, accum);
-			itemReferences.current[state]?.scrollIntoView({
-				behavior: "smooth",
-				inline: "start",
-				block: "nearest"
-			});
 		}, [itemReferences, state, gap]);
 
 		return (
@@ -133,7 +143,9 @@ export const CarouselBackButton = ({ className = "", ...props }) => {
 	} = useCarousel();
 
 	const handleClick = () => {
-		if (!currentItem || currentItem <= 0) {
+		console.log("Back button pressed");
+		if (currentItem === undefined || currentItem <= 0) {
+			console.log("No previous item to nav to");
 			return;
 		}
 		setCurrentItem(currentItem - 1);
@@ -141,6 +153,9 @@ export const CarouselBackButton = ({ className = "", ...props }) => {
 		const previousItemReference = itemRefs.current?.[currentItem - 1];
 		if (previousItemReference) {
 			previousItemReference.focus();
+			console.log("focused on youur previous item");
+		} else {
+			console.error("No previous item reference found");
 		}
 	};
 
@@ -165,11 +180,13 @@ export const CarouselNextButton = ({ className = "", ...props }) => {
 	} = useCarousel();
 
 	const handleClick = () => {
+		console.log("Next button pressed");
 		if (
 			!itemRefs.current ||
 			currentItem === undefined ||
 			currentItem >= itemRefs.current.length - 1
 		) {
+			console.log("No next item to nav to");
 			return;
 		}
 		setCurrentItem(currentItem + 1);
@@ -177,6 +194,9 @@ export const CarouselNextButton = ({ className = "", ...props }) => {
 		const nextItemReference = itemRefs.current?.[currentItem + 1];
 		if (nextItemReference) {
 			nextItemReference.focus();
+			console.log("focused on your next item");
+		} else {
+			console.error("No next item reference found");
 		}
 	};
 
