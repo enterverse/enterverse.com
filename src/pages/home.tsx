@@ -2,6 +2,13 @@ import { Link } from "react-router-dom";
 import React, { useState, useEffect, useRef } from "react";
 
 import { Foldout, FoldoutTrigger, FoldoutContent } from "../foldout";
+import {
+	Carousel,
+	CarouselBackButton,
+	CarouselNextButton,
+	CarouselItem
+} from "../updated-carousel";
+import ErrorBoundary from "../error-boundary";
 
 interface ImageInfo {
 	url: string;
@@ -170,7 +177,7 @@ function useImageNavigator<T extends string | { url: string }>(
 // 67% top section
 
 export default function Home() {
-	const promoNavigator = useImageNavigator(promoImages);
+	//	const promoNavigator = useImageNavigator(promoImages);
 	const vrchatNavigator = useImageNavigator(vrchatImages);
 	const coreTeamNavigator = useImageNavigator(coreTeamImages);
 	const associateTeamNavigator = useImageNavigator(associateTeamImages);
@@ -281,30 +288,23 @@ export default function Home() {
 					</div>
 				</section>
 				<section className="flex w-full flex-col items-center justify-center gap-16 p-32">
-					<div className="flex w-full flex-col items-start justify-center gap-16">
-						<Foldout defaultOpen={true}>
-							<div className="">
-								<FoldoutTrigger asChild>
-									<button type="button" onClick={promoNavigator.previousImage}>
-										Previous
-									</button>
-								</FoldoutTrigger>
-								<FoldoutContent>
-									<img
-										alt={`Slide ${promoNavigator.activeImage + 1}`}
-										className="h-64 w-1/3 rounded-lg"
-										src={promoNavigator.activeImage}
-										style={{ width: "1280px", height: "768px" }}
-									/>
-								</FoldoutContent>
-								<FoldoutTrigger asChild>
-									<button type="button" onClick={promoNavigator.nextImage}>
-										Next
-									</button>
-								</FoldoutTrigger>
+					<ErrorBoundary>
+						<Carousel defaultCurrent={0} gap={1}>
+							<CarouselBackButton className="carousel-back-button" />
+							<div className="flex size-full overflow-hidden">
+								{promoImages.map((image, index) => (
+									<CarouselItem className="w-2/3 shrink-0" key={index}>
+										<img
+											alt={`Promo ${index + 1}`}
+											className="size-full object-cover"
+											src={image}
+										/>
+									</CarouselItem>
+								))}
 							</div>
-						</Foldout>
-					</div>
+							<CarouselNextButton className="carousel-next-button" />
+						</Carousel>
+					</ErrorBoundary>
 				</section>
 
 				<section className="flex min-h-screen w-full flex-col items-start justify-center bg-section2-gradient bg-cover p-32">

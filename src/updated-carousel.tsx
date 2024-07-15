@@ -10,27 +10,28 @@ import React, {
 	useEffect
 } from "react";
 {
-	/* <Carsel>
-  <CarselNextButton />
-    <CarselItems>
-       <CarselItem />
-       <CarselItem />
-       <CarselItem />
-    </CarselItems>
-  <CarselBackButton />
-</Carsel> */
+	/* 
+<Carousel>
+  <CarouselNextButton />
+    <CarouselItems>
+       <CarouselItem />
+       <CarouselItem />
+       <CarouselItem />
+    </CarouselItems>
+  <CarouselBackButton />
+</Carousel> */
 }
-interface CarselContext {
+interface CarouselContext {
 	backRef: RefObject<HTMLButtonElement>;
 	nextRef: RefObject<HTMLButtonElement>;
 	itemRefs: RefObject<Array<HTMLDivElement>>;
 	state: [number | undefined, (value: number | undefined) => void];
 }
 
-const CarselContext = createContext<CarselContext | null>(null);
-const useCarsel = () => useContext(CarselContext)!;
+const CarouselContext = createContext<CarouselContext | null>(null);
+const useCarousel = () => useContext(CarouselContext)!;
 
-export const Carsel = withRef<
+export const Carousel = withRef<
 	"div",
 	{
 		current?: number;
@@ -62,7 +63,13 @@ export const Carsel = withRef<
 		const itemReferences = useRef<Array<HTMLDivElement>>([]);
 
 		useEffect(() => {
-			if (!itemReferences.current || state === undefined) return;
+			if (
+				!itemReferences.current ||
+				state === undefined ||
+				state >= itemReferences.current.length ||
+				!itemReferences.current[state]
+			)
+				return;
 			// calculating pixels from rem.
 			const rootFontSize = Number.parseFloat(
 				getComputedStyle(document.documentElement).fontSize
@@ -74,10 +81,15 @@ export const Carsel = withRef<
 			}
 
 			console.log("Current goto", state, accum);
+			itemReferences.current[state]?.scrollIntoView({
+				behavior: "smooth",
+				inline: "start",
+				block: "nearest"
+			});
 		}, [itemReferences, state, gap]);
 
 		return (
-			<CarselContext.Provider
+			<CarouselContext.Provider
 				value={{
 					backRef: backReference,
 					nextRef: nextReference,
@@ -94,12 +106,15 @@ export const Carsel = withRef<
 					{React.Children.map(children, (child, index) =>
 						// @ts-expect-error bruh this shit stupid
 						React.cloneElement(child, {
-							ref: (elm: HTMLDivElement | null) =>
-								elm && (itemReferences.current[index] = elm)
+							ref: (elm: HTMLDivElement | null) => {
+								if (elm) {
+									itemReferences.current[index] = elm;
+								}
+							}
 						})
 					)}
 				</div>
-			</CarselContext.Provider>
+			</CarouselContext.Provider>
 		);
 	}
 );
@@ -110,11 +125,12 @@ export const CarouselItem = withRef<"div">(
 	)
 );
 
-export const CarselBackButton = ({ className = "", ...props }) => {
+export const CarouselBackButton = ({ className = "", ...props }) => {
 	const {
 		state: [currentItem, setCurrentItem],
-		itemRefs
-	} = useCarsel();
+		itemRefs,
+		backRef
+	} = useCarousel();
 
 	const handleClick = () => {
 		if (!currentItem || currentItem <= 0) {
@@ -134,27 +150,33 @@ export const CarselBackButton = ({ className = "", ...props }) => {
 			type="button"
 			onClick={handleClick}
 			{...props}
+			ref={backRef}
 		>
 			{"<"}
 		</Button>
 	);
 };
 
-export const CarselNextButton = ({ className = "", ...props }) => {
+export const CarouselNextButton = ({ className = "", ...props }) => {
 	const {
 		state: [currentItem, setCurrentItem],
-		itemRefs
-	} = useCarsel();
+		itemRefs,
+		nextRef
+	} = useCarousel();
 
 	const handleClick = () => {
-		if (!currentItem || currentItem <= 0) {
+		if (
+			!itemRefs.current ||
+			currentItem === undefined ||
+			currentItem >= itemRefs.current.length - 1
+		) {
 			return;
 		}
 		setCurrentItem(currentItem + 1);
 
-		const previousItemReference = itemRefs.current?.[currentItem + 1];
-		if (previousItemReference) {
-			previousItemReference.focus();
+		const nextItemReference = itemRefs.current?.[currentItem + 1];
+		if (nextItemReference) {
+			nextItemReference.focus();
 		}
 	};
 
@@ -164,6 +186,7 @@ export const CarselNextButton = ({ className = "", ...props }) => {
 			type="button"
 			onClick={handleClick}
 			{...props}
+			ref={nextRef}
 		>
 			{">"}
 		</Button>
