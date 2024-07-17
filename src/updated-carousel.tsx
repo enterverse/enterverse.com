@@ -24,7 +24,7 @@ import React, {
 interface CarouselContext {
 	backRef: RefObject<HTMLButtonElement>;
 	nextRef: RefObject<HTMLButtonElement>;
-	itemRefs: RefObject<Array<HTMLDivElement>>;
+	itemRefs: RefObject<Array<HTMLDivElement | null>>;
 	state: [number | undefined, (value: number | undefined) => void];
 }
 
@@ -60,12 +60,22 @@ export const Carousel = withRef<
 			defaultProp: defaultCurrent
 		});
 
-		const itemReferences = useRef<Array<HTMLDivElement>>([]);
+		const itemReferences = useRef<Array<HTMLDivElement | null>>([]);
+
+		useEffect(() => {
+			itemReferences.current = itemReferences.current.slice(
+				0,
+				React.Children.count(children)
+			);
+		}, [children]);
+
+		useEffect(() => {
+			console.log("Item References:", itemReferences.current);
+		}, []);
 
 		useEffect(() => {
 			try {
 				if (
-					!itemReferences.current ||
 					state === undefined ||
 					state >= itemReferences.current.length ||
 					!itemReferences.current[state]
@@ -84,7 +94,8 @@ export const Carousel = withRef<
 				let accum = (gap ?? 0) * rootFontSize * state;
 
 				for (let index = 0; index < state; index++) {
-					accum += itemReferences.current[index].getBoundingClientRect().width;
+					accum +=
+						itemReferences.current[index]?.getBoundingClientRect().width ?? 0;
 				}
 
 				console.log("Current goto", state, accum);
