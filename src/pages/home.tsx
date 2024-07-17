@@ -175,6 +175,7 @@ function useImageNavigator<T extends string | { url: string }>(
 
 // vite image algorithm from logan
 // 67% top section
+//text-balance
 
 export default function Home() {
 	//	const promoNavigator = useImageNavigator(promoImages);
@@ -243,20 +244,20 @@ export default function Home() {
 						poster="/src/assets/concept/KoiFish.jpg"
 						src="/Enterverse Playable-POC Teaser 1080P.mp4"
 					/>
-					<div className="relative flex w-full flex-col justify-center gap-16 pt-32 md:pt-56">
-						<div className="flex w-full flex-col gap-4">
-							<h1 className="mb-4 w-full font-dm-sans text-4xl font-bold leading-snug text-white drop-shadow-section1 md:text-7xl">
+					<div className="relative flex  flex-col justify-center gap-16 pt-32 md:pt-56 lg:w-full">
+						<div className="flex w-full flex-col gap-4 lg:w-2/3">
+							<h1 className="mb-4 w-full text-balance font-dm-sans text-4xl font-bold leading-7 text-white drop-shadow-section1 md:text-7xl">
 								Find Meetups and Events in all your Virtual Realities
 							</h1>
-							<p className="font-geist text-base leading-9 text-white drop-shadow-section1 md:text-xl">
+							<p className="w-full font-geist text-base leading-9 text-white drop-shadow-section1 md:text-xl lg:w-2/3">
 								We know how hard it is to plan your hangouts in virtual spaces.
 								Enterverse&apos;s soon-to-launch service, Enterlink, makes
 								virtual social games and experiences accessible, connecting you
 								to events, experiences, worlds, and communities.
 							</p>
 						</div>
-						<div className="mb-16 flex flex-col gap-8 lg:mb-0">
-							<p className="font-geist text-xl leading-9 text-white drop-shadow-section1">
+						<div className="mb-16 flex w-full flex-col gap-8 lg:mb-0 lg:w-2/3">
+							<p className="flex font-geist text-xl leading-9 text-white drop-shadow-section1 lg:w-2/3">
 								Interested in more? Join our community to stay updated with the
 								latest updates on Enterlink.
 							</p>
