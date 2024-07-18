@@ -215,7 +215,7 @@ export default function Home() {
 	}, []);
 
 	return (
-		<body className="bg-overall-gradient">
+		<body className="bg-mobile-gradient lg:bg-overall-gradient">
 			<main className="flex min-h-screen flex-col items-center justify-between">
 				<header
 					className={`fixed top-0 z-50 flex h-32 w-full items-center justify-center bg-black/0 px-32 pt-8 transition-all duration-500 ${
@@ -228,7 +228,8 @@ export default function Home() {
 							src="\Logos\Enterverse logo v2.8_whitetext with shadow for BLACK AND COLOR BACKGROUNDS.png"
 						/>
 					</div>
-					<nav className="ml-auto flex h-24 w-96 flex-row items-center justify-between">
+
+					<nav className="ml-auto hidden h-24 w-96 flex-row items-center justify-between lg:flex">
 						<Link to="/home">Home</Link>
 						<Link to="/Enterlink">Enterlink</Link>
 						<Link to="/about">About</Link>
@@ -244,9 +245,9 @@ export default function Home() {
 						poster="/src/assets/concept/KoiFish.jpg"
 						src="/Enterverse Playable-POC Teaser 1080P.mp4"
 					/>
-					<div className="relative flex  flex-col justify-center gap-16 pt-32 md:pt-56 lg:w-full">
+					<div className="relative flex flex-col justify-center gap-16 pt-32 md:pt-56 lg:w-full">
 						<div className="flex w-full flex-col gap-4 lg:w-2/3">
-							<h1 className="mb-4 w-full text-balance font-dm-sans text-4xl font-bold leading-7 text-white drop-shadow-section1 md:text-7xl">
+							<h1 className="mb-4 w-full text-balance font-dm-sans text-4xl font-bold leading-relaxed text-white drop-shadow-section1 md:text-7xl lg:leading-7">
 								Find Meetups and Events in all your Virtual Realities
 							</h1>
 							<p className="w-full font-geist text-base leading-9 text-white drop-shadow-section1 md:text-xl lg:w-2/3">
@@ -263,7 +264,7 @@ export default function Home() {
 							</p>
 							<div className="flex w-full flex-col space-y-8 lg:flex-row lg:space-x-4 lg:space-y-0">
 								<button
-									className="flex h-16 w-64 items-center justify-center space-x-4 rounded-lg bg-pink px-4 py-2 font-dm-sans text-white"
+									className="flex h-16 w-full items-center justify-center space-x-4 rounded-lg bg-pink px-4 py-2 font-dm-sans text-white lg:w-64"
 									type="button"
 									onClick={() => {
 										if (
@@ -279,7 +280,7 @@ export default function Home() {
 									<img className="size-8" src="\Logos\discord.svg" />
 								</button>
 								<button
-									className="h-16 w-64 rounded-lg border-2 border-white px-4 py-2 font-dm-sans text-white"
+									className="h-16 w-full rounded-lg border-2 border-white px-4 py-2 font-dm-sans text-white lg:w-64"
 									type="button"
 								>
 									<p className="font-semibold">What&apos;s Enterlink?</p>
@@ -309,20 +310,20 @@ export default function Home() {
 				</section>
 
 				<section className="flex min-h-screen w-full flex-col items-start justify-center bg-section2-gradient bg-cover p-12 lg:p-32">
-					<div className="flex w-full flex-col items-center justify-center lg:flex-row">
+					<div className="mt-12 flex w-full flex-col items-center justify-center lg:mt-0 lg:flex-row">
 						<div className="flex w-full flex-col items-start justify-center">
 							<div className="mb-14 flex h-24 flex-row items-center gap-8">
 								<img
-									className="size-16 lg:size-20"
+									className="size-20 lg:size-20"
 									src="\Logos\enterlink logo.png"
 								/>
-								<h1 className="font-geist text-4xl font-bold lg:text-6xl">
+								<h1 className="font-geist text-5xl font-bold lg:text-6xl">
 									enterlink
 								</h1>
 							</div>
 							<div className="flex w-full flex-col items-start justify-center gap-16">
 								<div className="flex flex-col gap-8">
-									<h2 className="font-dm-sans text-4xl font-bold leading-tight text-white lg:text-6xl">
+									<h2 className="mt-6 font-dm-sans text-5xl font-bold leading-tight text-white lg:mt-0 lg:text-6xl">
 										Make plans and share with friends
 									</h2>
 									<p className="font-geist text-base leading-9 text-white lg:text-xl">
@@ -338,7 +339,7 @@ export default function Home() {
 										Enterlink, Enterverse, and more.
 									</p>
 
-									<form className="flex h-16 w-4/5 items-center overflow-hidden rounded-l-lg rounded-r-full border-2 lg:w-96">
+									<form className="flex h-16 w-full items-center overflow-hidden rounded-l-lg rounded-r-full border-2 lg:w-96">
 										<input
 											className="flex-1 rounded-l-lg bg-transparent px-4 py-2"
 											placeholder="Email your email to join"
@@ -358,16 +359,20 @@ export default function Home() {
 								</div>
 							</div>
 						</div>
-						<div className="hidden w-1/2 items-center justify-center lg:flex">
-							<img alt="Vea Butterfly" src="VEA butterfly 512.png" />
+						<div className="mb-44 mt-12 flex w-full items-center justify-center lg:my-0 lg:w-1/2">
+							<img
+								alt="Vea Butterfly"
+								className="size-96"
+								src="VEA butterfly 512.png"
+							/>
 						</div>
 					</div>
-					<div className="flex h-auto w-full flex-col items-start justify-center gap-16 lg:flex-row">
-						<div className="flex flex-col gap-4">
+					<div className="mb-12 flex h-auto w-full flex-col items-start justify-center gap-16 lg:mb-0 lg:flex-row">
+						<div className="mb-24 flex flex-col gap-4 lg:mb-0">
 							<p className="font-dm-sans text-2xl font-bold text-white">
 								Here&apos;s the issue we saw
 							</p>
-							<h1 className="font-dm-sans text-3xl font-bold leading-tight text-white lg:text-4xl">
+							<h1 className="font-dm-sans text-3xl font-bold leading-relaxed text-white lg:text-4xl lg:leading-tight">
 								It&apos;s not easy finding events, worlds, and experiences
 							</h1>
 							<p className="font-geist text-base leading-7 text-white">
@@ -380,7 +385,7 @@ export default function Home() {
 							<p className="font-dm-sans text-2xl font-bold text-white">
 								Here&apos;s our solution{" "}
 							</p>
-							<h1 className="font-dm-sans text-3xl font-bold leading-tight text-white lg:text-4xl">
+							<h1 className="font-dm-sans text-3xl font-bold leading-relaxed text-white lg:text-4xl lg:leading-tight">
 								An easy-to-navigate platform for VR events and community
 								building
 							</h1>
@@ -395,7 +400,7 @@ export default function Home() {
 				<section className="flex w-full flex-col items-start justify-center gap-16 bg-section3-gradient p-12 lg:p-32">
 					<div className="flex w-full flex-col items-start justify-center">
 						<div className="flex flex-col gap-8 lg:w-1/2">
-							<h2 className="mt-12 font-dm-sans text-4xl font-bold leading-tight text-white lg:mt-0 lg:text-6xl">
+							<h2 className="mt-12 font-dm-sans text-5xl font-bold leading-tight text-white lg:mt-0 lg:text-6xl">
 								We&apos;re helping you build your digital community
 							</h2>
 							<p className="font-geist text-base leading-9 text-white lg:text-xl">
@@ -428,11 +433,11 @@ export default function Home() {
 							</Foldout>
 						</div>
 						<div className="flex flex-col gap-16">
-							<div className="flex h-full w-2/3 flex-col gap-8">
-								<h1 className="flex font-dm-sans text-4xl font-bold leading-tight text-white lg:text-6xl">
+							<div className="flex size-full flex-col gap-8 overflow-hidden lg:w-2/3">
+								<h1 className="flex font-dm-sans text-5xl font-bold leading-tight text-white lg:text-6xl">
 									Meet the team
 								</h1>
-								<p className="flex font-geist text-base leading-9 text-white lg:text-xl">
+								<p className="flex font-geist text-lg leading-9 text-white lg:text-xl">
 									We&apos;re a team of developers and community contributors
 									bridging the gap between today&apos;s reality and our shared
 									vision of an ethical digital future centered around
@@ -701,13 +706,13 @@ export default function Home() {
 				</section>
 
 				<section className="flex w-full flex-col items-start justify-center  bg-footer-gradient px-12 pt-16 lg:px-32 lg:pt-32">
-					<h2 className="font-dm-sans text-4xl font-bold leading-tight text-white lg:text-6xl">
+					<h2 className="my-16 w-2/3 font-dm-sans text-5xl font-bold leading-tight text-white lg:my-0 lg:text-6xl">
 						Interested in more?
 					</h2>
 					<div className="flex flex-col items-start justify-center gap-32 leading-7 lg:flex-row">
 						<div className="flex w-full flex-col gap-16 lg:pr-32">
 							<div className="my-16 flex flex-col gap-6">
-								<h3 className="font-dm-sans text-4xl font-bold leading-7 text-white">
+								<h3 className="mb-4 font-dm-sans text-4xl font-bold leading-7 text-white lg:mb-0">
 									Join the adventure
 								</h3>
 								<p className="font-geist leading-7 text-white">
@@ -725,8 +730,8 @@ export default function Home() {
 									happen.
 								</p>
 							</div>
-							<div className="my-16 flex flex-col gap-4">
-								<h2 className="font-dm-sans text-4xl font-bold text-white">
+							<div className="mt-16 flex flex-col gap-4">
+								<h2 className="font-dm-sans text-4xl font-bold leading-normal text-white">
 									Get rewarded for subscribing
 								</h2>
 								<p className="font-geist leading-7 text-white">
@@ -761,7 +766,7 @@ export default function Home() {
 									placeholder="Share your thoughts, interest or feedback (optional)"
 								/>
 								<button
-									className="h-16 w-64 rounded-lg bg-pink px-4 py-2 text-white"
+									className="h-16 w-full rounded-lg bg-pink px-4 py-2 text-white lg:w-64"
 									type="submit"
 								>
 									Join
@@ -770,11 +775,11 @@ export default function Home() {
 						</div>
 					</div>
 
-					<footer className="flex w-full flex-col items-center justify-between pb-24 pt-16 lg:h-48 lg:flex-row lg:gap-2">
-						<div className="flex flex-col gap-4">
-							<div className="flex lg:flex-row lg:flex-col">
+					<footer className="flex h-96 w-full flex-col-reverse items-center justify-evenly gap-4 lg:h-48 lg:flex-row lg:justify-between lg:gap-2 lg:pb-24 lg:pt-36">
+						<div className="flex flex-col justify-center gap-6">
+							<div className="flex flex-col items-center gap-10 lg:flex-row lg:items-start lg:gap-0">
 								<img
-									className="h-10 w-16"
+									className="h-16 w-24 lg:h-10 lg:w-16"
 									src="\Logos\VEU_logo_transparent w shadow.png"
 								/>
 								<div className="flex flex-col">
@@ -791,7 +796,7 @@ export default function Home() {
 								</div>
 							</div>
 						</div>
-						<div className="left-1/2 flex -translate-x-1/2 flex-row gap-6 lg:absolute">
+						<div className="mt-4 flex flex-row gap-6 lg:absolute lg:left-1/2 lg:mt-0 lg:-translate-x-1/2">
 							<a
 								href="https://discord.enterverse.com/"
 								rel="noopener noreferrer"
