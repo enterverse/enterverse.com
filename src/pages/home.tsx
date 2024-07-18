@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import React, { useState, useEffect, useRef } from "react";
 
 import { Foldout, FoldoutTrigger, FoldoutContent } from "../foldout";
@@ -176,6 +175,7 @@ function useImageNavigator<T extends string | { url: string }>(
 // vite image algorithm from logan
 // 67% top section
 //text-balance
+// sidebar
 
 export default function Home() {
 	//	const promoNavigator = useImageNavigator(promoImages);
@@ -231,20 +231,43 @@ export default function Home() {
 					</div>
 
 					<nav className="ml-auto hidden h-24 w-96 flex-row items-center justify-between xl:flex">
-						<Link to="/home">Home</Link>
-						<Link to="/Enterlink">Enterlink</Link>
-						<Link to="/about">About</Link>
-						<Link to="/contact">Contact</Link>
+						<a href="#home">Home</a>
+
+						<a href="#Enterlink">Enterlink</a>
+
+						<a href="#about">About</a>
+
+						<a href="#contact">Contact</a>
 					</nav>
 					<button
 						className="ml-auto xl:hidden"
 						type="button"
 						onClick={() => setIsMenuOpen(!isMenuOpen)}
 					>
-						<img src="/src/assets/Logos/menu.svg" />
+						<img alt="open menu button" src="/src/assets/Logos/menu.svg" />
 					</button>
+					{isMenuOpen && (
+						<div className="fixed left-0 top-16 z-40 h-screen w-full bg-black/75">
+							<button
+								className="absolute right-20 top-20"
+								type="button"
+								onClick={() => setIsMenuOpen(false)}
+							>
+								<img alt="close menu button" src="src/assets/Logos/close.svg" />
+							</button>
+							<nav className="flex h-full w-96 flex-col items-center justify-center">
+								<a href="#home">Home</a>
+								<a href="#Enterlink">Enterlink</a>
+								<a href="#about">About</a>
+								<a href="#contact">Contact</a>
+							</nav>
+						</div>
+					)}
 				</header>
-				<section className="relative flex min-h-screen w-full flex-col items-center gap-16 space-x-0 bg-section1-gradient-darkened bg-cover px-12 md:px-32">
+				<section
+					className="relative flex min-h-screen w-full flex-col items-center gap-16 space-x-0 bg-section1-gradient-darkened bg-cover px-12 md:px-32"
+					id="home"
+				>
 					<video
 						autoPlay
 						loop
@@ -317,7 +340,10 @@ export default function Home() {
 					</ErrorBoundary>
 				</section>
 
-				<section className="flex min-h-screen w-full flex-col items-start justify-center bg-section2-gradient bg-cover p-12 xl:p-32">
+				<section
+					className="flex min-h-screen w-full flex-col items-start justify-center bg-section2-gradient bg-cover p-12 xl:p-32"
+					id="Enterlink"
+				>
 					<div className="mt-12 flex w-full flex-col items-center justify-center xl:mt-0 xl:flex-row">
 						<div className="flex w-full flex-col items-start justify-center">
 							<div className="mb-14 flex h-24 flex-row items-center gap-8">
@@ -405,7 +431,10 @@ export default function Home() {
 					</div>
 				</section>
 
-				<section className="flex w-full flex-col items-start justify-center gap-16 bg-section3-gradient p-12 xl:p-32">
+				<section
+					className="flex w-full flex-col items-start justify-center gap-16 bg-section3-gradient p-12 xl:p-32"
+					id="about"
+				>
 					<div className="flex w-full flex-col items-start justify-center">
 						<div className="flex flex-col gap-8 xl:w-1/2">
 							<h2 className="mt-12 font-dm-sans text-5xl font-bold leading-tight text-white xl:mt-0 xl:text-6xl">
@@ -713,7 +742,10 @@ export default function Home() {
 					</div>
 				</section>
 
-				<section className="flex w-full flex-col items-start justify-center  bg-footer-gradient px-12 pt-16 xl:px-32 xl:pt-32">
+				<section
+					className="flex w-full flex-col items-start justify-center  bg-footer-gradient px-12 pt-16 xl:px-32 xl:pt-32"
+					id="contact"
+				>
 					<h2 className="my-16 w-2/3 font-dm-sans text-5xl font-bold leading-tight text-white xl:my-0 xl:text-6xl">
 						Interested in more?
 					</h2>
