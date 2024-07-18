@@ -217,6 +217,7 @@ export default function Home() {
 
 	return (
 		<body className="bg-mobile-gradient lg:bg-overall-gradient">
+		<body className="bg-mobile-gradient lg:bg-overall-gradient">
 			<main className="flex min-h-screen flex-col items-center justify-between">
 				<header
 					className={`fixed top-0 z-50 flex h-32 w-full items-center justify-between bg-black/0 px-32 pt-8 transition-all duration-500 lg:justify-center ${
@@ -230,7 +231,7 @@ export default function Home() {
 						/>
 					</div>
 
-					<nav className="ml-auto hidden h-24 w-96 flex-row items-center justify-between xl:flex">
+					<nav className="ml-auto hidden h-24 w-96 flex-row items-center justify-between lg:flex">
 						<Link to="/home">Home</Link>
 						<Link to="/Enterlink">Enterlink</Link>
 						<Link to="/about">About</Link>
@@ -253,9 +254,9 @@ export default function Home() {
 						poster="/src/assets/concept/KoiFish.jpg"
 						src="/Enterverse Playable-POC Teaser 1080P.mp4"
 					/>
-					<div className="relative flex h-full flex-col justify-center gap-16 pt-32 md:pt-56 lg:w-full">
+					<div className="relative flex flex-col justify-center gap-16 pt-32 md:pt-56 lg:w-full">
 						<div className="flex w-full flex-col gap-4 lg:w-2/3">
-							<h1 className="mb-4 w-full text-balance font-dm-sans  text-4xl font-bold leading-relaxed text-white drop-shadow-section1 md:text-7xl lg:leading-7">
+							<h1 className="mb-4 w-full text-balance font-dm-sans text-4xl font-bold leading-relaxed text-white drop-shadow-section1 md:text-7xl lg:leading-7">
 								Find Meetups and Events in all your Virtual Realities
 							</h1>
 							<p className="w-full font-geist text-base leading-9 text-white drop-shadow-section1 md:text-xl lg:w-2/3">
