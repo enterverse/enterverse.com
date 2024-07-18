@@ -247,19 +247,53 @@ export default function Home() {
 						<img alt="open menu button" src="/src/assets/Logos/menu.svg" />
 					</button>
 					{isMenuOpen && (
-						<div className="fixed left-0 top-16 z-40 h-screen w-full bg-black/75">
-							<button
-								className="absolute right-20 top-20"
-								type="button"
-								onClick={() => setIsMenuOpen(false)}
-							>
-								<img alt="close menu button" src="src/assets/Logos/close.svg" />
-							</button>
-							<nav className="flex h-full w-96 flex-col items-center justify-center">
-								<a href="#home">Home</a>
-								<a href="#Enterlink">Enterlink</a>
-								<a href="#about">About</a>
-								<a href="#contact">Contact</a>
+						<div className="bg-mobile-gradient fixed left-0 top-0 z-40 h-screen w-full bg-black bg-cover">
+							<div className="flex h-32 w-full items-center justify-between px-12">
+								<div className="flex flex-1 items-center justify-start">
+									<img
+										className="h-16 w-24"
+										src="/src/assets/Logos/VEU_logo_transparent.png"
+									/>
+								</div>
+								<div className="flex flex-1 items-center justify-end">
+									<button
+										className="right-20 py-4 pl-4"
+										type="button"
+										onClick={() => setIsMenuOpen(false)}
+									>
+										<img
+											alt="close menu button"
+											className="size-5"
+											src="src/assets/Logos/close.svg"
+										/>
+									</button>
+								</div>
+							</div>
+							<nav className="absolute right-0 top-1/2 mr-20 flex -translate-y-1/2 flex-col items-end">
+								<a
+									className="mb-8 py-2 pl-2 font-dm-sans text-3xl font-semibold"
+									href="#home"
+								>
+									Home
+								</a>
+								<a
+									className="mb-8 py-2 pl-2 font-dm-sans text-3xl font-semibold"
+									href="#Enterlink"
+								>
+									Enterlink
+								</a>
+								<a
+									className="mb-8 py-2 pl-2 font-dm-sans text-3xl font-semibold"
+									href="#about"
+								>
+									About
+								</a>
+								<a
+									className="mb-8 py-2 pl-2 font-dm-sans text-3xl font-semibold"
+									href="#contact"
+								>
+									Contact
+								</a>
 							</nav>
 						</div>
 					)}
