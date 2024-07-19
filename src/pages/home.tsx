@@ -1,12 +1,12 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
-import { Foldout, FoldoutTrigger, FoldoutContent } from "../foldout";
 import {
 	Carousel,
+	CarouselItems,
 	CarouselBackButton,
 	CarouselNextButton,
 	CarouselItem
-} from "../updated-carousel";
+} from "../carousel.tsx";
 import ErrorBoundary from "../error-boundary";
 
 interface ImageInfo {
@@ -18,7 +18,7 @@ interface ImageInfo2 {
 	url: string;
 	name: string;
 }
-type CombinedImageInfo = ImageInfo | ImageInfo2;
+//type CombinedImageInfo = ImageInfo | ImageInfo2;
 
 const promoImages = [
 	"/concept/ENTERVERSE.COM_Arch.jpg",
@@ -147,41 +147,12 @@ const associateTeamImages: Array<ImageInfo2> = [
 	}
 ];
 
-const isActiveImageInfo = (image: CombinedImageInfo): image is ImageInfo => {
-	return typeof image === "object" && "position" in image;
-};
-
-function useImageNavigator<T extends string | { url: string }>(
-	images: Array<T>
-) {
-	const [activeImage, setActiveImage] = React.useState(0);
-
-	const nextImage = () =>
-		setActiveImage((current) => (current + 1) % images.length);
-	const previousImage = () =>
-		setActiveImage((current) => (current - 1 + images.length) % images.length);
-
-	const getImageUrl = (image: T) =>
-		typeof image === "string" ? image : image.url;
-
-	return {
-		activeImage: images[activeImage],
-		getImageUrl,
-		nextImage,
-		previousImage
-	};
-}
-
 // vite image algorithm from logan
 // 67% top section
-//text-balance
+// text-balance
 // sidebar
 
 export default function Home() {
-	//	const promoNavigator = useImageNavigator(promoImages);
-	const vrchatNavigator = useImageNavigator(vrchatImages);
-	const coreTeamNavigator = useImageNavigator(coreTeamImages);
-	const associateTeamNavigator = useImageNavigator(associateTeamImages);
 	const [isScrolled, setIsScrolled] = useState(false);
 	const [showHeader, setShowHeader] = useState(true);
 	const lastScrollY = useRef(window.scrollY);
@@ -356,20 +327,27 @@ export default function Home() {
 				</section>
 				<section className="flex w-full flex-col items-center justify-center gap-16 p-32">
 					<ErrorBoundary>
-						<Carousel defaultCurrent={0} gap={1}>
-							<CarouselBackButton className="carousel-back-button" />
-							<div className="flex size-full space-x-5 overflow-hidden">
+						<Carousel className="relative">
+							<CarouselBackButton className="absolute left-0 top-0 z-20 h-full w-14 bg-gradient-to-r from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
+								{"<"}
+							</CarouselBackButton>
+							<CarouselItems className="relative z-10 gap-6 object-cover px-14 duration-500">
 								{promoImages.map((image, index) => (
-									<CarouselItem className="w-2/3 shrink-0" key={index}>
+									<CarouselItem
+										className="flex h-48 flex-col items-center justify-center rounded-lg bg-neutral-900"
+										key={index}
+									>
 										<img
 											alt={`Promo ${index + 1}`}
-											className="size-full object-cover"
+											className="size-full rounded-lg object-cover"
 											src={image}
 										/>
 									</CarouselItem>
 								))}
-							</div>
-							<CarouselNextButton className="carousel-next-button" />
+							</CarouselItems>
+							<CarouselNextButton className="absolute right-0 top-0 z-20 h-full w-14 bg-gradient-to-l from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
+								{">"}
+							</CarouselNextButton>
 						</Carousel>
 					</ErrorBoundary>
 				</section>
@@ -482,26 +460,30 @@ export default function Home() {
 							</p>
 						</div>
 						<div className="flex flex-col justify-center gap-8 pb-32">
-							<Foldout defaultOpen={true}>
-								<div className="">
-									<FoldoutTrigger asChild>
-										<button
-											type="button"
-											onClick={vrchatNavigator.previousImage}
-										>
-											Previous
-										</button>
-									</FoldoutTrigger>
-									<FoldoutContent>
-										<img />
-									</FoldoutContent>
-									<FoldoutTrigger asChild>
-										<button type="button" onClick={vrchatNavigator.nextImage}>
-											Next
-										</button>
-									</FoldoutTrigger>
-								</div>
-							</Foldout>
+							<ErrorBoundary>
+								<Carousel className="relative">
+									<CarouselBackButton className="absolute left-0 top-0 z-20 h-full w-14 bg-gradient-to-r from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
+										{"<"}
+									</CarouselBackButton>
+									<CarouselItems className="relative z-10 gap-6 object-cover px-14 duration-500">
+										{vrchatImages.map((image, index) => (
+											<CarouselItem
+												className="flex h-48 flex-col items-center justify-center rounded-lg bg-neutral-900"
+												key={index}
+											>
+												<img
+													alt={`Promo ${index + 1}`}
+													className="size-full rounded-lg object-cover"
+													src={image}
+												/>
+											</CarouselItem>
+										))}
+									</CarouselItems>
+									<CarouselNextButton className="absolute right-0 top-0 z-20 h-full w-14 bg-gradient-to-l from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
+										{">"}
+									</CarouselNextButton>
+								</Carousel>
+							</ErrorBoundary>
 						</div>
 						<div className="flex flex-col gap-16">
 							<div className="flex size-full flex-col gap-8 overflow-hidden xl:w-2/3">
@@ -579,199 +561,61 @@ export default function Home() {
 							<h1 className="font-dm-sans text-4xl font-bold text-white">
 								Core Team
 							</h1>
-							<div className="flex flex-row">
-								<div className="flex flex-col">
-									<Foldout defaultOpen={true}>
-										<div className="">
-											<FoldoutTrigger asChild>
-												<button
-													type="button"
-													onClick={coreTeamNavigator.previousImage}
-												>
-													Previous
-												</button>
-											</FoldoutTrigger>
-											<FoldoutContent>
-												<div className="flex flex-col">
-													<img
-														style={{ width: "256px", height: "256px" }}
-														src={coreTeamNavigator.getImageUrl(
-															coreTeamNavigator.activeImage
-														)}
-													/>
-													{isActiveImageInfo(coreTeamNavigator.activeImage) && (
-														<>
-															<h2 className="font-dm-sans text-2xl text-white">
-																{coreTeamNavigator.activeImage.name}
-															</h2>
-															<p className="font-geist text-xl text-white">
-																{coreTeamNavigator.activeImage.position}
-															</p>
-														</>
-													)}
-												</div>
-											</FoldoutContent>
-											<FoldoutTrigger asChild>
-												<button
-													type="button"
-													onClick={coreTeamNavigator.nextImage}
-												>
-													Next
-												</button>
-											</FoldoutTrigger>
-										</div>
-									</Foldout>
-									{/* <img src="" style={{ height: "256px", width: "256px" }} />
-										<p className="font-dm-sans text-2xl text-white">
-											Michael Heilemann
-										</p>
-										<p className="font-geist text-xl text-white">CTO</p> */}
-								</div>
-								<div className="flex flex-col">
-									<img />
-									<p className="font-dm-sans text-2xl text-white">
-										William Garcia
-									</p>
-									<p className="font-geist text-white">COO</p>
-								</div>
-								<div className="flex flex-col">
-									<img />
-									<p className="font-dm-sans text-2xl text-white">
-										Michael Depiro
-									</p>
-									<p className="font-geist text-white">CMO</p>
-								</div>
-								<div className="flex flex-col">
-									<img />
-									<p className="font-dm-sans text-2xl text-white">
-										Logan Desseyn
-									</p>
-									<p className="font-geist text-white">
-										Principal Software Developer
-									</p>
-								</div>
-								<div className="flex flex-col">
-									<img />
-									<p className="text-2xl text-white">Bryce Dichristofalo</p>
-									<p className="text-white">XR Director</p>
-								</div>
-								<div className="flex flex-col">
-									<img />
-									<p className="text-2xl text-white">Eva Petitot</p>
-									<p className="text-white">Lead Unity Environment Artist</p>
-								</div>
-								<div className="flex flex-col">
-									<img />
-									<p className="text-2xl text-white">Michael Reed</p>
-									<p className="text-white">Principal 3D Modeler</p>
-								</div>
-								<div className="flex flex-col">
-									<img />
-									<p className="text-white">Neil Blakemore</p>
-									<p className="text-white">Ethics Director</p>
-								</div>
-								<div className="flex flex-col">
-									<img />
-									<p className="text-white">Jonah Keel</p>
-									<p className="text-white">Publicity</p>
-								</div>
-								<div className="flex flex-col">
-									<img />
-									<p className="text-white">Gopal Metro</p>
-									<p className="text-white">R&D Manager</p>
-								</div>
-								<div className="flex flex-col">
-									<img />
-									<p className="text-white">Giorgi Chitidze</p>
-									<p className="text-white">Lead Unreal Environment Artist</p>
-								</div>
-								<div className="flex flex-col">
-									<img />
-									<p className="text-white">Giorgi Koridze</p>
-									<p className="text-white">Lead Unreal Technical Artist</p>
-								</div>
-							</div>
+							<Carousel className="relative">
+								<CarouselBackButton className="absolute left-0 top-0 z-20 h-full w-14 bg-gradient-to-r from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
+									{"<"}
+								</CarouselBackButton>
+								<CarouselItems className="relative z-10 gap-6 px-14 duration-500">
+									{coreTeamImages.map((member, index) => (
+										<CarouselItem
+											className="flex flex-col items-center justify-center rounded-lg bg-neutral-900"
+											key={index}
+										>
+											<img
+												alt={member.name}
+												className="size-40 rounded-lg object-cover"
+												src={member.url}
+											/>
+											<p className="font-dm-sans text-2xl text-white">
+												{member.name}
+											</p>
+											<p className="font-geist text-white">{member.position}</p>
+										</CarouselItem>
+									))}
+								</CarouselItems>
+								<CarouselNextButton className="absolute right-0 top-0 z-20 h-full w-14 bg-gradient-to-l from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
+									{">"}
+								</CarouselNextButton>
+							</Carousel>
+
 							<h1 className="font-dm-sans text-4xl font-bold text-white">
 								Associate developers and creators
 							</h1>
-							<div className="flex flex-row">
-								<Foldout defaultOpen={true}>
-									<div className="">
-										<FoldoutTrigger asChild>
-											<button
-												type="button"
-												onClick={associateTeamNavigator.previousImage}
-											>
-												Previous
-											</button>
-										</FoldoutTrigger>
-										<FoldoutContent>
-											<div className="flex flex-col">
-												<img
-													style={{ width: "192px", height: "192px" }}
-													src={associateTeamNavigator.getImageUrl(
-														associateTeamNavigator.activeImage
-													)}
-												/>
-												{typeof associateTeamNavigator.activeImage !==
-													"string" && (
-													<h2 className="text-white">
-														{associateTeamNavigator.activeImage.name}
-													</h2>
-												)}
-											</div>
-										</FoldoutContent>
-										<FoldoutTrigger asChild>
-											<button
-												type="button"
-												onClick={associateTeamNavigator.nextImage}
-											>
-												Next
-											</button>
-										</FoldoutTrigger>
-									</div>
-								</Foldout>
-								<div className="flex flex-col">
-									<img />
-									<p className="text-white">Joseph Napoli</p>
-								</div>
-								<div className="flex flex-col">
-									<img />
-									<p className="text-white">Sullivan Huebner</p>
-								</div>
-								<div className="flex flex-col">
-									<img />
-									<p className="text-white">Adam Jones</p>
-								</div>
-								<div className="flex flex-col">
-									<img />
-									<p className="text-white">Tai Le</p>
-								</div>
-								<div className="flex flex-col">
-									<img />
-									<p className="text-white">Oliver Beck</p>
-								</div>
-								<div className="flex flex-col">
-									<img />
-									<p className="text-white">Todd Casey</p>
-								</div>
-								<div className="flex flex-col">
-									<img />
-									<p className="text-white">“Reth Sogen”</p>
-								</div>
-								<div className="flex flex-col">
-									<img />
-									<p className="text-white">“Virtualily”</p>
-								</div>
-								<div className="flex flex-col">
-									<img />
-									<p className="text-white">“Shopow”</p>
-								</div>
-								<div className="flex flex-col">
-									<img />
-									<p className="text-white">Hash Studios</p>
-								</div>
-							</div>
+							<Carousel className="relative">
+								<CarouselBackButton className="absolute left-0 top-0 z-20 h-full w-14 bg-gradient-to-r from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
+									{"<"}
+								</CarouselBackButton>
+								<CarouselItems className="relative z-10 gap-6 px-14 duration-500">
+									{associateTeamImages.map((member, index) => (
+										<CarouselItem
+											className="flex flex-col items-center justify-center rounded-lg bg-neutral-900"
+											key={index}
+										>
+											<img
+												alt={member.name}
+												className="size-40 rounded-lg object-cover"
+												src={member.url}
+											/>
+											<p className="font-dm-sans text-2xl text-white">
+												{member.name}
+											</p>
+										</CarouselItem>
+									))}
+								</CarouselItems>
+								<CarouselNextButton className="absolute right-0 top-0 z-20 h-full w-14 bg-gradient-to-l from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
+									{">"}
+								</CarouselNextButton>
+							</Carousel>
 						</div>
 					</div>
 				</section>
