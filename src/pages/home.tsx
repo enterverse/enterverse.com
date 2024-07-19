@@ -18,6 +18,12 @@ interface ImageInfo2 {
 	url: string;
 	name: string;
 }
+interface ImageInfo3 {
+	url: string;
+	name: string;
+	position: string;
+	description: string;
+}
 
 const promoImages = [
 	"/src/assets/concept/Arch.jpg",
@@ -145,11 +151,36 @@ const associateTeamImages: Array<ImageInfo2> = [
 		name: "Hash Studios"
 	}
 ];
+const founderTeamImages: Array<ImageInfo3> = [
+	{
+		url: "/src/assets/profiles/matthew_profile.png",
+		name: "Matthew Brewbaker",
+		position: "Co-Founder, CEO",
+		description:
+			"Matthew Brewbaker melds his film production savvy with a mastery of gaming and software workflows, steering the company towards groundbreaking VR experiences."
+	},
+	{
+		url: "/src/assets/profiles/raphael_profile.jpg",
+		name: "Raphael Arkera",
+		position: "Co-Founder, CCO",
+		description:
+			"Raphael Arkera leverages his creative direction prowess, honed with giants like Marvel, Netflix, and Imaginarium Studios, to infuse VEU Inc. with innovative VR event concepts."
+	},
+
+	{
+		url: "/src/assets/profiles/nuno_profile.jpg",
+		name: "Nuno Rivotti",
+		position: "Co-Founder, CPO",
+		description:
+			"Nuno Rivotti blends insights from film, games, and blockchain, enriching VEU's product strategy with experience from founding the Trojan Horse Was a Unicorn convention."
+	}
+];
 
 // vite image algorithm from logan
 // 67% top section
-// text-balance
-// sidebar
+// sidebar color
+// Foudners carousel debugging. Clash with carousel vs not.
+// some text near bottom not wrapping on mobile size.
 
 export default function Home() {
 	const [isScrolled, setIsScrolled] = useState(false);
@@ -324,16 +355,16 @@ export default function Home() {
 						</div>
 					</div>
 				</section>
-				<section className="flex min-h-screen w-full flex-col items-center justify-center gap-16 p-32">
+				<section className="flex w-full flex-col items-center justify-center gap-16 p-8 xl:min-h-screen xl:p-32">
 					<ErrorBoundary>
-						<Carousel className="relative h-[48rem] w-full">
+						<Carousel className="relative h-64 w-full xl:h-[48rem]">
 							<CarouselBackButton className="absolute left-0 top-0 z-20 h-full w-14 bg-gradient-to-r from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
 								{"<"}
 							</CarouselBackButton>
-							<CarouselItems className="relative z-10 flex gap-6  px-14 duration-500">
+							<CarouselItems className="relative z-10 flex gap-6 duration-500">
 								{promoImages.map((image, index) => (
 									<CarouselItem
-										className="flex aspect-video h-[48rem] flex-col items-center justify-center rounded-lg bg-neutral-900"
+										className="flex aspect-video h-64 flex-col items-center justify-center rounded-lg bg-neutral-900 xl:h-[48rem]"
 										key={index}
 									>
 										<img
@@ -446,7 +477,7 @@ export default function Home() {
 					className="flex w-full flex-col items-start justify-center gap-16 bg-section3-gradient p-12 xl:p-32"
 					id="about"
 				>
-					<div className="flex w-full flex-col items-start justify-center gap-32">
+					<div className="flex w-full flex-col items-start justify-center gap-16 xl:gap-32">
 						<div className="flex flex-col gap-8 xl:w-1/2">
 							<h2 className="mb-6 mt-12 font-dm-sans text-5xl font-bold leading-tight text-white xl:mt-0 xl:text-6xl xl:leading-loose">
 								We&apos;re helping you build your digital community
@@ -458,16 +489,16 @@ export default function Home() {
 								Virtual Reality easily accessible to everyone.
 							</p>
 						</div>
-						<div className="flex flex-col justify-center gap-8 pb-32">
+						<div className="flex flex-col justify-center gap-8 pb-16 xl:pb-32">
 							<ErrorBoundary>
-								<Carousel className="relative h-[32rem]">
+								<Carousel className="relative h-64 xl:h-[32rem]">
 									<CarouselBackButton className="absolute left-0 top-0 z-20 h-full w-14 bg-gradient-to-r from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
 										{"<"}
 									</CarouselBackButton>
-									<CarouselItems className="relative z-10 gap-6 object-cover px-14 duration-500">
+									<CarouselItems className="relative z-10 gap-6 object-cover duration-500">
 										{vrchatImages.map((image, index) => (
 											<CarouselItem
-												className="flex h-[32rem] flex-col items-center justify-center rounded-lg bg-neutral-900"
+												className="flex h-64 flex-col items-center justify-center rounded-lg bg-neutral-900 xl:h-[32rem]"
 												key={index}
 											>
 												<img
@@ -484,8 +515,8 @@ export default function Home() {
 								</Carousel>
 							</ErrorBoundary>
 						</div>
-						<div className="flex flex-col gap-16">
-							<div className="flex size-full flex-col gap-8 overflow-hidden xl:w-2/3">
+						<div className="flex shrink flex-col flex-wrap gap-16">
+							<div className="flex size-full flex-col gap-8 xl:w-2/3">
 								<h1 className="mb-2 flex font-dm-sans text-5xl font-bold leading-tight text-white xl:text-6xl">
 									Meet the team
 								</h1>
@@ -499,7 +530,39 @@ export default function Home() {
 							<h1 className="mt-16 font-dm-sans text-3xl font-bold text-white xl:text-4xl">
 								Founders
 							</h1>
-							<div className="flex flex-row gap-4 pb-16">
+							<Carousel className="relative flex h-[38rem] gap-12 xl:mb-16 xl:hidden">
+								<CarouselBackButton className="absolute left-0 top-0 z-20 h-full w-14 bg-gradient-to-r from-neutral-950 to-transparent opacity-0 transition-opacity hover:opacity-100">
+									{"<"}
+								</CarouselBackButton>
+								<CarouselItems className="relative z-10 gap-12 duration-500">
+									{founderTeamImages.map((member, index) => (
+										<CarouselItem
+											className="flex h-[44rem] w-64 flex-col items-start justify-start gap-8 rounded-lg"
+											key={index}
+										>
+											<img
+												alt={member.name}
+												className="size-64 rounded-lg"
+												src={member.url}
+											/>
+											<p className="font-dm-sans text-4xl text-white">
+												{member.name}
+											</p>
+											<p className="font-dm-sans text-2xl font-bold text-white">
+												{member.position}
+											</p>
+											<p className="flex-wrap font-dm-sans text-base text-white">
+												{member.description}
+											</p>
+										</CarouselItem>
+									))}
+								</CarouselItems>
+								<CarouselNextButton className="sticky right-0 z-20 h-full w-14  bg-gradient-to-l from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
+									{">"}
+								</CarouselNextButton>
+							</Carousel>
+
+							<div className="hidden flex-row gap-4 pb-16 xl:flex">
 								<div className="flex w-1/3 flex-col gap-6">
 									<img
 										className="rounded-xl"
@@ -560,11 +623,11 @@ export default function Home() {
 							<h1 className="mt-16 font-dm-sans text-4xl font-bold text-white">
 								Core Team
 							</h1>
-							<Carousel className="relative mb-16 h-[22rem]">
+							<Carousel className="relative h-[22rem] xl:mb-16">
 								<CarouselBackButton className="absolute left-0 top-0 z-20 h-[22rem] w-14 bg-gradient-to-r from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
 									{"<"}
 								</CarouselBackButton>
-								<CarouselItems className="relative z-10 gap-6 px-14 duration-500">
+								<CarouselItems className="relative z-10 gap-6  duration-500">
 									{coreTeamImages.map((member, index) => (
 										<CarouselItem
 											className="flex h-[22rem] flex-col items-start justify-start gap-4 rounded-lg"
@@ -582,7 +645,7 @@ export default function Home() {
 										</CarouselItem>
 									))}
 								</CarouselItems>
-								<CarouselNextButton className="absolute right-0 top-0 z-20 h-full w-14 bg-gradient-to-l from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
+								<CarouselNextButton className="sticky right-0 top-0 z-20 h-full w-14 bg-gradient-to-l from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
 									{">"}
 								</CarouselNextButton>
 							</Carousel>
@@ -590,11 +653,11 @@ export default function Home() {
 							<h1 className="mt-16 font-dm-sans text-4xl font-bold text-white">
 								Associate developers and creators
 							</h1>
-							<Carousel className="relative mb-32 h-60">
+							<Carousel className="relative mb-8 h-60 xl:mb-32">
 								<CarouselBackButton className="absolute left-0 top-0 z-20 h-full w-14 bg-gradient-to-r from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
 									{"<"}
 								</CarouselBackButton>
-								<CarouselItems className="relative z-10 gap-6 px-14 duration-500">
+								<CarouselItems className="relative z-10 gap-6 duration-500">
 									{associateTeamImages.map((member, index) => (
 										<CarouselItem
 											className="flex h-60 flex-col items-center justify-start gap-4 rounded-lg"
@@ -611,7 +674,7 @@ export default function Home() {
 										</CarouselItem>
 									))}
 								</CarouselItems>
-								<CarouselNextButton className="absolute right-0 top-0 z-20 h-full w-14 bg-gradient-to-l from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
+								<CarouselNextButton className="sticky right-0 top-0 z-20 h-full w-14 bg-gradient-to-l from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
 									{">"}
 								</CarouselNextButton>
 							</Carousel>
@@ -620,7 +683,7 @@ export default function Home() {
 				</section>
 
 				<section
-					className="flex w-full flex-col items-start justify-center  bg-footer-gradient px-12 pt-16 xl:px-32 xl:pt-32"
+					className="flex w-full flex-col items-start justify-center  bg-footer-gradient px-12 pt-8 xl:px-32 xl:pt-32"
 					id="contact"
 				>
 					<h2 className="my-16 w-2/3 font-dm-sans text-5xl font-bold leading-tight text-white xl:my-0 xl:text-6xl">
