@@ -18,7 +18,6 @@ interface ImageInfo2 {
 	url: string;
 	name: string;
 }
-//type CombinedImageInfo = ImageInfo | ImageInfo2;
 
 const promoImages = [
 	"/src/assets/concept/Arch.jpg",
@@ -325,16 +324,16 @@ export default function Home() {
 						</div>
 					</div>
 				</section>
-				<section className="flex w-full flex-col items-center justify-center gap-16 p-32">
+				<section className="flex min-h-screen w-full flex-col items-center justify-center gap-16 p-32">
 					<ErrorBoundary>
-						<Carousel className="relative">
+						<Carousel className="relative h-[48rem] w-full">
 							<CarouselBackButton className="absolute left-0 top-0 z-20 h-full w-14 bg-gradient-to-r from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
 								{"<"}
 							</CarouselBackButton>
-							<CarouselItems className="relative z-10 gap-6 object-cover px-14 duration-500">
+							<CarouselItems className="relative z-10 flex gap-6  px-14 duration-500">
 								{promoImages.map((image, index) => (
 									<CarouselItem
-										className="flex h-48 flex-col items-center justify-center rounded-lg bg-neutral-900"
+										className="flex aspect-video h-[48rem] flex-col items-center justify-center rounded-lg bg-neutral-900"
 										key={index}
 									>
 										<img
@@ -447,9 +446,9 @@ export default function Home() {
 					className="flex w-full flex-col items-start justify-center gap-16 bg-section3-gradient p-12 xl:p-32"
 					id="about"
 				>
-					<div className="flex w-full flex-col items-start justify-center">
+					<div className="flex w-full flex-col items-start justify-center gap-32">
 						<div className="flex flex-col gap-8 xl:w-1/2">
-							<h2 className="mt-12 font-dm-sans text-5xl font-bold leading-tight text-white xl:mt-0 xl:text-6xl">
+							<h2 className="mb-6 mt-12 font-dm-sans text-5xl font-bold leading-tight text-white xl:mt-0 xl:text-6xl xl:leading-loose">
 								We&apos;re helping you build your digital community
 							</h2>
 							<p className="font-geist text-base leading-9 text-white xl:text-xl">
@@ -461,14 +460,14 @@ export default function Home() {
 						</div>
 						<div className="flex flex-col justify-center gap-8 pb-32">
 							<ErrorBoundary>
-								<Carousel className="relative">
+								<Carousel className="relative h-[32rem]">
 									<CarouselBackButton className="absolute left-0 top-0 z-20 h-full w-14 bg-gradient-to-r from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
 										{"<"}
 									</CarouselBackButton>
 									<CarouselItems className="relative z-10 gap-6 object-cover px-14 duration-500">
 										{vrchatImages.map((image, index) => (
 											<CarouselItem
-												className="flex h-48 flex-col items-center justify-center rounded-lg bg-neutral-900"
+												className="flex h-[32rem] flex-col items-center justify-center rounded-lg bg-neutral-900"
 												key={index}
 											>
 												<img
@@ -487,17 +486,17 @@ export default function Home() {
 						</div>
 						<div className="flex flex-col gap-16">
 							<div className="flex size-full flex-col gap-8 overflow-hidden xl:w-2/3">
-								<h1 className="flex font-dm-sans text-5xl font-bold leading-tight text-white xl:text-6xl">
+								<h1 className="mb-2 flex font-dm-sans text-5xl font-bold leading-tight text-white xl:text-6xl">
 									Meet the team
 								</h1>
-								<p className="flex font-geist text-xl leading-9 text-white xl:text-xl">
+								<p className="flex w-full text-balance font-geist text-xl leading-9 text-white xl:w-2/3 xl:text-xl">
 									We&apos;re a team of developers and community contributors
 									bridging the gap between today&apos;s reality and our shared
 									vision of an ethical digital future centered around
 									communities and creators.
 								</p>
 							</div>
-							<h1 className="font-dm-sans text-3xl font-bold text-white xl:text-4xl">
+							<h1 className="mt-16 font-dm-sans text-3xl font-bold text-white xl:text-4xl">
 								Founders
 							</h1>
 							<div className="flex flex-row gap-4 pb-16">
@@ -558,22 +557,22 @@ export default function Home() {
 									</p>
 								</div>
 							</div>
-							<h1 className="font-dm-sans text-4xl font-bold text-white">
+							<h1 className="mt-16 font-dm-sans text-4xl font-bold text-white">
 								Core Team
 							</h1>
-							<Carousel className="relative">
-								<CarouselBackButton className="absolute left-0 top-0 z-20 h-full w-14 bg-gradient-to-r from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
+							<Carousel className="relative mb-16 h-[22rem]">
+								<CarouselBackButton className="absolute left-0 top-0 z-20 h-[22rem] w-14 bg-gradient-to-r from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
 									{"<"}
 								</CarouselBackButton>
 								<CarouselItems className="relative z-10 gap-6 px-14 duration-500">
 									{coreTeamImages.map((member, index) => (
 										<CarouselItem
-											className="flex flex-col items-center justify-center rounded-lg bg-neutral-900"
+											className="flex h-[22rem] flex-col items-start justify-start gap-4 rounded-lg"
 											key={index}
 										>
 											<img
 												alt={member.name}
-												className="size-40 rounded-lg object-cover"
+												className="size-64 rounded-lg"
 												src={member.url}
 											/>
 											<p className="font-dm-sans text-2xl text-white">
@@ -588,22 +587,22 @@ export default function Home() {
 								</CarouselNextButton>
 							</Carousel>
 
-							<h1 className="font-dm-sans text-4xl font-bold text-white">
+							<h1 className="mt-16 font-dm-sans text-4xl font-bold text-white">
 								Associate developers and creators
 							</h1>
-							<Carousel className="relative">
+							<Carousel className="relative mb-32 h-60">
 								<CarouselBackButton className="absolute left-0 top-0 z-20 h-full w-14 bg-gradient-to-r from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
 									{"<"}
 								</CarouselBackButton>
 								<CarouselItems className="relative z-10 gap-6 px-14 duration-500">
 									{associateTeamImages.map((member, index) => (
 										<CarouselItem
-											className="flex flex-col items-center justify-center rounded-lg bg-neutral-900"
+											className="flex h-60 flex-col items-center justify-start gap-4 rounded-lg"
 											key={index}
 										>
 											<img
 												alt={member.name}
-												className="size-40 rounded-lg object-cover"
+												className="size-48 rounded-lg object-cover"
 												src={member.url}
 											/>
 											<p className="font-dm-sans text-2xl text-white">
