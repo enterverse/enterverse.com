@@ -21,88 +21,88 @@ interface ImageInfo2 {
 //type CombinedImageInfo = ImageInfo | ImageInfo2;
 
 const promoImages = [
-	"/concept/ENTERVERSE.COM_Arch.jpg",
-	"/concept/Enterverse_concept3.jpg",
-	"/concept/ENTERVERSE.COM (2).jpg",
-	"/concept/VEU_ENV_SplashArt_FinalPass_02b.jpg",
-	"/concept/LS_OpeningPavilionFlyoverCutscene.0140.jpg",
-	"/concept/LS_OpeningPavilionFlyoverCutscene.0296.jpg",
-	"/concept/LS_OpeningPavilionFlyoverCutscene.0889.jpg",
-	"/concept/LS_WebsiteStillsPavilion.0474.jpeg",
-	"/concept/LS_WebsiteStillsPavilion.1589.jpg"
+	"/src/assets/concept/Arch.jpg",
+	"/src/assets/concept/DiscoGreen.jpg",
+	"/src/assets/concept/KoiFish.jpg",
+	"/src/assets/concept/VEU_ENV_Full_Island.jpg",
+	"/src/assets/concept/PavilionGuyLookingUp.jpg",
+	"/src/assets/concept/LookingUpDome.jpg",
+	"/src/assets/concept/DomeDiscoveryFish.jpg",
+	"/src/assets/concept/LightDJ.jpeg",
+	"/src/assets/concept/GreenJacketGuy.jpg"
 ];
 const vrchatImages = [
-	"/vrchat/By.jpg",
-	"/vrchat/image.webp",
-	"/vrchat/VRChat_2023-04-21_21-39-37.233_3840x2160.png",
-	"/vrchat/VRChat_2023-05-01_11-40-42.001_3840x2160.png",
-	"/vrchat/VRChat_2023-06-02_00-29-28.530_2560x1440.webp",
-	"/vrchat/VRChat_2023-07-08_21-40-06.689_3840x2160.webp",
-	"/vrchat/VRChat_2023-11-19_00-37-25.603_3840x2160.png",
-	"/vrchat/VRchatEvent.png",
-	"/vrchat/www.enterverse.com_ (1).png",
-	"/vrchat/www.enterverse.com_ (2).png",
-	"/vrchat/www.enterverse.com_ (5).png",
-	"/vrchat/www.enterverse.com_ (8).png"
+	"/src/assets/vrchat/EpicSoloPhoto.png",
+	"/src/assets/vrchat/SoloIntoTheFuture.webp",
+	"/src/assets/vrchat/6PersonWave.webp",
+	"/src/assets/vrchat/PraisetheSun.webp",
+	"/src/assets/vrchat/Bye.jpg",
+	"/src/assets/vrchat/CourtAndManyCats.png",
+	"/src/assets/vrchat/GroupPhoto.png",
+	"/src/assets/vrchat/PianoSolo.png",
+	"/src/assets/vrchat/BatPerson.png",
+	"/src/assets/vrchat/Singing.png",
+	"/src/assets/vrchat/VRchatEvent.png",
+	"/src/assets/vrchat/heheFaceCover.png"
 ];
 const coreTeamImages: Array<ImageInfo> = [
 	{
-		url: "/core-team/MH-1-300x300+copy.jpg",
+		url: "/src/assets/core-team/MHeilemann.jpg",
 		name: "Michael Heilemann",
 		position: "CTO"
 	},
 	{
-		url: "/core-team/William-Garcia-1-300x279+copy.jpg",
+		url: "/src/assets/core-team/WilliamGarcia.jpg",
 		name: "William Garcia",
 		position: "COO"
 	},
 	{
-		url: "/core-team/MD1-300x300+copy.jpg",
+		url: "/src/assets/core-team/MDepiro.jpg",
 		name: "Michael Depiro",
 		position: "CMO"
 	},
 	{
-		url: "/core-team/LoganD5.png",
+		url: "/src/assets/core-team/LoganD.png",
 		name: "Logan Desseyn",
 		position: "Principal Software Developer"
 	},
 	{
-		url: "/core-team/Bryce-300x300+copy.jpg",
+		url: "/src/assets/core-team/Bryce.jpg",
 		name: "Bryce Dichristofalo",
 		position: "XR Director"
 	},
 	{
-		url: "/core-team/Eva-300x300+copy.jpg",
+		url: "/src/assets/core-team/EvaPetitot.png",
 		name: "Eva Petitot",
 		position: "Lead Unity Environment Artist"
 	},
 	{
-		url: "/core-team/MR-200x300+copy.jpg",
+		url: "/src/assets/core-team/MReed.jpg",
 		name: "Michael Reed",
 		position: "Principal 3D Modeler"
 	},
 	{
-		url: "/core-team/Neil-1-300x300+copy.jpg",
+		url: "/src/assets/core-team/NeilBlakemore.jpg",
 		name: "Neil Blakemore",
 		position: "Ethics Director"
 	},
 	{
-		url: "/core-team/J-2-300x300+copy.jpg",
+		url: "/src/assets/core-team/JonahKeel.jpg",
 		name: "Jonah Keel",
 		position: "Publicity"
 	},
 	{
-		url: "/core-team/Gopal-2-200x300+copy.jpg",
+		url: "/src/assets/core-team/Gopal.jpg",
 		name: "Gopal Metro",
 		position: "R&D Manager"
 	},
 	{
-		url: "/core-team/GC-200x300+copy.jpg",
+		url: "/src/assets/core-team/GC.jpg",
 		name: "Giorgi Chitidze",
 		position: "Lead Unreal Environment Artist"
 	},
 	{
-		url: "/core-team/GK-1-300x293+copy.jpg",
+		url: "/src/assets/core-team/GK.jpg",
 		name: "Giorgi Koridze",
 		position: "Lead Unreal Technical Artist"
 	}
@@ -110,39 +110,39 @@ const coreTeamImages: Array<ImageInfo> = [
 
 const associateTeamImages: Array<ImageInfo2> = [
 	{
-		url: "/associate/josephnapoli_panda.png",
+		url: "/src/assets/associate/josephnapoli_panda.png",
 		name: "Joseph Napoli"
 	},
 	{
-		url: "/associate/AJ-ava-1-300x300+copy.jpg",
+		url: "/src/assets/associate/adam_jones.jpg",
 		name: "Adam Jones"
 	},
 	{
-		url: "/associate/Tai-1-300x300+copy.jpg",
+		url: "/src/assets/associate/TaiLe.jpg",
 		name: "Tai Le"
 	},
 	{
-		url: "/associate/OliverB-300x300+copy.jpg",
+		url: "/src/assets/associate/OliverB.jpg",
 		name: "Oliver Beck"
 	},
 	{
-		url: "/associate/Todd-1-300x300+copy.jpg",
+		url: "/src/assets/associate/ToddCasey.jpg",
 		name: "Todd Casey"
 	},
 	{
-		url: "/associate/rethsogan_associate.png",
+		url: "/src/assets/associate/rethsogan.png",
 		name: "Reth Sogen"
 	},
 	{
-		url: "/associate/virtualilly_associate.png",
+		url: "/src/assets/associate/virtualilly.png",
 		name: "Virtualily"
 	},
 	{
-		url: "/associate/shopow_future.png",
+		url: "/src/assets/associate/shopow.png",
 		name: "Shopow"
 	},
 	{
-		url: "/associate/HashStudios_metaverse.png",
+		url: "/src/assets/associate/HashStudios.png",
 		name: "Hash Studios"
 	}
 ];
@@ -197,7 +197,7 @@ export default function Home() {
 					<div className="absolute left-1/2 -translate-x-1/2 gap-6">
 						<img
 							className="h-16 w-60"
-							src="\Logos\Enterverse logo v2.8_whitetext with shadow for BLACK AND COLOR BACKGROUNDS.png"
+							src="/src/assets/Logos/EnterverseWhiteTextBlackBackground.png"
 						/>
 					</div>
 
@@ -279,7 +279,7 @@ export default function Home() {
 						muted
 						className="absolute size-full object-cover mix-blend-overlay"
 						poster="/src/assets/concept/KoiFish.jpg"
-						src="/Enterverse Playable-POC Teaser 1080P.mp4"
+						src="/src/assets/concept/EnterverseTrailer1080P.mp4"
 					/>
 					<div className="relative flex flex-col justify-center gap-16 pt-32 md:pt-56 xl:w-full">
 						<div className="flex w-full flex-col gap-4 xl:w-2/3">
@@ -313,7 +313,7 @@ export default function Home() {
 									}}
 								>
 									<p className="font-semibold">Join our Discord</p>
-									<img className="size-8" src="\Logos\discord.svg" />
+									<img className="size-8" src="/src/assets/Logos/discord.svg" />
 								</button>
 								<button
 									className="h-16 w-full rounded-xl border-2 border-white px-4 py-2 font-dm-sans text-white xl:w-64"
@@ -361,7 +361,7 @@ export default function Home() {
 							<div className="mb-14 flex h-24 flex-row items-center gap-8">
 								<img
 									className="size-20 xl:size-20"
-									src="\Logos\enterlink logo.png"
+									src="/src/assets/Logos/enterlink logo.png"
 								/>
 								<h1 className="font-geist text-5xl font-bold xl:text-6xl">
 									enterlink
@@ -398,7 +398,7 @@ export default function Home() {
 											<img
 												alt="Submit"
 												className="size-6"
-												src="/Logos/arrow-right.svg"
+												src="/src/assets/Logos/arrow-right.svg"
 											/>
 										</button>
 									</form>
@@ -409,7 +409,7 @@ export default function Home() {
 							<img
 								alt="Vea Butterfly"
 								className="size-96"
-								src="VEA butterfly 512.png"
+								src="/src/assets/concept/VEA_butterfly.png"
 							/>
 						</div>
 					</div>
@@ -504,7 +504,7 @@ export default function Home() {
 								<div className="flex w-1/3 flex-col gap-6">
 									<img
 										className="rounded-xl"
-										src="\profiles\matthew_profile.png"
+										src="/src/assets/profiles/matthew_profile.png"
 										style={{ height: "512px", width: "512px" }}
 									/>
 									<p className="font-dm-sans text-4xl text-white">
@@ -522,7 +522,7 @@ export default function Home() {
 								<div className="flex w-1/3 flex-col gap-6">
 									<img
 										className="rounded-xl"
-										src="\profiles\raf-3+copy.jpg"
+										src="/src/assets/profiles/raphael_profile.jpg"
 										style={{ height: "512px", width: "512px" }}
 									/>
 									<p className="font-dm-sans text-4xl text-white">
@@ -541,7 +541,7 @@ export default function Home() {
 								<div className="flex w-1/3 flex-col gap-6">
 									<img
 										className="rounded-xl"
-										src="\profiles\nuno-2-1+copy.jpg"
+										src="/src/assets/profiles/nuno_profile.jpg"
 										style={{ height: "512px", width: "512px" }}
 									/>
 									<p className="font-dm-sans text-4xl text-white">
@@ -698,7 +698,7 @@ export default function Home() {
 							<div className="flex flex-col items-center gap-10 xl:flex-row xl:items-start xl:gap-0">
 								<img
 									className="h-16 w-24 xl:h-10 xl:w-16"
-									src="\Logos\VEU_logo_transparent w shadow.png"
+									src="/src/assets/Logos/VEU_logo_transparent.png"
 								/>
 								<div className="flex flex-col">
 									<div className="flex flex-col">
@@ -720,35 +720,35 @@ export default function Home() {
 								rel="noopener noreferrer"
 								target="_blank"
 							>
-								<img className="size-6" src="\Logos\discord.svg" />
+								<img className="size-6" src="/src/assets/Logos/discord.svg" />
 							</a>
 							<a
 								href="https://twitter.com/VEUverse"
 								rel="noopener noreferrer"
 								target="_blank"
 							>
-								<img className="size-6" src="\Logos\twitter.svg" />
+								<img className="size-6" src="/src/assets/Logos/twitter.svg" />
 							</a>
 							<a
 								href="https://www.instagram.com/veuverse/"
 								rel="noopener noreferrer"
 								target="_blank"
 							>
-								<img className="size-6" src="\Logos\instagram.svg" />
+								<img className="size-6" src="/src/assets/Logos/instagram.svg" />
 							</a>
 							<a
 								href="https://www.facebook.com/VEUverse"
 								rel="noopener noreferrer"
 								target="_blank"
 							>
-								<img className="size-6" src="\Logos\facebook.svg" />
+								<img className="size-6" src="/src/assets/Logos/facebook.svg" />
 							</a>
 							<a
 								href="https://www.linkedin.com/company/veu-inc/"
 								rel="noopener noreferrer"
 								target="_blank"
 							>
-								<img className="size-6" src="\Logos\linkedin.svg" />
+								<img className="size-6" src="/src/assets/Logos/linkedin.svg" />
 							</a>
 
 							<a
@@ -756,7 +756,7 @@ export default function Home() {
 								rel="noopener noreferrer"
 								target="_blank"
 							>
-								<img className="size-6" src="\Logos\medium.svg" />
+								<img className="size-6" src="/src/assets/Logos/medium.svg" />
 							</a>
 						</div>
 					</footer>
