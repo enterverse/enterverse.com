@@ -178,8 +178,6 @@ const founderTeamImages: Array<ImageInfo3> = [
 
 // vite image algorithm from logan
 // sidebar color
-// change the stretch on gopal and michael reed
-// useeffect to close menu on scroll
 // for header turn the menu to an x and leave Enterverse the same
 
 export default function Home() {
@@ -194,6 +192,9 @@ export default function Home() {
 			const scrolled = currentScrollY > 0;
 			setIsScrolled(scrolled);
 
+			if (scrolled) {
+				setIsMenuOpen(false);
+			}
 			const shouldShowHeader =
 				currentScrollY <= lastScrollY.current || !scrolled;
 			setShowHeader(shouldShowHeader);
