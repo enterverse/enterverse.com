@@ -177,8 +177,6 @@ const founderTeamImages: Array<ImageInfo3> = [
 ];
 
 // vite image algorithm from logan
-// sidebar color
-// for header turn the menu to an x and leave Enterverse the same
 
 export default function Home() {
 	const [isScrolled, setIsScrolled] = useState(false);
@@ -249,9 +247,9 @@ export default function Home() {
 						<img alt="open menu button" src="/src/assets/Logos/menu.svg" />
 					</button>
 					{isMenuOpen && (
-						<div className="bg-mobile-gradient fixed left-0 top-0 z-40 h-screen w-full bg-black">
+						<div className="fixed left-0 top-0 z-50 h-screen w-full bg-base bg-mobile-gradient">
 							<div className="flex h-32 w-full items-center justify-between pr-20 pt-8">
-								<div className="absolute left-1/2 mt-8 -translate-x-1/2 gap-6">
+								<div className="absolute left-1/2 -translate-x-1/2 gap-6">
 									<img
 										className="h-16 w-60"
 										src="/src/assets/Logos/EnterverseWhiteTextBlackBackground.png"
