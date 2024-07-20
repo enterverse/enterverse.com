@@ -316,17 +316,17 @@ export default function Home() {
 					/>
 					<div className="relative flex flex-col justify-center gap-16 pt-32 md:pt-56 xl:w-full">
 						<div className="flex w-full flex-col gap-4 xl:w-2/3">
-							<h1 className="mb-4 w-full text-balance font-dm-sans text-4xl font-bold leading-relaxed text-white drop-shadow-section1 md:text-7xl">
+							<h1 className="mb-4 w-full text-balance font-dm-sans text-5xl font-bold leading-tight text-white drop-shadow-section1 xl:text-7xl">
 								Find Meetups and Events in all your Virtual Realities
 							</h1>
-							<p className="w-full text-balance font-geist text-base leading-9 text-white drop-shadow-section1 md:text-xl xl:w-2/3">
+							<p className="w-full text-balance font-geist text-lg leading-9 text-white drop-shadow-section1 xl:w-2/3 xl:text-xl">
 								We know how hard it is to plan your hangouts in virtual spaces.
 								Enterverse&apos;s soon-to-launch service, Enterlink, makes
 								virtual social games and experiences accessible, connecting you
 								to events, experiences, worlds, and communities.
 							</p>
 						</div>
-						<div className="mb-16 flex w-full flex-col gap-8 xl:mb-0 xl:w-2/3">
+						<div className="mb-16 flex w-full flex-col gap-8 text-lg xl:mb-0 xl:w-2/3">
 							<p className="flex font-geist text-xl leading-9 text-white drop-shadow-section1 xl:w-2/3">
 								Interested in more? Join our community to stay updated with the
 								latest updates on Enterlink.
@@ -405,14 +405,14 @@ export default function Home() {
 									<h2 className="mt-6 font-dm-sans text-5xl font-bold leading-tight text-white xl:mt-0 xl:text-6xl">
 										Make plans and share with friends
 									</h2>
-									<p className="font-geist text-base leading-9 text-white xl:text-xl">
+									<p className="font-geist text-lg leading-9 text-white xl:text-xl">
 										Enterlink is our soon-to-launch service that makes virtual
 										social games and experiences accessible, connecting you to
 										events, experiences, worlds and communities.
 									</p>
 								</div>
 								<div className="flex h-72 flex-col gap-8">
-									<p className="font-geist text-base leading-9 text-white xl:text-xl">
+									<p className="font-geist text-lg leading-9 text-white xl:text-xl">
 										Stay updated with our latest developments! Join our
 										community and receive exclusive news and updates on
 										Enterlink, Enterverse, and more.
@@ -438,7 +438,7 @@ export default function Home() {
 								</div>
 							</div>
 						</div>
-						<div className="mb-44 mt-12 flex w-full items-center justify-center xl:my-0 xl:w-1/2">
+						<div className="mb-24 mt-8 flex w-full items-center justify-center xl:my-0 xl:w-1/2">
 							<img
 								alt="Vea Butterfly"
 								className="size-96"
@@ -485,7 +485,7 @@ export default function Home() {
 							<h2 className="mb-6 mt-12 font-dm-sans text-5xl font-bold leading-tight text-white xl:mt-0 xl:text-6xl xl:leading-loose">
 								We&apos;re helping you build your digital community
 							</h2>
-							<p className="font-geist text-base leading-9 text-white xl:text-xl">
+							<p className="font-geist text-lg leading-9 text-white xl:text-xl">
 								Our goal is to help build authentic social connections by
 								bringing people together through a shared love of virtual
 								entertainment and culture. We aim to make communities within
@@ -658,7 +658,7 @@ export default function Home() {
 							<h1 className="mt-16 px-8 font-dm-sans text-4xl font-bold text-white">
 								Associate developers and creators
 							</h1>
-							<Carousel className="relative mb-8 h-60 xl:mb-32">
+							<Carousel className="relative mb-24 h-60 xl:mb-32">
 								<CarouselBackButton className="absolute left-0 top-0 z-20 h-full w-14 bg-gradient-to-r from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
 									{"<"}
 								</CarouselBackButton>
@@ -673,7 +673,7 @@ export default function Home() {
 												className="size-48 rounded-lg object-cover"
 												src={member.url}
 											/>
-											<p className="font-dm-sans text-2xl text-white">
+											<p className="font-dm-sans text-2xl font-bold text-white">
 												{member.name}
 											</p>
 										</CarouselItem>
