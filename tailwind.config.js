@@ -30,7 +30,7 @@ export default {
 				'gradient-overlay': "radial-gradient(circle at center, #FAFAFA 0%, #000000 100%)",
 				'about-section': "linear-gradient(to bottom, #297F8B 0%, #0D0D0D 30%), radial-gradient(at center, #632B89 0%, transparent 50%, #0D0D0D 80%), linear-gradient(to bottom, #EF3E72 0%, #0D0D0D 30%)",
 				'section1-gradient-darkened': "radial-gradient(41.31% 89.17% at 50% 50%, rgba(0, 0, 0, 0.30) 0%, #000 100%), linear-gradient(180deg, #FFF 10%, rgba(0, 0, 0, 0.00) 100%);",
-				'mobile-gradient': "background: linear-gradient(148deg, rgba(41, 127, 139, 0.30) 0%, rgba(13, 13, 13, 0.30) 100%), linear-gradient(340deg, rgba(239, 62, 114, 0.24) 23.37%, rgba(13, 13, 13, 0.30) 76.63%), radial-gradient(69.43% 69.43% at 31.99% 26.99%, rgba(99, 43, 137, 0.40) 0%, rgba(13, 13, 13, 0.50) 100%);",
+				'mobile-gradient': "background: radial-gradient(170.67% 69.43% at 31.99% 26.99%, rgba(99, 43, 137, 0.32) 0%, rgba(13, 13, 13, 0.40) 100%), #1A1A1A;",
 
 
 			},

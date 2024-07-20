@@ -177,10 +177,13 @@ const founderTeamImages: Array<ImageInfo3> = [
 ];
 
 // vite image algorithm from logan
-// 67% top section
+// 67% top section (when you zoom out)
 // sidebar color
 // Foudners carousel debugging. Clash with carousel vs not.
 // some text near bottom not wrapping on mobile size.
+// change the stretch on gopal and michael reed
+// useeffect to close menu on scroll
+// for header turn the menu to an x and leave Enterverse the same
 
 export default function Home() {
 	const [isScrolled, setIsScrolled] = useState(false);
@@ -217,10 +220,10 @@ export default function Home() {
 	}, []);
 
 	return (
-		<body className="bg-mobile-gradient xl:bg-overall-gradient">
+		<body className="bg-overall-gradient">
 			<main className="flex min-h-screen flex-col items-center justify-between">
 				<header
-					className={`fixed top-0 z-50 flex h-32 w-full items-center justify-between bg-black/0 px-12 pt-8 transition-all duration-500 xl:justify-center xl:px-32 ${
+					className={`fixed top-0 z-50 flex h-32 w-full items-center justify-between bg-black/0 px-8 pt-8 transition-all duration-500 xl:justify-center xl:px-32 ${
 						isScrolled ? "backdrop-blur-md" : ""
 					} ${showHeader ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"}`}
 				>
@@ -248,12 +251,12 @@ export default function Home() {
 						<img alt="open menu button" src="/src/assets/Logos/menu.svg" />
 					</button>
 					{isMenuOpen && (
-						<div className="bg-mobile-gradient fixed left-0 top-0 z-40 h-screen w-full bg-black bg-cover">
+						<div className="bg-mobile-gradient fixed left-0 top-0 z-40 h-screen w-full">
 							<div className="flex h-32 w-full items-center justify-between px-12">
 								<div className="flex flex-1 items-center justify-start">
 									<img
-										className="h-16 w-24"
-										src="/src/assets/Logos/VEU_logo_transparent.png"
+										className="h-16 w-48"
+										src="/src/assets/Logos/EnterverseWhiteTextBlackBackground.png"
 									/>
 								</div>
 								<div className="flex flex-1 items-center justify-end">
@@ -300,7 +303,7 @@ export default function Home() {
 					)}
 				</header>
 				<section
-					className="relative flex min-h-screen w-full flex-col items-center gap-16 space-x-0 bg-section1-gradient-darkened bg-cover px-12 md:px-32"
+					className="xl::px-32 relative flex min-h-screen w-full flex-col items-center gap-16 space-x-0 bg-section1-gradient-darkened bg-cover px-8 lg:px-16"
 					id="home"
 				>
 					<video
@@ -383,7 +386,7 @@ export default function Home() {
 				</section>
 
 				<section
-					className="flex min-h-screen w-full flex-col items-start justify-center bg-section2-gradient bg-cover p-12 xl:p-32"
+					className="flex min-h-screen w-full flex-col items-start justify-center bg-section2-gradient bg-cover p-8 xl:p-32"
 					id="Enterlink"
 				>
 					<div className="mt-12 flex w-full flex-col items-center justify-center xl:mt-0 xl:flex-row">
@@ -474,11 +477,11 @@ export default function Home() {
 				</section>
 
 				<section
-					className="flex w-full flex-col items-start justify-center gap-16 bg-section3-gradient p-12 xl:p-32"
+					className="flex w-full flex-col items-start justify-center gap-16 bg-section3-gradient xl:p-32"
 					id="about"
 				>
 					<div className="flex w-full flex-col items-start justify-center gap-16 xl:gap-32">
-						<div className="flex flex-col gap-8 xl:w-1/2">
+						<div className="flex flex-col gap-8 p-8 xl:w-1/2 ">
 							<h2 className="mb-6 mt-12 font-dm-sans text-5xl font-bold leading-tight text-white xl:mt-0 xl:text-6xl xl:leading-loose">
 								We&apos;re helping you build your digital community
 							</h2>
@@ -489,7 +492,7 @@ export default function Home() {
 								Virtual Reality easily accessible to everyone.
 							</p>
 						</div>
-						<div className="flex flex-col justify-center gap-8 pb-16 xl:pb-32">
+						<div className="flex flex-col justify-center gap-8 pb-16 pt-12 xl:pb-32">
 							<ErrorBoundary>
 								<Carousel className="relative h-64 xl:h-[32rem]">
 									<CarouselBackButton className="absolute left-0 top-0 z-20 h-full w-14 bg-gradient-to-r from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
@@ -515,8 +518,8 @@ export default function Home() {
 								</Carousel>
 							</ErrorBoundary>
 						</div>
-						<div className="flex shrink flex-col flex-wrap gap-16">
-							<div className="flex size-full flex-col gap-8 xl:w-2/3">
+						<div className="flex  w-full  flex-col items-start justify-center gap-12">
+							<div className="flex size-full flex-col gap-8 px-8 xl:w-2/3">
 								<h1 className="mb-2 flex font-dm-sans text-5xl font-bold leading-tight text-white xl:text-6xl">
 									Meet the team
 								</h1>
@@ -527,17 +530,17 @@ export default function Home() {
 									communities and creators.
 								</p>
 							</div>
-							<h1 className="mt-16 font-dm-sans text-3xl font-bold text-white xl:text-4xl">
+							<h1 className="mt-4 px-8 font-dm-sans text-4xl font-bold text-white xl:text-4xl ">
 								Founders
 							</h1>
-							<Carousel className="relative flex h-[38rem] gap-12 xl:mb-16 xl:hidden">
+							<Carousel className="relative flex h-[38rem] w-full gap-12 p-2 xl:mb-16 xl:hidden">
 								<CarouselBackButton className="absolute left-0 top-0 z-20 h-full w-14 bg-gradient-to-r from-neutral-950 to-transparent opacity-0 transition-opacity hover:opacity-100">
 									{"<"}
 								</CarouselBackButton>
 								<CarouselItems className="relative z-10 gap-12 duration-500">
 									{founderTeamImages.map((member, index) => (
 										<CarouselItem
-											className="flex h-[44rem] w-64 flex-col items-start justify-start gap-8 rounded-lg"
+											className="flex h-[38rem] w-64 flex-col items-start justify-start gap-8 rounded-lg"
 											key={index}
 										>
 											<img
@@ -557,7 +560,7 @@ export default function Home() {
 										</CarouselItem>
 									))}
 								</CarouselItems>
-								<CarouselNextButton className="sticky right-0 z-20 h-full w-14  bg-gradient-to-l from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
+								<CarouselNextButton className="absolute right-0 top-0 z-20 h-full w-14 bg-gradient-to-r from-neutral-950 to-transparent opacity-0 transition-opacity hover:opacity-100">
 									{">"}
 								</CarouselNextButton>
 							</Carousel>
@@ -620,10 +623,10 @@ export default function Home() {
 									</p>
 								</div>
 							</div>
-							<h1 className="mt-16 font-dm-sans text-4xl font-bold text-white">
+							<h1 className="mt-12 px-8 font-dm-sans text-4xl font-bold text-white">
 								Core Team
 							</h1>
-							<Carousel className="relative h-[22rem] xl:mb-16">
+							<Carousel className="relative m-2 h-[22rem] xl:mb-16">
 								<CarouselBackButton className="absolute left-0 top-0 z-20 h-[22rem] w-14 bg-gradient-to-r from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
 									{"<"}
 								</CarouselBackButton>
@@ -638,10 +641,12 @@ export default function Home() {
 												className="size-64 rounded-lg"
 												src={member.url}
 											/>
-											<p className="font-dm-sans text-2xl text-white">
+											<p className="font-dm-sans text-2xl font-bold leading-9 text-white">
 												{member.name}
 											</p>
-											<p className="font-geist text-white">{member.position}</p>
+											<p className="font-dm-sans text-xl text-white">
+												{member.position}
+											</p>
 										</CarouselItem>
 									))}
 								</CarouselItems>
@@ -650,7 +655,7 @@ export default function Home() {
 								</CarouselNextButton>
 							</Carousel>
 
-							<h1 className="mt-16 font-dm-sans text-4xl font-bold text-white">
+							<h1 className="mt-16 px-8 font-dm-sans text-4xl font-bold text-white">
 								Associate developers and creators
 							</h1>
 							<Carousel className="relative mb-8 h-60 xl:mb-32">
@@ -683,7 +688,7 @@ export default function Home() {
 				</section>
 
 				<section
-					className="flex w-full flex-col items-start justify-center  bg-footer-gradient px-12 pt-8 xl:px-32 xl:pt-32"
+					className="flex w-full flex-col items-start justify-center  bg-footer-gradient px-8 pt-8 xl:px-32 xl:pt-32"
 					id="contact"
 				>
 					<h2 className="my-16 w-2/3 font-dm-sans text-5xl font-bold leading-tight text-white xl:my-0 xl:text-6xl">
