@@ -177,10 +177,7 @@ const founderTeamImages: Array<ImageInfo3> = [
 ];
 
 // vite image algorithm from logan
-// 67% top section (when you zoom out)
 // sidebar color
-// Foudners carousel debugging. Clash with carousel vs not.
-// some text near bottom not wrapping on mobile size.
 // change the stretch on gopal and michael reed
 // useeffect to close menu on scroll
 // for header turn the menu to an x and leave Enterverse the same
@@ -492,7 +489,7 @@ export default function Home() {
 								Virtual Reality easily accessible to everyone.
 							</p>
 						</div>
-						<div className="flex flex-col justify-center gap-8 pb-16 pt-12 xl:pb-32">
+						<div className="flex flex-col justify-center gap-8 pb-16 xl:pb-32">
 							<ErrorBoundary>
 								<Carousel className="relative h-64 xl:h-[32rem]">
 									<CarouselBackButton className="absolute left-0 top-0 z-20 h-full w-14 bg-gradient-to-r from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
@@ -565,7 +562,7 @@ export default function Home() {
 								</CarouselNextButton>
 							</Carousel>
 
-							<div className="hidden flex-row gap-4 pb-16 xl:flex">
+							<div className="hidden flex-row gap-4 pb-16 xl:flex xl:px-32">
 								<div className="flex w-1/3 flex-col gap-6">
 									<img
 										className="rounded-xl"
@@ -638,7 +635,7 @@ export default function Home() {
 										>
 											<img
 												alt={member.name}
-												className="size-64 rounded-lg"
+												className="size-64 rounded-lg object-cover"
 												src={member.url}
 											/>
 											<p className="font-dm-sans text-2xl font-bold leading-9 text-white">
@@ -670,7 +667,7 @@ export default function Home() {
 										>
 											<img
 												alt={member.name}
-												className="size-48 rounded-lg object-cover"
+												className="size-48 rounded-lg"
 												src={member.url}
 											/>
 											<p className="font-dm-sans text-2xl font-bold text-white">
