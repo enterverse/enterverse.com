@@ -249,15 +249,15 @@ export default function Home() {
 						<img alt="open menu button" src="/src/assets/Logos/menu.svg" />
 					</button>
 					{isMenuOpen && (
-						<div className="bg-mobile-gradient fixed left-0 top-0 z-40 h-screen w-full">
-							<div className="flex h-32 w-full items-center justify-between px-12">
-								<div className="flex flex-1 items-center justify-start">
+						<div className="bg-mobile-gradient fixed left-0 top-0 z-40 h-screen w-full bg-black">
+							<div className="flex h-32 w-full items-center justify-between pr-20 pt-8">
+								<div className="absolute left-1/2 mt-8 -translate-x-1/2 gap-6">
 									<img
-										className="h-16 w-48"
+										className="h-16 w-60"
 										src="/src/assets/Logos/EnterverseWhiteTextBlackBackground.png"
 									/>
 								</div>
-								<div className="flex flex-1 items-center justify-end">
+								<div className="mt-6 flex flex-1 items-center justify-end">
 									<button
 										className="right-20 py-4 pl-4"
 										type="button"
@@ -265,7 +265,7 @@ export default function Home() {
 									>
 										<img
 											alt="close menu button"
-											className="size-5"
+											className="size-8"
 											src="src/assets/Logos/close.svg"
 										/>
 									</button>
