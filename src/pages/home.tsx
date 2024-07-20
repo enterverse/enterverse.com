@@ -177,6 +177,7 @@ const founderTeamImages: Array<ImageInfo3> = [
 ];
 
 // vite image algorithm from logan
+// wait for fixed Michael images
 
 export default function Home() {
 	const [isScrolled, setIsScrolled] = useState(false);
@@ -529,7 +530,7 @@ export default function Home() {
 							<h1 className="mt-12 px-8 font-dm-sans text-4xl font-bold text-white  xl:px-32 xl:text-4xl ">
 								Founders
 							</h1>
-							<Carousel className="relative flex h-[38rem] w-full gap-12 xl:mb-16 xl:hidden">
+							<Carousel className="relative flex h-[38rem] w-full gap-12 lg:hidden xl:mb-16">
 								<CarouselBackButton className="absolute left-0 top-0 z-20 h-full w-14 bg-gradient-to-r from-neutral-950 to-transparent opacity-0 transition-opacity hover:opacity-100">
 									{"<"}
 								</CarouselBackButton>
@@ -561,7 +562,7 @@ export default function Home() {
 								</CarouselNextButton>
 							</Carousel>
 
-							<div className="hidden flex-row gap-4 pb-16 xl:flex xl:px-32">
+							<div className="hidden flex-row gap-4 pb-16 lg:flex lg:px-8 xl:px-32">
 								<div className="flex w-1/3 flex-col gap-6">
 									<img
 										className="rounded-xl"
