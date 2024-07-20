@@ -303,7 +303,7 @@ export default function Home() {
 					)}
 				</header>
 				<section
-					className="xl::px-32 relative flex min-h-screen w-full flex-col items-center gap-16 space-x-0 bg-section1-gradient-darkened bg-cover px-8 lg:px-16"
+					className="relative flex min-h-screen w-full flex-col items-center gap-16 space-x-0 bg-section1-gradient-darkened bg-cover px-8 lg:px-16 xl:px-32"
 					id="home"
 				>
 					<video
@@ -481,8 +481,8 @@ export default function Home() {
 					id="about"
 				>
 					<div className="flex w-full flex-col items-start justify-center gap-16 xl:gap-32">
-						<div className="flex flex-col gap-8 p-8 xl:w-1/2 ">
-							<h2 className="mb-6 mt-12 font-dm-sans text-5xl font-bold leading-tight text-white xl:mt-0 xl:text-6xl xl:leading-loose">
+						<div className="flex flex-col gap-8 p-8 xl:w-1/2 xl:p-0 ">
+							<h2 className="mb-6 mt-12 font-dm-sans text-5xl font-bold leading-tight text-white xl:mt-0 xl:text-6xl xl:leading-snug">
 								We&apos;re helping you build your digital community
 							</h2>
 							<p className="font-geist text-lg leading-9 text-white xl:text-xl">
@@ -519,7 +519,7 @@ export default function Home() {
 							</ErrorBoundary>
 						</div>
 						<div className="flex  w-full  flex-col items-start justify-center gap-12">
-							<div className="flex size-full flex-col gap-8 px-8 xl:w-2/3">
+							<div className="flex size-full flex-col gap-8 px-8 xl:w-2/3 xl:px-0">
 								<h1 className="mb-2 flex font-dm-sans text-5xl font-bold leading-tight text-white xl:text-6xl">
 									Meet the team
 								</h1>
@@ -530,7 +530,7 @@ export default function Home() {
 									communities and creators.
 								</p>
 							</div>
-							<h1 className="mt-4 px-8 font-dm-sans text-4xl font-bold text-white xl:text-4xl ">
+							<h1 className="mt-12 px-8 font-dm-sans text-4xl font-bold text-white xl:px-0 xl:text-4xl ">
 								Founders
 							</h1>
 							<Carousel className="relative flex h-[38rem] w-full gap-12 p-2 xl:mb-16 xl:hidden">
@@ -623,7 +623,7 @@ export default function Home() {
 									</p>
 								</div>
 							</div>
-							<h1 className="mt-12 px-8 font-dm-sans text-4xl font-bold text-white">
+							<h1 className="mt-12 px-8 font-dm-sans text-4xl font-bold text-white xl:px-0">
 								Core Team
 							</h1>
 							<Carousel className="relative m-2 h-[22rem] xl:mb-16">
@@ -655,7 +655,7 @@ export default function Home() {
 								</CarouselNextButton>
 							</Carousel>
 
-							<h1 className="mt-16 px-8 font-dm-sans text-4xl font-bold text-white">
+							<h1 className="mt-16 px-8 font-dm-sans text-4xl font-bold text-white xl:px-0">
 								Associate developers and creators
 							</h1>
 							<Carousel className="relative mb-24 h-60 xl:mb-32">
