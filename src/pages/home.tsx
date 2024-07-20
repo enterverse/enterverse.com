@@ -303,7 +303,7 @@ export default function Home() {
 					)}
 				</header>
 				<section
-					className="relative flex min-h-screen w-full flex-col items-center gap-16 space-x-0 bg-section1-gradient-darkened bg-cover px-8 lg:px-16 xl:px-32"
+					className="relative flex min-h-screen w-full flex-col items-center justify-center gap-16 space-x-0 bg-section1-gradient-darkened bg-cover px-8 lg:px-16 xl:px-32"
 					id="home"
 				>
 					<video
@@ -314,7 +314,7 @@ export default function Home() {
 						poster="/src/assets/concept/KoiFish.jpg"
 						src="/src/assets/concept/EnterverseTrailer1080P.mp4"
 					/>
-					<div className="relative flex flex-col justify-center gap-16 pt-32 md:pt-56 xl:w-full">
+					<div className="relative flex flex-col justify-center gap-16 pt-32 xl:w-full xl:pt-24">
 						<div className="flex w-full flex-col gap-4 xl:w-2/3">
 							<h1 className="mb-4 w-full text-balance font-dm-sans text-5xl font-bold leading-tight text-white drop-shadow-section1 xl:text-7xl">
 								Find Meetups and Events in all your Virtual Realities
