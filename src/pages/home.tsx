@@ -358,7 +358,7 @@ export default function Home() {
 						</div>
 					</div>
 				</section>
-				<section className="flex w-full flex-col items-center justify-center gap-16 p-8 xl:min-h-screen xl:p-32">
+				<section className="flex w-full flex-col items-center justify-center gap-16 xl:min-h-screen">
 					<ErrorBoundary>
 						<Carousel className="relative h-64 w-full xl:h-[48rem]">
 							<CarouselBackButton className="absolute left-0 top-0 z-20 h-full w-14 bg-gradient-to-r from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
@@ -477,11 +477,11 @@ export default function Home() {
 				</section>
 
 				<section
-					className="flex w-full flex-col items-start justify-center gap-16 bg-section3-gradient xl:p-32"
+					className="flex w-full flex-col items-start justify-center gap-16 bg-section3-gradient"
 					id="about"
 				>
 					<div className="flex w-full flex-col items-start justify-center gap-16 xl:gap-32">
-						<div className="flex flex-col gap-8 p-8 xl:w-1/2 xl:p-0 ">
+						<div className="flex flex-col gap-8 p-8 xl:w-1/2 xl:p-32">
 							<h2 className="mb-6 mt-12 font-dm-sans text-5xl font-bold leading-tight text-white xl:mt-0 xl:text-6xl xl:leading-snug">
 								We&apos;re helping you build your digital community
 							</h2>
@@ -519,7 +519,7 @@ export default function Home() {
 							</ErrorBoundary>
 						</div>
 						<div className="flex  w-full  flex-col items-start justify-center gap-12">
-							<div className="flex size-full flex-col gap-8 px-8 xl:w-2/3 xl:px-0">
+							<div className="flex size-full flex-col gap-8 px-8 xl:w-2/3  xl:px-32">
 								<h1 className="mb-2 flex font-dm-sans text-5xl font-bold leading-tight text-white xl:text-6xl">
 									Meet the team
 								</h1>
@@ -530,10 +530,10 @@ export default function Home() {
 									communities and creators.
 								</p>
 							</div>
-							<h1 className="mt-12 px-8 font-dm-sans text-4xl font-bold text-white xl:px-0 xl:text-4xl ">
+							<h1 className="mt-12 px-8 font-dm-sans text-4xl font-bold text-white  xl:px-32 xl:text-4xl ">
 								Founders
 							</h1>
-							<Carousel className="relative flex h-[38rem] w-full gap-12 p-2 xl:mb-16 xl:hidden">
+							<Carousel className="relative flex h-[38rem] w-full gap-12 xl:mb-16 xl:hidden">
 								<CarouselBackButton className="absolute left-0 top-0 z-20 h-full w-14 bg-gradient-to-r from-neutral-950 to-transparent opacity-0 transition-opacity hover:opacity-100">
 									{"<"}
 								</CarouselBackButton>
@@ -623,10 +623,10 @@ export default function Home() {
 									</p>
 								</div>
 							</div>
-							<h1 className="mt-12 px-8 font-dm-sans text-4xl font-bold text-white xl:px-0">
+							<h1 className="mt-12 px-8 font-dm-sans text-4xl font-bold text-white  xl:px-32">
 								Core Team
 							</h1>
-							<Carousel className="relative m-2 h-[22rem] xl:mb-16">
+							<Carousel className="relative  h-[22rem] xl:mb-16">
 								<CarouselBackButton className="absolute left-0 top-0 z-20 h-[22rem] w-14 bg-gradient-to-r from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
 									{"<"}
 								</CarouselBackButton>
@@ -655,7 +655,7 @@ export default function Home() {
 								</CarouselNextButton>
 							</Carousel>
 
-							<h1 className="mt-16 px-8 font-dm-sans text-4xl font-bold text-white xl:px-0">
+							<h1 className="mt-16 px-8 font-dm-sans text-4xl font-bold text-white  xl:px-32">
 								Associate developers and creators
 							</h1>
 							<Carousel className="relative mb-24 h-60 xl:mb-32">
