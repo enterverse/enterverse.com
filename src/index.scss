@@ -34,6 +34,7 @@
   * {
     min-width: 0;
     @apply scrollbar-thin scrollbar-track-transparent scrollbar-thumb-neutral-800 scrollbar-corner-transparent;
+    scroll-behavior: smooth;
   }
 }
 

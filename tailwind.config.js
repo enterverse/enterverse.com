@@ -20,17 +20,15 @@ export default {
 		extend: {
 			
 			backgroundImage: {
-				'custom-image': "url('/portal.png')",
 				'overall-gradient': "linear-gradient(148deg, rgba(13, 13, 13, 0.30) 0%, rgba(41, 127, 139, 0.30) 100%), linear-gradient(225deg, rgba(13, 13, 13, 0.30) 0%, rgba(239, 62, 114, 0.24) 100%);",
 				'section1-gradient': "radial-gradient(41.31% 89.17% at 50% 50%, rgba(0, 0, 0, 0.00) 0%, #000 100%), linear-gradient(180deg, #FFF 40%, rgba(0, 0, 0, 0.00) 100%);",
-				'section1-gradient-w-image': "url('/concept/portal.png'), radial-gradient(41.31% 89.17% at 50% 50%, rgba(0, 0, 0, 0.00) 0%, #000 100%), linear-gradient(180deg, #FFF 40%, rgba(0, 0, 0, 0.00) 100%);",
 				'section2-gradient': "radial-gradient(83.58% 89.17% at 50% 50%, rgba(0, 0, 0, 0.00) 0%, #000 100%);",
 				'section3-gradient': "linear-gradient(148deg, rgba(41, 127, 139, 0.30) 0%, rgba(13, 13, 13, 0.30) 100%), linear-gradient(340deg, rgba(239, 62, 114, 0.24) 23.37%, rgba(13, 13, 13, 0.30) 76.63%), radial-gradient(69.43% 69.43% at 31.99% 26.99%, rgba(99, 43, 137, 0.40) 0%, rgba(13, 13, 13, 0.50) 100%);",
 				'footer-gradient': "radial-gradient(53.45% 89.17% at 50% 50%, rgba(0, 0, 0, 0.00) 0%, #000 100%);",
 				'gradient-overlay': "radial-gradient(circle at center, #FAFAFA 0%, #000000 100%)",
 				'about-section': "linear-gradient(to bottom, #297F8B 0%, #0D0D0D 30%), radial-gradient(at center, #632B89 0%, transparent 50%, #0D0D0D 80%), linear-gradient(to bottom, #EF3E72 0%, #0D0D0D 30%)",
 				'section1-gradient-darkened': "radial-gradient(41.31% 89.17% at 50% 50%, rgba(0, 0, 0, 0.30) 0%, #000 100%), linear-gradient(180deg, #FFF 10%, rgba(0, 0, 0, 0.00) 100%);",
-				'mobile-gradient': "radial-gradient(170.67% 69.43% at 31.99% 26.99%, rgba(99, 43, 137, 0.32) 0%, rgba(13, 13, 13, 0.40) 100%);",
+				'mobile-gradient': "radial-gradient(170.67% 69.43% at 31.99% 26.99%, rgba(99, 43, 137, 0.32) 0%, rgba(13, 13, 13, 0.40) 100%), linear-gradient(rgb(11, 11, 11), rgb(11, 11, 11))",
 			},
 			backgroundColor: {
 				'base': '#1A1A1A',

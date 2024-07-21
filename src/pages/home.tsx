@@ -1,4 +1,12 @@
 import { useState, useEffect, useRef } from "react";
+import {
+	AlignRight,
+	ArrowRight,
+	ChevronLeft,
+	ChevronRight,
+	X
+} from "lucide-react";
+import { cn } from "@udecode/cn";
 
 import {
 	Carousel,
@@ -6,177 +14,27 @@ import {
 	CarouselBackButton,
 	CarouselNextButton,
 	CarouselItem
-} from "../carousel.tsx";
-import ErrorBoundary from "../error-boundary";
+} from "../components/carousel.tsx";
+import {
+	AssociatedImages,
+	ExecutiveImages,
+	PromoImages,
+	TeamImages,
+	VRChatImages
+} from "../constants.ts";
+import EnterverseLogo from "../assets/logos/enterverse-white-logo.webp";
+import VideoThumbnail from "../assets/concept/koi-fish.webp";
+import ConceptVideo from "../assets/concept/enterverse-trailer.mp4";
+import Discord from "../icons/discord.tsx";
+import EnterlinkLogo from "../assets/logos/enterlink-logo.webp";
+import VeaLogoThingy from "../assets/concept/vea-butterfly.webp";
+import VeuLogoTransparent from "../assets/logos/veu-logo-transparent.webp";
+import Twitter from "../icons/twitter.tsx";
+import Instagram from "../icons/instagram.tsx";
+import Facebook from "../icons/facebook.tsx";
+import LinkedIn from "../icons/linkedin.tsx";
+import Medium from "../icons/medium.tsx";
 
-interface ImageInfo {
-	url: string;
-	name: string;
-	position: string;
-}
-interface ImageInfo2 {
-	url: string;
-	name: string;
-}
-interface ImageInfo3 {
-	url: string;
-	name: string;
-	position: string;
-	description: string;
-}
-
-const promoImages = [
-	"/src/assets/concept/Arch.jpg",
-	"/src/assets/concept/DiscoGreen.jpg",
-	"/src/assets/concept/KoiFish.jpg",
-	"/src/assets/concept/VEU_ENV_Full_Island.jpg",
-	"/src/assets/concept/PavilionGuyLookingUp.jpg",
-	"/src/assets/concept/LookingUpDome.jpg",
-	"/src/assets/concept/DomeDiscoveryFish.jpg",
-	"/src/assets/concept/LightDJ.jpeg",
-	"/src/assets/concept/GreenJacketGuy.jpg"
-];
-const vrchatImages = [
-	"/src/assets/vrchat/EpicSoloPhoto.png",
-	"/src/assets/vrchat/SoloIntoTheFuture.webp",
-	"/src/assets/vrchat/6PersonWave.webp",
-	"/src/assets/vrchat/PraisetheSun.webp",
-	"/src/assets/vrchat/Bye.jpg",
-	"/src/assets/vrchat/CourtAndManyCats.png",
-	"/src/assets/vrchat/GroupPhoto.png",
-	"/src/assets/vrchat/PianoSolo.png",
-	"/src/assets/vrchat/BatPerson.png",
-	"/src/assets/vrchat/Singing.png",
-	"/src/assets/vrchat/VRchatEvent.png",
-	"/src/assets/vrchat/heheFaceCover.png"
-];
-const coreTeamImages: Array<ImageInfo> = [
-	{
-		url: "/src/assets/core-team/MHeilemann.jpg",
-		name: "Michael Heilemann",
-		position: "CTO"
-	},
-	{
-		url: "/src/assets/core-team/WilliamGarcia.jpg",
-		name: "William Garcia",
-		position: "COO"
-	},
-	{
-		url: "/src/assets/core-team/MDepiro.jpg",
-		name: "Michael Depiro",
-		position: "CMO"
-	},
-	{
-		url: "/src/assets/core-team/LoganD.png",
-		name: "Logan Desseyn",
-		position: "Principal Software Developer"
-	},
-	{
-		url: "/src/assets/core-team/Bryce.jpg",
-		name: "Bryce Dichristofalo",
-		position: "XR Director"
-	},
-	{
-		url: "/src/assets/core-team/EvaPetitot.png",
-		name: "Eva Petitot",
-		position: "Lead Unity Environment Artist"
-	},
-	{
-		url: "/src/assets/core-team/MReed.jpg",
-		name: "Michael Reed",
-		position: "Principal 3D Modeler"
-	},
-	{
-		url: "/src/assets/core-team/NeilBlakemore.jpg",
-		name: "Neil Blakemore",
-		position: "Ethics Director"
-	},
-	{
-		url: "/src/assets/core-team/JonahKeel.jpg",
-		name: "Jonah Keel",
-		position: "Publicity"
-	},
-	{
-		url: "/src/assets/core-team/Gopal.jpg",
-		name: "Gopal Metro",
-		position: "R&D Manager"
-	},
-	{
-		url: "/src/assets/core-team/GC.jpg",
-		name: "Giorgi Chitidze",
-		position: "Lead Unreal Environment Artist"
-	},
-	{
-		url: "/src/assets/core-team/GK.jpg",
-		name: "Giorgi Koridze",
-		position: "Lead Unreal Technical Artist"
-	}
-];
-
-const associateTeamImages: Array<ImageInfo2> = [
-	{
-		url: "/src/assets/associate/josephnapoli_panda.png",
-		name: "Joseph Napoli"
-	},
-	{
-		url: "/src/assets/associate/adam_jones.jpg",
-		name: "Adam Jones"
-	},
-	{
-		url: "/src/assets/associate/TaiLe.jpg",
-		name: "Tai Le"
-	},
-	{
-		url: "/src/assets/associate/OliverB.jpg",
-		name: "Oliver Beck"
-	},
-	{
-		url: "/src/assets/associate/ToddCasey.jpg",
-		name: "Todd Casey"
-	},
-	{
-		url: "/src/assets/associate/rethsogan.png",
-		name: "Reth Sogen"
-	},
-	{
-		url: "/src/assets/associate/virtualilly.png",
-		name: "Virtualily"
-	},
-	{
-		url: "/src/assets/associate/shopow.png",
-		name: "Shopow"
-	},
-	{
-		url: "/src/assets/associate/HashStudios.png",
-		name: "Hash Studios"
-	}
-];
-const founderTeamImages: Array<ImageInfo3> = [
-	{
-		url: "/src/assets/profiles/matthew_profile.png",
-		name: "Matthew Brewbaker",
-		position: "Co-Founder, CEO",
-		description:
-			"Matthew Brewbaker melds his film production savvy with a mastery of gaming and software workflows, steering the company towards groundbreaking VR experiences."
-	},
-	{
-		url: "/src/assets/profiles/raphael_profile.jpg",
-		name: "Raphael Arkera",
-		position: "Co-Founder, CCO",
-		description:
-			"Raphael Arkera leverages his creative direction prowess, honed with giants like Marvel, Netflix, and Imaginarium Studios, to infuse VEU Inc. with innovative VR event concepts."
-	},
-
-	{
-		url: "/src/assets/profiles/nuno_profile.jpg",
-		name: "Nuno Rivotti",
-		position: "Co-Founder, CPO",
-		description:
-			"Nuno Rivotti blends insights from film, games, and blockchain, enriching VEU's product strategy with experience from founding the Trojan Horse Was a Unicorn convention."
-	}
-];
-
-// vite image algorithm from logan
 // wait for fixed Michael images
 
 export default function Home() {
@@ -217,18 +75,15 @@ export default function Home() {
 	}, []);
 
 	return (
-		<body className="bg-overall-gradient">
-			<main className="flex min-h-screen flex-col items-center justify-between">
+		<main className="bg-overall-gradient">
+			<div className="flex min-h-screen flex-col items-center justify-between">
 				<header
 					className={`fixed top-0 z-50 flex h-32 w-full items-center justify-between bg-black/0 px-8 pt-8 transition-all duration-500 xl:justify-center xl:px-32 ${
 						isScrolled ? "backdrop-blur-md" : ""
 					} ${showHeader ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"}`}
 				>
 					<div className="absolute left-1/2 -translate-x-1/2 gap-6">
-						<img
-							className="h-16 w-60"
-							src="/src/assets/Logos/EnterverseWhiteTextBlackBackground.png"
-						/>
+						<img className="h-16 w-60" src={EnterverseLogo} />
 					</div>
 
 					<nav className="ml-auto hidden h-24 w-96 flex-row items-center justify-between xl:flex">
@@ -245,59 +100,55 @@ export default function Home() {
 						type="button"
 						onClick={() => setIsMenuOpen(!isMenuOpen)}
 					>
-						<img alt="open menu button" src="/src/assets/Logos/menu.svg" />
+						<AlignRight className="size-8" />
 					</button>
-					{isMenuOpen && (
-						<div className="fixed left-0 top-0 z-50 h-screen w-full bg-base bg-mobile-gradient">
-							<div className="flex h-32 w-full items-center justify-between pr-20 pt-8">
-								<div className="absolute left-1/2 -translate-x-1/2 gap-6">
-									<img
-										className="h-16 w-60"
-										src="/src/assets/Logos/EnterverseWhiteTextBlackBackground.png"
-									/>
-								</div>
-								<div className="mt-6 flex flex-1 items-center justify-end">
-									<button
-										className="right-20 py-4 pl-4"
-										type="button"
-										onClick={() => setIsMenuOpen(false)}
-									>
-										<img
-											alt="close menu button"
-											className="size-8"
-											src="src/assets/Logos/close.svg"
-										/>
-									</button>
-								</div>
+					<div
+						className={cn(
+							"fixed left-0 top-0 z-50 h-screen w-full duration-500 bg-mobile-gradient -translate-y-full transition-transform",
+							isMenuOpen && "translate-y-0"
+						)}
+					>
+						<div className="flex h-32 w-full items-center justify-between pr-20 pt-8">
+							<div className="absolute left-1/2 -translate-x-1/2 gap-6">
+								<img className="h-16 w-60" src={EnterverseLogo} />
 							</div>
-							<nav className="absolute right-0 top-1/2 mr-20 flex -translate-y-1/2 flex-col items-end">
-								<a
-									className="mb-8 py-2 pl-2 font-dm-sans text-3xl font-semibold"
-									href="#home"
+							<div className="mt-6 flex flex-1 items-center justify-end">
+								<button
+									className="right-20 py-4 pl-4"
+									type="button"
+									onClick={() => setIsMenuOpen(false)}
 								>
-									Home
-								</a>
-								<a
-									className="mb-8 py-2 pl-2 font-dm-sans text-3xl font-semibold"
-									href="#Enterlink"
-								>
-									Enterlink
-								</a>
-								<a
-									className="mb-8 py-2 pl-2 font-dm-sans text-3xl font-semibold"
-									href="#about"
-								>
-									About
-								</a>
-								<a
-									className="mb-8 py-2 pl-2 font-dm-sans text-3xl font-semibold"
-									href="#contact"
-								>
-									Contact
-								</a>
-							</nav>
+									<X className="size-8" />
+								</button>
+							</div>
 						</div>
-					)}
+						<nav className="absolute right-0 top-1/2 mr-20 flex -translate-y-1/2 flex-col items-end">
+							<a
+								className="mb-8 py-2 pl-2 font-dm-sans text-3xl font-semibold"
+								href="#home"
+							>
+								Home
+							</a>
+							<a
+								className="mb-8 py-2 pl-2 font-dm-sans text-3xl font-semibold"
+								href="#Enterlink"
+							>
+								Enterlink
+							</a>
+							<a
+								className="mb-8 py-2 pl-2 font-dm-sans text-3xl font-semibold"
+								href="#about"
+							>
+								About
+							</a>
+							<a
+								className="mb-8 py-2 pl-2 font-dm-sans text-3xl font-semibold"
+								href="#contact"
+							>
+								Contact
+							</a>
+						</nav>
+					</div>
 				</header>
 				<section
 					className="relative flex min-h-screen w-full flex-col items-center justify-center gap-16 space-x-0 bg-section1-gradient-darkened bg-cover px-8 lg:px-16 xl:px-32"
@@ -305,11 +156,14 @@ export default function Home() {
 				>
 					<video
 						autoPlay
+						disablePictureInPicture
+						disableRemotePlayback
 						loop
 						muted
 						className="absolute size-full object-cover mix-blend-overlay"
-						poster="/src/assets/concept/KoiFish.jpg"
-						src="/src/assets/concept/EnterverseTrailer1080P.mp4"
+						controls={false}
+						poster={VideoThumbnail}
+						src={ConceptVideo}
 					/>
 					<div className="relative flex flex-col justify-center gap-16 pt-32 xl:w-full xl:pt-24">
 						<div className="flex w-full flex-col gap-4 xl:w-2/3">
@@ -343,7 +197,7 @@ export default function Home() {
 									}}
 								>
 									<p className="font-semibold">Join our Discord</p>
-									<img className="size-8" src="/src/assets/Logos/discord.svg" />
+									<Discord className="size-8" />
 								</button>
 								<button
 									className="h-16 w-full rounded-xl border-2 border-white px-4 py-2 font-dm-sans text-white xl:w-64"
@@ -356,30 +210,28 @@ export default function Home() {
 					</div>
 				</section>
 				<section className="flex w-full flex-col items-center justify-center gap-16 xl:min-h-screen">
-					<ErrorBoundary>
-						<Carousel className="relative h-64 w-full xl:h-[48rem]">
-							<CarouselBackButton className="absolute left-0 top-0 z-20 h-full w-14 bg-gradient-to-r from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
-								{"<"}
-							</CarouselBackButton>
-							<CarouselItems className="relative z-10 flex gap-6 duration-500">
-								{promoImages.map((image, index) => (
-									<CarouselItem
-										className="flex aspect-video h-64 flex-col items-center justify-center rounded-lg bg-neutral-900 xl:h-[48rem]"
-										key={index}
-									>
-										<img
-											alt={`Promo ${index + 1}`}
-											className="size-full rounded-lg object-cover"
-											src={image}
-										/>
-									</CarouselItem>
-								))}
-							</CarouselItems>
-							<CarouselNextButton className="absolute right-0 top-0 z-20 h-full w-14 bg-gradient-to-l from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
-								{">"}
-							</CarouselNextButton>
-						</Carousel>
-					</ErrorBoundary>
+					<Carousel className="relative h-fit w-full bg-black xl:h-[48rem] xl:bg-transparent">
+						<CarouselBackButton className="absolute left-0 top-0 z-20 flex h-full w-20 flex-col items-center justify-center bg-gradient-to-r from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
+							<ChevronLeft className="size-8" />
+						</CarouselBackButton>
+						<CarouselItems className="relative z-10 flex gap-6 px-8 duration-500 xl:px-32">
+							{PromoImages.map((image, index) => (
+								<CarouselItem
+									className="flex aspect-video h-48 flex-col items-center justify-center rounded-lg bg-neutral-900 xl:h-[48rem]"
+									key={index}
+								>
+									<img
+										alt={`Promo ${index + 1}`}
+										className="size-full rounded-lg object-cover"
+										src={image.default}
+									/>
+								</CarouselItem>
+							))}
+						</CarouselItems>
+						<CarouselNextButton className="absolute right-0 top-0 z-20 flex h-full w-20 flex-col items-center justify-center bg-gradient-to-l from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
+							<ChevronRight className="size-8" />
+						</CarouselNextButton>
+					</Carousel>
 				</section>
 
 				<section
@@ -389,10 +241,7 @@ export default function Home() {
 					<div className="mt-12 flex w-full flex-col items-center justify-center xl:mt-0 xl:flex-row">
 						<div className="flex w-full flex-col items-start justify-center">
 							<div className="mb-14 flex h-24 flex-row items-center gap-8">
-								<img
-									className="size-20 xl:size-20"
-									src="/src/assets/Logos/enterlink logo.png"
-								/>
+								<img className="size-20 xl:size-20" src={EnterlinkLogo} />
 								<h1 className="font-geist text-5xl font-bold xl:text-6xl">
 									enterlink
 								</h1>
@@ -425,11 +274,7 @@ export default function Home() {
 											className="m-1 flex size-12 items-center justify-center rounded-full bg-pink text-white"
 											type="submit"
 										>
-											<img
-												alt="Submit"
-												className="size-6"
-												src="/src/assets/Logos/arrow-right.svg"
-											/>
+											<ArrowRight className="size-6" />
 										</button>
 									</form>
 								</div>
@@ -439,7 +284,7 @@ export default function Home() {
 							<img
 								alt="Vea Butterfly"
 								className="size-96"
-								src="/src/assets/concept/VEA_butterfly.png"
+								src={VeaLogoThingy}
 							/>
 						</div>
 					</div>
@@ -490,30 +335,28 @@ export default function Home() {
 							</p>
 						</div>
 						<div className="flex flex-col justify-center gap-8 pb-16 xl:pb-32">
-							<ErrorBoundary>
-								<Carousel className="relative h-64 xl:h-[32rem]">
-									<CarouselBackButton className="absolute left-0 top-0 z-20 h-full w-14 bg-gradient-to-r from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
-										{"<"}
-									</CarouselBackButton>
-									<CarouselItems className="relative z-10 gap-6 object-cover duration-500">
-										{vrchatImages.map((image, index) => (
-											<CarouselItem
-												className="flex h-64 flex-col items-center justify-center rounded-lg bg-neutral-900 xl:h-[32rem]"
-												key={index}
-											>
-												<img
-													alt={`Promo ${index + 1}`}
-													className="size-full rounded-lg object-cover"
-													src={image}
-												/>
-											</CarouselItem>
-										))}
-									</CarouselItems>
-									<CarouselNextButton className="absolute right-0 top-0 z-20 h-full w-14 bg-gradient-to-l from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
-										{">"}
-									</CarouselNextButton>
-								</Carousel>
-							</ErrorBoundary>
+							<Carousel className="relative h-fit xl:h-[32rem]">
+								<CarouselBackButton className="absolute left-0 top-0 z-20 flex h-full w-20 flex-col items-center justify-center bg-gradient-to-r from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
+									<ChevronLeft className="size-8" />
+								</CarouselBackButton>
+								<CarouselItems className="relative z-10 gap-6 object-cover px-8 duration-500 xl:px-32">
+									{VRChatImages.map((image, index) => (
+										<CarouselItem
+											className="flex h-48 flex-col items-center justify-center rounded-lg bg-neutral-900 xl:h-[32rem]"
+											key={index}
+										>
+											<img
+												alt={`Promo ${index + 1}`}
+												className="size-full rounded-lg object-cover"
+												src={image.default}
+											/>
+										</CarouselItem>
+									))}
+								</CarouselItems>
+								<CarouselNextButton className="absolute right-0 top-0 z-20 flex h-full w-20 flex-col items-center justify-center bg-gradient-to-l from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
+									<ChevronRight className="size-8" />
+								</CarouselNextButton>
+							</Carousel>
 						</div>
 						<div className="flex  w-full  flex-col items-start justify-center gap-12">
 							<div className="flex size-full flex-col gap-8 px-8 xl:w-2/3  xl:px-32">
@@ -530,20 +373,20 @@ export default function Home() {
 							<h1 className="mt-12 px-8 font-dm-sans text-4xl font-bold text-white  xl:px-32 xl:text-4xl ">
 								Founders
 							</h1>
-							<Carousel className="relative flex h-[38rem] w-full gap-12 lg:hidden xl:mb-16">
-								<CarouselBackButton className="absolute left-0 top-0 z-20 h-full w-14 bg-gradient-to-r from-neutral-950 to-transparent opacity-0 transition-opacity hover:opacity-100">
-									{"<"}
+							<Carousel className="relative flex h-fit w-full gap-12 xl:mb-16">
+								<CarouselBackButton className="absolute left-0 top-0 z-20 flex h-full w-20 flex-col items-center justify-center bg-gradient-to-r from-neutral-950 to-transparent opacity-0 transition-opacity hover:opacity-100">
+									<ChevronLeft className="size-8" />
 								</CarouselBackButton>
-								<CarouselItems className="relative z-10 gap-12 duration-500">
-									{founderTeamImages.map((member, index) => (
+								<CarouselItems className="relative z-10 gap-12 px-8 duration-500 xl:px-32">
+									{ExecutiveImages.map((member, index) => (
 										<CarouselItem
-											className="flex h-[38rem] w-64 flex-col items-start justify-start gap-8 rounded-lg"
+											className="flex h-fit w-64 flex-col items-start justify-start gap-8 rounded-lg"
 											key={index}
 										>
 											<img
 												alt={member.name}
 												className="size-64 rounded-lg"
-												src={member.url}
+												src={member.img.default}
 											/>
 											<p className="font-dm-sans text-4xl text-white">
 												{member.name}
@@ -557,110 +400,52 @@ export default function Home() {
 										</CarouselItem>
 									))}
 								</CarouselItems>
-								<CarouselNextButton className="absolute right-0 top-0 z-20 h-full w-14 bg-gradient-to-r from-neutral-950 to-transparent opacity-0 transition-opacity hover:opacity-100">
-									{">"}
+								<CarouselNextButton className="absolute right-0 top-0 z-20 flex h-full w-20 flex-col items-center justify-center bg-gradient-to-l from-neutral-950 to-transparent opacity-0 transition-opacity hover:opacity-100">
+									<ChevronRight className="size-8" />
 								</CarouselNextButton>
 							</Carousel>
 
-							<div className="hidden flex-row gap-4 pb-16 lg:flex lg:px-8 xl:px-32">
-								<div className="flex w-1/3 flex-col gap-6">
-									<img
-										className="rounded-xl"
-										src="/src/assets/profiles/matthew_profile.png"
-										style={{ height: "512px", width: "512px" }}
-									/>
-									<p className="font-dm-sans text-4xl text-white">
-										Matthew Brewbaker
-									</p>
-									<p className="font-dm-sans text-2xl text-white">
-										Co-Founder, CEO
-									</p>
-									<p className="font-geist leading-7 text-white">
-										Matthew Brewbaker melds his film production savvy with a
-										mastery of gaming and software workflows, steering the
-										company towards groundbreaking VR experiences.
-									</p>
-								</div>
-								<div className="flex w-1/3 flex-col gap-6">
-									<img
-										className="rounded-xl"
-										src="/src/assets/profiles/raphael_profile.jpg"
-										style={{ height: "512px", width: "512px" }}
-									/>
-									<p className="font-dm-sans text-4xl text-white">
-										Raphael Arkera
-									</p>
-									<p className="font-dm-sans text-2xl text-white">
-										Co-Founder, CCO
-									</p>
-									<p className="font-geist leading-7 text-white">
-										Raphael Arkera leverages his creative direction prowess,
-										honed with giants like Marvel, Netflix, and Imaginarium
-										Studios, to infuse VEU Inc. with innovative VR event
-										concepts.
-									</p>
-								</div>
-								<div className="flex w-1/3 flex-col gap-6">
-									<img
-										className="rounded-xl"
-										src="/src/assets/profiles/nuno_profile.jpg"
-										style={{ height: "512px", width: "512px" }}
-									/>
-									<p className="font-dm-sans text-4xl text-white">
-										Nuno Rivotti
-									</p>
-									<p className="font-dm-sans text-2xl text-white">
-										Co-Founder, CPO
-									</p>
-									<p className="font-geist leading-7 text-white">
-										Nuno Rivotti blends insights from film, games, and
-										blockchain, enriching VEU&apos;s product strategy with
-										experience from founding the Trojan Horse Was a Unicorn
-										convention.
-									</p>
-								</div>
-							</div>
-							<h1 className="mt-12 px-8 font-dm-sans text-4xl font-bold text-white  xl:px-32">
+							<h1 className="mt-12 px-8 font-dm-sans text-4xl font-bold text-white xl:px-32">
 								Core Team
 							</h1>
-							<Carousel className="relative  h-[22rem] xl:mb-16">
-								<CarouselBackButton className="absolute left-0 top-0 z-20 h-[22rem] w-14 bg-gradient-to-r from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
-									{"<"}
+							<Carousel className="relative h-fit w-full xl:mb-16">
+								<CarouselBackButton className="absolute left-0 top-0 z-20 flex h-full w-20 flex-col items-center justify-center bg-gradient-to-r from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
+									<ChevronLeft className="size-8" />
 								</CarouselBackButton>
-								<CarouselItems className="relative z-10 gap-6  duration-500">
-									{coreTeamImages.map((member, index) => (
+								<CarouselItems className="relative z-10 gap-6 px-8 duration-500 xl:px-32">
+									{TeamImages.map((member, index) => (
 										<CarouselItem
-											className="flex h-[22rem] flex-col items-start justify-start gap-4 rounded-lg"
+											className="flex h-fit flex-col items-start justify-start gap-4 rounded-lg"
 											key={index}
 										>
 											<img
 												alt={member.name}
 												className="size-64 rounded-lg object-cover"
-												src={member.url}
+												src={member.img.default}
 											/>
 											<p className="font-dm-sans text-2xl font-bold leading-9 text-white">
 												{member.name}
 											</p>
-											<p className="font-dm-sans text-xl text-white">
+											<p className="max-w-64 font-dm-sans text-xl text-white">
 												{member.position}
 											</p>
 										</CarouselItem>
 									))}
 								</CarouselItems>
-								<CarouselNextButton className="sticky right-0 top-0 z-20 h-full w-14 bg-gradient-to-l from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
-									{">"}
+								<CarouselNextButton className="absolute right-0 top-0 z-20 flex h-full w-20 flex-col items-center justify-center bg-gradient-to-l from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
+									<ChevronRight className="size-8" />
 								</CarouselNextButton>
 							</Carousel>
 
 							<h1 className="mt-16 px-8 font-dm-sans text-4xl font-bold text-white  xl:px-32">
 								Associate developers and creators
 							</h1>
-							<Carousel className="relative mb-24 h-60 xl:mb-32">
-								<CarouselBackButton className="absolute left-0 top-0 z-20 h-full w-14 bg-gradient-to-r from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
-									{"<"}
+							<Carousel className="relative mb-24 h-fit w-full xl:mb-32">
+								<CarouselBackButton className="absolute left-0 top-0 z-20 flex h-full w-20 flex-col items-center justify-center bg-gradient-to-r from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
+									<ChevronLeft className="size-8" />
 								</CarouselBackButton>
-								<CarouselItems className="relative z-10 gap-6 duration-500">
-									{associateTeamImages.map((member, index) => (
+								<CarouselItems className="relative z-10 gap-6 px-8 duration-500 xl:px-32">
+									{AssociatedImages.map((member, index) => (
 										<CarouselItem
 											className="flex h-60 flex-col items-center justify-start gap-4 rounded-lg"
 											key={index}
@@ -668,7 +453,7 @@ export default function Home() {
 											<img
 												alt={member.name}
 												className="size-48 rounded-lg"
-												src={member.url}
+												src={member.img.default}
 											/>
 											<p className="font-dm-sans text-2xl font-bold text-white">
 												{member.name}
@@ -676,8 +461,8 @@ export default function Home() {
 										</CarouselItem>
 									))}
 								</CarouselItems>
-								<CarouselNextButton className="sticky right-0 top-0 z-20 h-full w-14 bg-gradient-to-l from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
-									{">"}
+								<CarouselNextButton className="absolute right-0 top-0 z-20 flex h-full w-20 flex-col items-center justify-center bg-gradient-to-l from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
+									<ChevronRight className="size-8" />
 								</CarouselNextButton>
 							</Carousel>
 						</div>
@@ -762,7 +547,7 @@ export default function Home() {
 							<div className="flex flex-col items-center gap-10 xl:flex-row xl:items-start xl:gap-0">
 								<img
 									className="h-16 w-24 xl:h-10 xl:w-16"
-									src="/src/assets/Logos/VEU_logo_transparent.png"
+									src={VeuLogoTransparent}
 								/>
 								<div className="flex flex-col">
 									<div className="flex flex-col">
@@ -784,35 +569,35 @@ export default function Home() {
 								rel="noopener noreferrer"
 								target="_blank"
 							>
-								<img className="size-6" src="/src/assets/Logos/discord.svg" />
+								<Discord className="size-6" />
 							</a>
 							<a
 								href="https://twitter.com/VEUverse"
 								rel="noopener noreferrer"
 								target="_blank"
 							>
-								<img className="size-6" src="/src/assets/Logos/twitter.svg" />
+								<Twitter className="size-6" />
 							</a>
 							<a
 								href="https://www.instagram.com/veuverse/"
 								rel="noopener noreferrer"
 								target="_blank"
 							>
-								<img className="size-6" src="/src/assets/Logos/instagram.svg" />
+								<Instagram className="size-6" />
 							</a>
 							<a
 								href="https://www.facebook.com/VEUverse"
 								rel="noopener noreferrer"
 								target="_blank"
 							>
-								<img className="size-6" src="/src/assets/Logos/facebook.svg" />
+								<Facebook className="size-6" />
 							</a>
 							<a
 								href="https://www.linkedin.com/company/veu-inc/"
 								rel="noopener noreferrer"
 								target="_blank"
 							>
-								<img className="size-6" src="/src/assets/Logos/linkedin.svg" />
+								<LinkedIn className="size-6" />
 							</a>
 
 							<a
@@ -820,12 +605,12 @@ export default function Home() {
 								rel="noopener noreferrer"
 								target="_blank"
 							>
-								<img className="size-6" src="/src/assets/Logos/medium.svg" />
+								<Medium className="size-6" />
 							</a>
 						</div>
 					</footer>
 				</section>
-			</main>
-		</body>
+			</div>
+		</main>
 	);
 }
