@@ -223,7 +223,7 @@ export default function Home() {
 									<img
 										alt={`Promo ${index + 1}`}
 										className="size-full rounded-lg object-cover"
-										src={image.default}
+										src={image}
 									/>
 								</CarouselItem>
 							))}
@@ -348,7 +348,7 @@ export default function Home() {
 											<img
 												alt={`Promo ${index + 1}`}
 												className="size-full rounded-lg object-cover"
-												src={image.default}
+												src={image}
 											/>
 										</CarouselItem>
 									))}
@@ -386,7 +386,7 @@ export default function Home() {
 											<img
 												alt={member.name}
 												className="size-64 rounded-lg"
-												src={member.img.default}
+												src={member.img}
 											/>
 											<p className="font-dm-sans text-4xl text-white">
 												{member.name}
@@ -421,7 +421,7 @@ export default function Home() {
 											<img
 												alt={member.name}
 												className="size-64 rounded-lg object-cover"
-												src={member.img.default}
+												src={member.img}
 											/>
 											<p className="font-dm-sans text-2xl font-bold leading-9 text-white">
 												{member.name}
@@ -453,7 +453,7 @@ export default function Home() {
 											<img
 												alt={member.name}
 												className="size-48 rounded-lg"
-												src={member.img.default}
+												src={member.img}
 											/>
 											<p className="font-dm-sans text-2xl font-bold text-white">
 												{member.name}

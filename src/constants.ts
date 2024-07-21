@@ -1,68 +1,111 @@
-// eslint-disable-next-line @typescript-eslint/consistent-type-imports
-export type WebpImport = typeof import("*.webp");
+import ArchWebp from "./assets/concept/arch.webp";
+import DiscoGreenWebp from "./assets/concept/disco-green.webp";
+import KoiFishWebp from "./assets/concept/koi-fish.webp";
+import VeuEnvironmentFullIslandWebp from "./assets/concept/veu-env-full-island.webp";
+import PavilionGuyLookingUpWebp from "./assets/concept/pavilion-guy-looking-up.webp";
+import LookingUpDomeWebp from "./assets/concept/looking-up-dome.webp";
+import DomeDiscoveryFishWebp from "./assets/concept/dome-discovery-fish.webp";
+import LightDjWebp from "./assets/concept/light-dj.webp";
+import GreenJacketGuyWebp from "./assets/concept/green-jacket-guy.webp";
+import EpicSoloPhotoWebp from "./assets/vrchat/epic-solo-photo.webp";
+import SoloIntoTheFutureWebp from "./assets/vrchat/solo-into-the-future.webp";
+import PersonWaveWebp from "./assets/vrchat/person-wave.webp";
+import PraiseTheSunWebp from "./assets/vrchat/praise-the-sun.webp";
+import ByeWebp from "./assets/vrchat/bye.webp";
+import CourtAndManyCatsWebp from "./assets/vrchat/court-and-many-cats.webp";
+import GroupPhotoWebp from "./assets/vrchat/group-photo.webp";
+import PianoSoloWebp from "./assets/vrchat/piano-solo.webp";
+import BatPersonWebp from "./assets/vrchat/bat-person.webp";
+import SingingWebp from "./assets/vrchat/singing.webp";
+import VrchatEventWebp from "./assets/vrchat/vrchat-event.webp";
+import HeheFaceCoverWebp from "./assets/vrchat/hehe-face-cover.webp";
+import MatthewProfileWebp from "./assets/profiles/matthew-profile.webp";
+import RaphaelProfileWebp from "./assets/profiles/raphael-profile.webp";
+import NunoProfileWebp from "./assets/profiles/nuno-profile.webp";
+import MichaelHeilemannWebp from "./assets/team/m-heilemann.webp";
+import WilliamGarciaWebp from "./assets/team/william-garcia.webp";
+import MichaelDepiroWebp from "./assets/team/m-depiro.webp";
+import LoganDesseynWebp from "./assets/team/logan-desseyn.webp";
+import BryceWebp from "./assets/team/bryce.webp";
+import EvaPetitotWebp from "./assets/team/eva-petitot.webp";
+import MichaelReedWebp from "./assets/team/m-reed.webp";
+import NeilBlakemoreWebp from "./assets/team/neil-blakemore.webp";
+import JonahKeelWebp from "./assets/team/jonah-keel.webp";
+import GopalMetroWebp from "./assets/team/gopal.webp";
+import GiorgiChitidzeWebp from "./assets/team/gc.webp";
+import GiorgiKoridzeWebp from "./assets/team/gk.webp";
+import JosephNapoliWebp from "./assets/associate/joseph-napoli.webp";
+import AdamJonesWebp from "./assets/associate/adam-jones.webp";
+import TaiLeWebp from "./assets/associate/tai-le.webp";
+import OliverBeckWebp from "./assets/associate/oliver-b.webp";
+import ToddCaseyWebp from "./assets/associate/todd-casey.webp";
+import RethSoganWebp from "./assets/associate/reth-sogan.webp";
+import VirtualillyWebp from "./assets/associate/virtualilly.webp";
+import ShopowWebp from "./assets/associate/shopow.webp";
+import HashStudiosWebp from "./assets/associate/hash-studios.webp";
 
 export interface ImageInfoExecutive {
-	img: WebpImport;
+	img: string;
 	name: string;
 	position: string;
 	description: string;
 }
 
 export interface ImageInfoTeam {
-	img: WebpImport;
+	img: string;
 	name: string;
 	position: string;
 }
 
 export interface ImageInfoAssociated {
-	img: WebpImport;
+	img: string;
 	name: string;
 }
 
 export const PromoImages = [
-	await import("./assets/concept/arch.webp"),
-	await import("./assets/concept/disco-green.webp"),
-	await import("./assets/concept/koi-fish.webp"),
-	await import("./assets/concept/veu-env-full-island.webp"),
-	await import("./assets/concept/pavilion-guy-looking-up.webp"),
-	await import("./assets/concept/looking-up-dome.webp"),
-	await import("./assets/concept/dome-discovery-fish.webp"),
-	await import("./assets/concept/light-dj.webp"),
-	await import("./assets/concept/green-jacket-guy.webp")
+	ArchWebp,
+	DiscoGreenWebp,
+	KoiFishWebp,
+	VeuEnvironmentFullIslandWebp,
+	PavilionGuyLookingUpWebp,
+	LookingUpDomeWebp,
+	DomeDiscoveryFishWebp,
+	LightDjWebp,
+	GreenJacketGuyWebp
 ] as const;
 
 export const VRChatImages = [
-	await import("./assets/vrchat/epic-solo-photo.webp"),
-	await import("./assets/vrchat/solo-into-the-future.webp"),
-	await import("./assets/vrchat/person-wave.webp"),
-	await import("./assets/vrchat/praise-the-sun.webp"),
-	await import("./assets/vrchat/bye.webp"),
-	await import("./assets/vrchat/court-and-many-cats.webp"),
-	await import("./assets/vrchat/group-photo.webp"),
-	await import("./assets/vrchat/piano-solo.webp"),
-	await import("./assets/vrchat/bat-person.webp"),
-	await import("./assets/vrchat/singing.webp"),
-	await import("./assets/vrchat/vrchat-event.webp"),
-	await import("./assets/vrchat/hehe-face-cover.webp")
+	EpicSoloPhotoWebp,
+	SoloIntoTheFutureWebp,
+	PersonWaveWebp,
+	PraiseTheSunWebp,
+	ByeWebp,
+	CourtAndManyCatsWebp,
+	GroupPhotoWebp,
+	PianoSoloWebp,
+	BatPersonWebp,
+	SingingWebp,
+	VrchatEventWebp,
+	HeheFaceCoverWebp
 ] as const;
 
 export const ExecutiveImages: Array<ImageInfoExecutive> = [
 	{
-		img: await import("./assets/profiles/matthew-profile.webp"),
+		img: MatthewProfileWebp,
 		name: "Matthew Brewbaker",
 		position: "Co-Founder, CEO",
 		description:
 			"Matthew Brewbaker melds his film production savvy with a mastery of gaming and software workflows, steering the company towards groundbreaking VR experiences."
 	},
 	{
-		img: await import("./assets/profiles/raphael-profile.webp"),
+		img: RaphaelProfileWebp,
 		name: "Raphael Arkera",
 		position: "Co-Founder, CCO",
 		description:
 			"Raphael Arkera leverages his creative direction prowess, honed with giants like Marvel, Netflix, and Imaginarium Studios, to infuse VEU Inc. with innovative VR event concepts."
 	},
 	{
-		img: await import("./assets/profiles/nuno-profile.webp"),
+		img: NunoProfileWebp,
 		name: "Nuno Rivotti",
 		position: "Co-Founder, CPO",
 		description:
@@ -72,62 +115,62 @@ export const ExecutiveImages: Array<ImageInfoExecutive> = [
 
 export const TeamImages: Array<ImageInfoTeam> = [
 	{
-		img: await import("./assets/team/m-heilemann.webp"),
+		img: MichaelHeilemannWebp,
 		name: "Michael Heilemann",
 		position: "CTO"
 	},
 	{
-		img: await import("./assets/team/william-garcia.webp"),
+		img: WilliamGarciaWebp,
 		name: "William Garcia",
 		position: "COO"
 	},
 	{
-		img: await import("./assets/team/m-depiro.webp"),
+		img: MichaelDepiroWebp,
 		name: "Michael Depiro",
 		position: "CMO"
 	},
 	{
-		img: await import("./assets/team/logan-desseyn.webp"),
+		img: LoganDesseynWebp,
 		name: "Logan Desseyn",
 		position: "Principal Software Engineer"
 	},
 	{
-		img: await import("./assets/team/bryce.webp"),
+		img: BryceWebp,
 		name: "Bryce Dichristofalo",
 		position: "XR Director"
 	},
 	{
-		img: await import("./assets/team/eva-petitot.webp"),
+		img: EvaPetitotWebp,
 		name: "Eva Petitot",
 		position: "Lead Unity Environment Artist"
 	},
 	{
-		img: await import("./assets/team/m-reed.webp"),
+		img: MichaelReedWebp,
 		name: "Michael Reed",
 		position: "Principal 3D Modeler"
 	},
 	{
-		img: await import("./assets/team/neil-blakemore.webp"),
+		img: NeilBlakemoreWebp,
 		name: "Neil Blakemore",
 		position: "Ethics Director"
 	},
 	{
-		img: await import("./assets/team/jonah-keel.webp"),
+		img: JonahKeelWebp,
 		name: "Jonah Keel",
 		position: "Publicity"
 	},
 	{
-		img: await import("./assets/team/gopal.webp"),
+		img: GopalMetroWebp,
 		name: "Gopal Metro",
 		position: "R&D Manager"
 	},
 	{
-		img: await import("./assets/team/gc.webp"),
+		img: GiorgiChitidzeWebp,
 		name: "Giorgi Chitidze",
 		position: "Lead Unreal Environment Artist"
 	},
 	{
-		img: await import("./assets/team/gk.webp"),
+		img: GiorgiKoridzeWebp,
 		name: "Giorgi Koridze",
 		position: "Lead Unreal Technical Artist"
 	}
@@ -135,39 +178,39 @@ export const TeamImages: Array<ImageInfoTeam> = [
 
 export const AssociatedImages: Array<ImageInfoAssociated> = [
 	{
-		img: await import("./assets/associate/joseph-napoli.webp"),
+		img: JosephNapoliWebp,
 		name: "Joseph Napoli"
 	},
 	{
-		img: await import("./assets/associate/adam-jones.webp"),
+		img: AdamJonesWebp,
 		name: "Adam Jones"
 	},
 	{
-		img: await import("./assets/associate/tai-le.webp"),
+		img: TaiLeWebp,
 		name: "Tai Le"
 	},
 	{
-		img: await import("./assets/associate/oliver-b.webp"),
+		img: OliverBeckWebp,
 		name: "Oliver Beck"
 	},
 	{
-		img: await import("./assets/associate/todd-casey.webp"),
+		img: ToddCaseyWebp,
 		name: "Todd Casey"
 	},
 	{
-		img: await import("./assets/associate/reth-sogan.webp"),
+		img: RethSoganWebp,
 		name: "Reth Sogen"
 	},
 	{
-		img: await import("./assets/associate/virtualilly.webp"),
+		img: VirtualillyWebp,
 		name: "Virtualily"
 	},
 	{
-		img: await import("./assets/associate/shopow.webp"),
+		img: ShopowWebp,
 		name: "Shopow"
 	},
 	{
-		img: await import("./assets/associate/hash-studios.webp"),
+		img: HashStudiosWebp,
 		name: "Hash Studios"
 	}
 ] as const;
