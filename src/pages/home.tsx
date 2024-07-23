@@ -38,9 +38,8 @@ import Medium from "../icons/medium.tsx";
 // fix Michael images
 // add max-w for paragraph elements for pages bigger than 1080p
 // add functionality to not remove header if they click on one of the navigations
-// add # navigation to "whats enterlink" button
 // look at Alex's feedback
-// pinter events none for email inputs.
+// pointer events none for email inputs.
 // align button in menu with opening menu button. Move navigation as well.
 
 export default function Home() {
@@ -114,7 +113,7 @@ export default function Home() {
 							isMenuOpen && "translate-y-0"
 						)}
 					>
-						<div className="flex h-32 w-full items-center justify-between pr-20 pt-8">
+						<div className="flex h-32 w-full items-center justify-between pr-8 pt-8">
 							<div className="absolute left-1/2 -translate-x-1/2 gap-6">
 								<img className="h-16 w-60" src={EnterverseLogo} />
 							</div>
@@ -128,7 +127,7 @@ export default function Home() {
 								</button>
 							</div>
 						</div>
-						<nav className="absolute right-0 top-1/2 mr-20 flex -translate-y-1/2 flex-col items-end">
+						<nav className="absolute right-0 top-1/2 mr-8 flex -translate-y-1/2 flex-col items-end">
 							<a
 								className="mb-8 py-2 pl-2 font-dm-sans text-3xl font-semibold"
 								href="#home"
