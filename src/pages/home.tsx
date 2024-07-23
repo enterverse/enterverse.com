@@ -35,7 +35,13 @@ import Facebook from "../icons/facebook.tsx";
 import LinkedIn from "../icons/linkedin.tsx";
 import Medium from "../icons/medium.tsx";
 
-// wait for fixed Michael images
+// fix Michael images
+// add max-w for paragraph elements for pages bigger than 1080p
+// add functionality to not remove header if they click on one of the navigations
+// add # navigation to "whats enterlink" button
+// look at Alex's feedback
+// pinter events none for email inputs.
+// align button in menu with opening menu button. Move navigation as well.
 
 export default function Home() {
 	const [isScrolled, setIsScrolled] = useState(false);
@@ -203,7 +209,9 @@ export default function Home() {
 									className="h-16 w-full rounded-xl border-2 border-white px-4 py-2 font-dm-sans text-white xl:w-64"
 									type="button"
 								>
-									<p className="font-semibold">What&apos;s Enterlink?</p>
+									<a href="#Enterlink">
+										<p className="font-semibold">What&apos;s Enterlink?</p>
+									</a>
 								</button>
 							</div>
 						</div>
