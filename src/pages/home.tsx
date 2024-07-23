@@ -37,16 +37,15 @@ import Medium from "../icons/medium.tsx";
 
 // fix Michael images
 // add max-w for paragraph elements for pages bigger than 1080p
-// add functionality to not remove header if they click on one of the navigations
 // look at Alex's feedback
 // pointer events none for email inputs.
-// align button in menu with opening menu button. Move navigation as well.
 
 export default function Home() {
 	const [isScrolled, setIsScrolled] = useState(false);
 	const [showHeader, setShowHeader] = useState(true);
 	const lastScrollY = useRef(window.scrollY);
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const [isNavClicked, setIsNavClicked] = useState(false);
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -54,12 +53,12 @@ export default function Home() {
 			const scrolled = currentScrollY > 0;
 			setIsScrolled(scrolled);
 
-			if (scrolled) {
+			if (scrolled && !isNavClicked) {
 				setIsMenuOpen(false);
+				const shouldShowHeader =
+					currentScrollY <= lastScrollY.current || !scrolled;
+				setShowHeader(shouldShowHeader);
 			}
-			const shouldShowHeader =
-				currentScrollY <= lastScrollY.current || !scrolled;
-			setShowHeader(shouldShowHeader);
 
 			lastScrollY.current = currentScrollY < 0 ? 0 : currentScrollY;
 		};
@@ -77,10 +76,19 @@ export default function Home() {
 			window.removeEventListener("scroll", handleScroll);
 			window.removeEventListener("mousemove", handleMouseMove);
 		};
-	}, []);
+	}, [isNavClicked]);
+
+	const handleNavClick = () => {
+		setIsNavClicked(true);
+		setIsMenuOpen(false);
+
+		setTimeout(() => {
+			setIsNavClicked(false);
+		}, 1000);
+	};
 
 	return (
-		<main className="bg-overall-gradient">
+		<main className="bg-overall-gradient ">
 			<div className="flex min-h-screen flex-col items-center justify-between">
 				<header
 					className={`fixed top-0 z-50 flex h-32 w-full items-center justify-between bg-black/0 px-8 pt-8 transition-all duration-500 xl:justify-center xl:px-32 ${
@@ -92,13 +100,21 @@ export default function Home() {
 					</div>
 
 					<nav className="ml-auto hidden h-24 w-96 flex-row items-center justify-between xl:flex">
-						<a href="#home">Home</a>
+						<a href="#home" onClick={handleNavClick}>
+							Home
+						</a>
 
-						<a href="#Enterlink">Enterlink</a>
+						<a href="#Enterlink" onClick={handleNavClick}>
+							Enterlink
+						</a>
 
-						<a href="#about">About</a>
+						<a href="#about" onClick={handleNavClick}>
+							About
+						</a>
 
-						<a href="#contact">Contact</a>
+						<a href="#contact" onClick={handleNavClick}>
+							Contact
+						</a>
 					</nav>
 					<button
 						className="ml-auto xl:hidden"
@@ -156,7 +172,7 @@ export default function Home() {
 					</div>
 				</header>
 				<section
-					className="relative flex min-h-screen w-full flex-col items-center justify-center gap-16 space-x-0 bg-section1-gradient-darkened bg-cover px-8 lg:px-16 xl:px-32"
+					className="relative flex min-h-screen w-full flex-col items-center justify-center gap-16 space-x-0 bg-section1-gradient-darkened bg-cover px-8 lg:px-16 xl:px-32 "
 					id="home"
 				>
 					<video
@@ -170,7 +186,7 @@ export default function Home() {
 						poster={VideoThumbnail}
 						src={ConceptVideo}
 					/>
-					<div className="relative flex flex-col justify-center gap-16 pt-32 xl:w-full xl:pt-24">
+					<div className="relative flex max-w-[120rem] flex-col justify-center gap-16 pt-32 xl:w-full xl:pt-24">
 						<div className="flex w-full flex-col gap-4 xl:w-2/3">
 							<h1 className="mb-4 w-full text-balance font-dm-sans text-5xl font-bold leading-tight text-white drop-shadow-section1 xl:text-7xl">
 								Find Meetups and Events in all your Virtual Realities
