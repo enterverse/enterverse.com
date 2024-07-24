@@ -35,9 +35,9 @@ import Facebook from "../icons/facebook.tsx";
 import LinkedIn from "../icons/linkedin.tsx";
 import Medium from "../icons/medium.tsx";
 
-// fix Michael images
 // add max-w for paragraph elements for pages bigger than 1080p*
 // look at Alex's feedback
+// alex gradient changes.
 
 export default function Home() {
 	const [isScrolled, setIsScrolled] = useState(false);
@@ -130,7 +130,7 @@ export default function Home() {
 					>
 						<div className="flex h-32 w-full items-center justify-between pr-8 pt-8">
 							<div className="absolute left-1/2 -translate-x-1/2 gap-6">
-								<img className="h-16 w-60" src={EnterverseLogo} />
+								<img className="h-auto w-60" src={EnterverseLogo} />
 							</div>
 							<div className="mt-6 flex flex-1 items-center justify-end">
 								<button
@@ -305,7 +305,7 @@ export default function Home() {
 						<div className="mb-24 mt-8 flex w-full items-center justify-center xl:my-0 xl:w-1/2">
 							<img
 								alt="Vea Butterfly"
-								className="size-96"
+								className="h-auto w-96"
 								src={VeaLogoThingy}
 							/>
 						</div>
@@ -410,7 +410,7 @@ export default function Home() {
 												className="size-64 rounded-lg"
 												src={member.img}
 											/>
-											<p className="font-dm-sans text-4xl text-white">
+											<p className="font-dm-sans text-4xl font-bold text-white">
 												{member.name}
 											</p>
 											<p className="font-dm-sans text-2xl font-bold text-white">
@@ -469,7 +469,7 @@ export default function Home() {
 								<CarouselItems className="relative z-10 gap-6 px-8 duration-500 xl:px-32">
 									{AssociatedImages.map((member, index) => (
 										<CarouselItem
-											className="flex h-60 flex-col items-center justify-start gap-4 rounded-lg"
+											className="flex h-60 flex-col items-start justify-start gap-4 rounded-lg"
 											key={index}
 										>
 											<img
