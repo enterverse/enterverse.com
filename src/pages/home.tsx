@@ -171,7 +171,7 @@ export default function Home() {
 					</div>
 				</header>
 				<section
-					className="relative flex min-h-screen w-full flex-col items-center justify-center gap-16 space-x-0 bg-section1-gradient-darkened bg-cover px-8 lg:px-16 xl:px-32 "
+					className="relative flex min-h-screen w-full flex-col items-center justify-center gap-16 space-x-0 bg-section1-mobile-gradient bg-cover px-8 lg:bg-section1-gradient-darkened lg:px-16 xl:px-32 "
 					id="home"
 				>
 					<video
@@ -231,15 +231,15 @@ export default function Home() {
 						</div>
 					</div>
 				</section>
-				<section className="flex w-full flex-col items-center justify-center gap-16 xl:min-h-screen">
-					<Carousel className="relative h-fit w-full bg-black xl:h-[48rem] xl:bg-transparent">
+				<section className="flex w-full flex-col items-center justify-center gap-16 pb-12 xl:min-h-screen">
+					<Carousel className="relative mb-6 h-fit w-full bg-black xl:h-[48rem] xl:bg-transparent">
 						<CarouselBackButton className="absolute left-0 top-0 z-20 flex h-full w-20 flex-col items-center justify-center bg-gradient-to-r from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
 							<ChevronLeft className="size-8" />
 						</CarouselBackButton>
 						<CarouselItems className="relative z-10 flex gap-6 px-8 duration-500 xl:px-32">
 							{PromoImages.map((image, index) => (
 								<CarouselItem
-									className="flex aspect-video h-48 flex-col items-center justify-center rounded-lg bg-neutral-900 xl:h-[48rem]"
+									className="mb-12 flex aspect-video h-48 flex-col items-center justify-center rounded-lg bg-neutral-900 xl:h-[48rem]"
 									key={index}
 								>
 									<img
@@ -257,7 +257,7 @@ export default function Home() {
 				</section>
 
 				<section
-					className="flex min-h-screen w-full flex-col items-start justify-center bg-section2-gradient bg-cover p-8 xl:p-32"
+					className="bg-enterlink-mobile-gradient flex min-h-screen w-full flex-col items-start justify-center  bg-cover p-8 xl:bg-section2-gradient xl:p-32"
 					id="Enterlink"
 				>
 					<div className="mt-12 flex w-full flex-col items-center justify-center xl:mt-0 xl:flex-row">
@@ -492,7 +492,7 @@ export default function Home() {
 				</section>
 
 				<section
-					className="flex w-full flex-col items-start justify-center  bg-footer-gradient px-8 pt-8 xl:px-32 xl:pt-32"
+					className="bg-interested-mobile-gradient flex w-full flex-col items-start  justify-center  px-8 pt-8 xl:bg-footer-gradient xl:px-32 xl:pt-32"
 					id="contact"
 				>
 					<h2 className="my-16 w-2/3 font-dm-sans text-5xl font-bold leading-tight text-white xl:my-0 xl:text-6xl">

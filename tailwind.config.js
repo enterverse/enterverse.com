@@ -29,6 +29,9 @@ export default {
 				'about-section': "linear-gradient(to bottom, #297F8B 0%, #0D0D0D 30%), radial-gradient(at center, #632B89 0%, transparent 50%, #0D0D0D 80%), linear-gradient(to bottom, #EF3E72 0%, #0D0D0D 30%)",
 				'section1-gradient-darkened': "radial-gradient(41.31% 89.17% at 50% 50%, rgba(0, 0, 0, 0.30) 0%, #000 100%), linear-gradient(180deg, #FFF 10%, rgba(0, 0, 0, 0.00) 100%);",
 				'mobile-gradient': "radial-gradient(170.67% 69.43% at 31.99% 26.99%, rgba(99, 43, 137, 0.32) 0%, rgba(13, 13, 13, 0.40) 100%), linear-gradient(rgb(11, 11, 11), rgb(11, 11, 11))",
+				'section1-mobile-gradient': "radial-gradient(60% 89.17% at 50% 50%,#0000004d,#000),linear-gradient(180deg,#fff 10%,#0000)",
+				'enterlink-mobile-gradient': "background: radial-gradient(257.01% 89.17% at 50% 50%, rgba(0, 0, 0, 0.00) 0%, #000 100%);",
+				'interested-mobile-gradient': "background: radial-gradient(257.01% 89.17% at 50% 50%, rgba(0, 0, 0, 0.00) 0%, #000 100%);",
 			},
 			backgroundColor: {
 				'base': '#1A1A1A',
