@@ -36,9 +36,8 @@ import LinkedIn from "../icons/linkedin.tsx";
 import Medium from "../icons/medium.tsx";
 
 // fix Michael images
-// add max-w for paragraph elements for pages bigger than 1080p
+// add max-w for paragraph elements for pages bigger than 1080p*
 // look at Alex's feedback
-// pointer events none for email inputs.
 
 export default function Home() {
 	const [isScrolled, setIsScrolled] = useState(false);
@@ -287,7 +286,7 @@ export default function Home() {
 										Enterlink, Enterverse, and more.
 									</p>
 
-									<form className="flex h-16 w-full items-center overflow-hidden rounded-l-xl rounded-r-full border-2 xl:w-96">
+									<form className="pointer-events-none flex h-16 w-full items-center overflow-hidden rounded-l-xl rounded-r-full border-2 xl:w-96">
 										<input
 											className="flex-1 rounded-l-xl bg-transparent px-4 py-2"
 											placeholder="Email your email to join"
@@ -544,7 +543,7 @@ export default function Home() {
 							<p className="font-geist text-white">
 								We look forward to staying in touch!
 							</p>
-							<form className="flex flex-col gap-8 pt-6 xl:w-2/3">
+							<form className="pointer-events-none flex flex-col gap-8 pt-6 xl:w-2/3">
 								<input
 									required
 									className="h-16 rounded-xl bg-gray-700 px-4 py-2"
