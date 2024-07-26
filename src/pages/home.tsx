@@ -38,6 +38,8 @@ import Medium from "../icons/medium.tsx";
 // add max-w for paragraph elements for pages bigger than 1080p*
 // look at Alex's feedback
 // alex gradient changes.
+// try to condense header to 2-3 lines and shink all by a few rem
+// change px-8 to px-6 for mobile
 
 export default function Home() {
 	const [isScrolled, setIsScrolled] = useState(false);
@@ -90,12 +92,12 @@ export default function Home() {
 		<main className="bg-overall-gradient ">
 			<div className="flex min-h-screen flex-col items-center justify-between">
 				<header
-					className={`fixed top-0 z-50 flex h-32 w-full items-center justify-between bg-black/0 px-8 pt-8 transition-all duration-500 xl:justify-center xl:px-32 ${
+					className={`fixed top-0 z-50 flex h-32 w-full items-center justify-between bg-black/0 px-6 pt-8 transition-all duration-500 xl:justify-center xl:px-32 ${
 						isScrolled ? "backdrop-blur-md" : ""
 					} ${showHeader ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"}`}
 				>
 					<div className="absolute left-1/2 -translate-x-1/2 gap-6">
-						<img className="h-16 w-60" src={EnterverseLogo} />
+						<img className="h-auto w-60" src={EnterverseLogo} />
 					</div>
 
 					<nav className="ml-auto hidden h-24 w-96 flex-row items-center justify-between xl:flex">
@@ -171,7 +173,7 @@ export default function Home() {
 					</div>
 				</header>
 				<section
-					className="relative flex min-h-screen w-full flex-col items-center justify-center gap-16 space-x-0 bg-section1-mobile-gradient bg-cover px-8 lg:bg-section1-gradient-darkened lg:px-16 xl:px-32 "
+					className="relative flex min-h-screen w-full flex-col items-center justify-center gap-16 space-x-0 bg-section1-mobile-gradient bg-cover px-6 lg:bg-section1-gradient-darkened lg:px-16 xl:px-32 "
 					id="home"
 				>
 					<video
@@ -187,10 +189,10 @@ export default function Home() {
 					/>
 					<div className="relative flex max-w-[120rem] flex-col justify-center gap-16 pt-32 xl:w-full xl:pt-24">
 						<div className="flex w-full flex-col gap-4 xl:w-2/3">
-							<h1 className="mb-4 w-full text-balance font-dm-sans text-5xl font-bold leading-tight text-white drop-shadow-section1 xl:text-7xl">
+							<h1 className="mb-4 w-full text-balance font-dm-sans text-4xl font-bold leading-tight text-white drop-shadow-section1 md:text-5xl xl:text-7xl">
 								Find Meetups and Events in all your Virtual Realities
 							</h1>
-							<p className="w-full text-balance font-geist text-lg leading-9 text-white drop-shadow-section1 xl:w-2/3 xl:text-xl">
+							<p className="w-full text-balance font-geist text-lg leading-8 text-white drop-shadow-section1 xl:w-2/3 xl:text-xl">
 								We know how hard it is to plan your hangouts in virtual spaces.
 								Enterverse&apos;s soon-to-launch service, Enterlink, makes
 								virtual social games and experiences accessible, connecting you
@@ -198,7 +200,7 @@ export default function Home() {
 							</p>
 						</div>
 						<div className="mb-16 flex w-full flex-col gap-8 text-lg xl:mb-0 xl:w-2/3">
-							<p className="flex font-geist text-xl leading-9 text-white drop-shadow-section1 xl:w-2/3">
+							<p className="flex font-geist text-xl leading-8 text-white drop-shadow-section1 xl:w-2/3">
 								Interested in more? Join our community to stay updated with the
 								latest updates on Enterlink.
 							</p>
@@ -236,7 +238,7 @@ export default function Home() {
 						<CarouselBackButton className="absolute left-0 top-0 z-20 flex h-full w-20 flex-col items-center justify-center bg-gradient-to-r from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
 							<ChevronLeft className="size-8" />
 						</CarouselBackButton>
-						<CarouselItems className="relative z-10 flex gap-6 px-8 duration-500 xl:px-32">
+						<CarouselItems className="relative z-10 flex gap-6 px-6 duration-500 xl:px-32">
 							{PromoImages.map((image, index) => (
 								<CarouselItem
 									className="mb-12 flex aspect-video h-48 flex-col items-center justify-center rounded-lg bg-neutral-900 xl:h-[48rem]"
@@ -262,25 +264,25 @@ export default function Home() {
 				>
 					<div className="mt-12 flex w-full flex-col items-center justify-center xl:mt-0 xl:flex-row">
 						<div className="flex w-full flex-col items-start justify-center">
-							<div className="mb-14 flex h-24 flex-row items-center gap-8">
+							<div className="mb-14 flex h-24 flex-row items-center gap-4">
 								<img className="size-20 xl:size-20" src={EnterlinkLogo} />
 								<h1 className="font-geist text-5xl font-bold xl:text-6xl">
 									enterlink
 								</h1>
 							</div>
-							<div className="flex w-full flex-col items-start justify-center gap-16">
+							<div className="flex w-full flex-col items-start justify-center gap-14">
 								<div className="flex flex-col gap-8">
-									<h2 className="mt-6 font-dm-sans text-5xl font-bold leading-tight text-white xl:mt-0 xl:text-6xl">
+									<h2 className="mt-6 text-balance font-dm-sans text-4xl font-bold leading-tight text-white md:text-5xl xl:mt-0 xl:text-6xl">
 										Make plans and share with friends
 									</h2>
-									<p className="font-geist text-lg leading-9 text-white xl:text-xl">
+									<p className="text-balance font-geist text-lg leading-9 text-white xl:text-xl">
 										Enterlink is our soon-to-launch service that makes virtual
 										social games and experiences accessible, connecting you to
 										events, experiences, worlds and communities.
 									</p>
 								</div>
 								<div className="flex h-72 flex-col gap-8">
-									<p className="font-geist text-lg leading-9 text-white xl:text-xl">
+									<p className="text-balance font-geist text-lg leading-9 text-white xl:text-xl">
 										Stay updated with our latest developments! Join our
 										community and receive exclusive news and updates on
 										Enterlink, Enterverse, and more.
@@ -315,24 +317,24 @@ export default function Home() {
 							<p className="font-dm-sans text-2xl font-bold text-white">
 								Here&apos;s the issue we saw
 							</p>
-							<h1 className="font-dm-sans text-3xl font-bold leading-relaxed text-white xl:text-4xl xl:leading-tight">
+							<h1 className="text-balance font-dm-sans text-3xl font-bold leading-relaxed text-white xl:text-4xl xl:leading-tight">
 								It&apos;s not easy finding events, worlds, and experiences
 							</h1>
-							<p className="font-geist text-base leading-7 text-white">
+							<p className="text-balance font-geist text-base leading-7 text-white">
 								VR platforms offer exciting spaces but finding events, worlds,
 								experiences and communities is like navigating the early,
 								chaotic internet.
 							</p>
 						</div>
 						<div className="flex flex-col gap-4  font-dm-sans">
-							<p className="font-dm-sans text-2xl font-bold text-white">
+							<p className="text-balance font-dm-sans text-2xl font-bold text-white ">
 								Here&apos;s our solution{" "}
 							</p>
-							<h1 className="font-dm-sans text-3xl font-bold leading-relaxed text-white xl:text-4xl xl:leading-tight">
+							<h1 className="text-balance font-dm-sans text-3xl font-bold leading-relaxed text-white xl:text-4xl xl:leading-tight">
 								An easy-to-navigate platform for VR events and community
 								building
 							</h1>
-							<p className="font-geist text-base leading-7 text-white">
+							<p className="text-balance font-geist text-base leading-7 text-white">
 								Enterlink maps and organizes virtual worlds, making it easy to
 								find and join events across different platforms.
 							</p>
@@ -345,11 +347,11 @@ export default function Home() {
 					id="about"
 				>
 					<div className="flex w-full flex-col items-start justify-center gap-16 xl:gap-32">
-						<div className="flex flex-col gap-8 p-8 xl:w-1/2 xl:p-32">
-							<h2 className="mb-6 mt-12 font-dm-sans text-5xl font-bold leading-tight text-white xl:mt-0 xl:text-6xl xl:leading-snug">
+						<div className="flex flex-col gap-8 p-8  xl:w-1/2 xl:p-32">
+							<h2 className="mb-6 mt-12 text-balance font-dm-sans text-4xl font-bold leading-tight text-white md:text-5xl xl:mt-0 xl:text-6xl xl:leading-snug">
 								We&apos;re helping you build your digital community
 							</h2>
-							<p className="font-geist text-lg leading-9 text-white xl:text-xl">
+							<p className="text-balance font-geist text-lg leading-9 text-white xl:text-xl">
 								Our goal is to help build authentic social connections by
 								bringing people together through a shared love of virtual
 								entertainment and culture. We aim to make communities within
@@ -361,7 +363,7 @@ export default function Home() {
 								<CarouselBackButton className="absolute left-0 top-0 z-20 flex h-full w-20 flex-col items-center justify-center bg-gradient-to-r from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
 									<ChevronLeft className="size-8" />
 								</CarouselBackButton>
-								<CarouselItems className="relative z-10 gap-6 object-cover px-8 duration-500 xl:px-32">
+								<CarouselItems className="relative z-10 gap-6 object-cover px-6 duration-500 xl:px-32">
 									{VRChatImages.map((image, index) => (
 										<CarouselItem
 											className="flex h-48 flex-col items-center justify-center rounded-lg bg-neutral-900 xl:h-[32rem]"
@@ -381,8 +383,8 @@ export default function Home() {
 							</Carousel>
 						</div>
 						<div className="flex  w-full  flex-col items-start justify-center gap-12">
-							<div className="flex size-full flex-col gap-8 px-8 xl:w-2/3  xl:px-32">
-								<h1 className="mb-2 flex font-dm-sans text-5xl font-bold leading-tight text-white xl:text-6xl">
+							<div className="flex size-full flex-col gap-8 px-6 xl:w-2/3  xl:px-32">
+								<h1 className="mb-2 flex font-dm-sans text-4xl font-bold leading-tight text-white md:text-4xl xl:text-6xl">
 									Meet the team
 								</h1>
 								<p className="flex w-full text-balance font-geist text-xl leading-9 text-white xl:w-2/3 xl:text-xl">
@@ -392,14 +394,14 @@ export default function Home() {
 									communities and creators.
 								</p>
 							</div>
-							<h1 className="mt-12 px-8 font-dm-sans text-4xl font-bold text-white  xl:px-32 xl:text-4xl ">
+							<h1 className="mt-12 px-6 font-dm-sans text-3xl font-bold text-white md:text-4xl  xl:px-32 xl:text-4xl ">
 								Founders
 							</h1>
 							<Carousel className="relative flex h-fit w-full gap-12 xl:mb-16">
 								<CarouselBackButton className="absolute left-0 top-0 z-20 flex h-full w-20 flex-col items-center justify-center bg-gradient-to-r from-neutral-950 to-transparent opacity-0 transition-opacity hover:opacity-100">
 									<ChevronLeft className="size-8" />
 								</CarouselBackButton>
-								<CarouselItems className="relative z-10 gap-12 px-8 duration-500 xl:px-32">
+								<CarouselItems className="relative z-10 gap-12 px-6 duration-500 xl:px-32">
 									{ExecutiveImages.map((member, index) => (
 										<CarouselItem
 											className="flex h-fit w-64 flex-col items-start justify-start gap-8 rounded-lg"
@@ -410,13 +412,13 @@ export default function Home() {
 												className="size-64 rounded-lg"
 												src={member.img}
 											/>
-											<p className="font-dm-sans text-4xl font-bold text-white">
+											<p className="font-dm-sans text-3xl font-bold text-white md:text-4xl">
 												{member.name}
 											</p>
 											<p className="font-dm-sans text-2xl font-bold text-white">
 												{member.position}
 											</p>
-											<p className="flex-wrap font-dm-sans text-base text-white">
+											<p className="flex-wrap text-balance font-dm-sans text-base text-white">
 												{member.description}
 											</p>
 										</CarouselItem>
@@ -427,14 +429,14 @@ export default function Home() {
 								</CarouselNextButton>
 							</Carousel>
 
-							<h1 className="mt-12 px-8 font-dm-sans text-4xl font-bold text-white xl:px-32">
+							<h1 className="mt-12 px-6 font-dm-sans text-3xl font-bold text-white md:text-4xl xl:px-32">
 								Core Team
 							</h1>
 							<Carousel className="relative h-fit w-full xl:mb-16">
 								<CarouselBackButton className="absolute left-0 top-0 z-20 flex h-full w-20 flex-col items-center justify-center bg-gradient-to-r from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
 									<ChevronLeft className="size-8" />
 								</CarouselBackButton>
-								<CarouselItems className="relative z-10 gap-6 px-8 duration-500 xl:px-32">
+								<CarouselItems className="relative z-10 gap-6 px-6 duration-500 xl:px-32">
 									{TeamImages.map((member, index) => (
 										<CarouselItem
 											className="flex h-fit flex-col items-start justify-start gap-4 rounded-lg"
@@ -459,14 +461,14 @@ export default function Home() {
 								</CarouselNextButton>
 							</Carousel>
 
-							<h1 className="mt-16 px-8 font-dm-sans text-4xl font-bold text-white  xl:px-32">
+							<h1 className="mt-16 text-balance px-6 font-dm-sans text-3xl font-bold text-white md:text-4xl  xl:px-32">
 								Associate developers and creators
 							</h1>
 							<Carousel className="relative mb-24 h-fit w-full xl:mb-32">
 								<CarouselBackButton className="absolute left-0 top-0 z-20 flex h-full w-20 flex-col items-center justify-center bg-gradient-to-r from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
 									<ChevronLeft className="size-8" />
 								</CarouselBackButton>
-								<CarouselItems className="relative z-10 gap-6 px-8 duration-500 xl:px-32">
+								<CarouselItems className="relative z-10 gap-6 px-6 duration-500 xl:px-32">
 									{AssociatedImages.map((member, index) => (
 										<CarouselItem
 											className="flex h-60 flex-col items-start justify-start gap-4 rounded-lg"
@@ -492,7 +494,7 @@ export default function Home() {
 				</section>
 
 				<section
-					className="bg-interested-mobile-gradient flex w-full flex-col items-start  justify-center  px-8 pt-8 xl:bg-footer-gradient xl:px-32 xl:pt-32"
+					className="bg-interested-mobile-gradient flex w-full flex-col items-start  justify-center  px-6 pt-8 xl:bg-footer-gradient xl:px-32 xl:pt-32"
 					id="contact"
 				>
 					<h2 className="my-16 w-2/3 font-dm-sans text-5xl font-bold leading-tight text-white xl:my-0 xl:text-6xl">
@@ -504,16 +506,16 @@ export default function Home() {
 								<h3 className="mb-4 font-dm-sans text-4xl font-bold leading-7 text-white xl:mb-0">
 									Join the adventure
 								</h3>
-								<p className="font-geist leading-7 text-white">
+								<p className="text-balance font-geist leading-7 text-white">
 									VR platforms offer exciting spaces but finding events, worlds,
 									experiences and communities is like navigating the early,
 									chaotic internet.
 								</p>
-								<p className="font-geist leading-7 text-white">
+								<p className="text-balance font-geist leading-7 text-white">
 									Interested in collaborating, want to learn more, or want to
 									make a recommendation?
 								</p>
-								<p className="font-geist leading-7 text-white">
+								<p className="text-balance font-geist leading-7 text-white">
 									Share your insights and help us craft the ideal digital
 									future. Together, let&apos;s make the future we all want
 									happen.
@@ -523,7 +525,7 @@ export default function Home() {
 								<h2 className="font-dm-sans text-4xl font-bold leading-normal text-white">
 									Get rewarded for subscribing
 								</h2>
-								<p className="font-geist leading-7 text-white">
+								<p className="text-balance font-geist leading-7 text-white">
 									Our associate developers, supporters, and community
 									contributors gain free access to early feature releases,
 									exclusive behind-the-scenes content, and a community of
@@ -535,7 +537,7 @@ export default function Home() {
 							<h1 className="font-dm-sans text-4xl font-bold leading-10 text-white xl:leading-7">
 								Stay Connected
 							</h1>
-							<p className="font-geist text-base font-normal leading-7 text-white">
+							<p className="text-balance font-geist text-base font-normal leading-7 text-white">
 								Stay updated with our latest developments! Enter your email to
 								join our community and receive exclusive news and updates on
 								Enterlink, Enterverse, and more.
