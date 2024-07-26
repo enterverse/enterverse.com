@@ -36,10 +36,6 @@ import LinkedIn from "../icons/linkedin.tsx";
 import Medium from "../icons/medium.tsx";
 
 // add max-w for paragraph elements for pages bigger than 1080p*
-// look at Alex's feedback
-// alex gradient changes.
-// try to condense header to 2-3 lines and shink all by a few rem
-// change px-8 to px-6 for mobile
 
 export default function Home() {
 	const [isScrolled, setIsScrolled] = useState(false);
