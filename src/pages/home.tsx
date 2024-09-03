@@ -7,6 +7,8 @@ import {
 	X
 } from "lucide-react";
 import { cn } from "@udecode/cn";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import {
 	Carousel,
@@ -22,6 +24,10 @@ import {
 	TeamImages,
 	VRChatImages
 } from "../constants.ts";
+import {
+	handleFormSubmission,
+	emailListSubmission
+} from "../utils/form-handler.ts";
 import EnterverseLogo from "../assets/logos/enterverse-white-logo.webp";
 import VideoThumbnail from "../assets/concept/koi-fish.webp";
 import ConceptVideo from "../assets/concept/enterverse-trailer.mp4";
@@ -36,6 +42,7 @@ import LinkedIn from "../icons/linkedin.tsx";
 import Medium from "../icons/medium.tsx";
 
 // add max-w for paragraph elements for pages bigger than 1080p*
+// look for matts new sentence
 
 export default function Home() {
 	const [isScrolled, setIsScrolled] = useState(false);
@@ -43,6 +50,23 @@ export default function Home() {
 	const lastScrollY = useRef(window.scrollY);
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [isNavClicked, setIsNavClicked] = useState(false);
+	const [characterCountA, setCharacterCountA] = useState(0);
+	const [characterCountB, setCharacterCountB] = useState(0);
+	const [characterCountC, setCharacterCountC] = useState(0);
+	const maxCharacterCount = 2048;
+	const maxEmailCharacterCount = 256;
+
+	const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+		setCharacterCountA(event.target.value.length);
+	};
+	const handleInputChangeB = (event: React.ChangeEvent<HTMLInputElement>) => {
+		setCharacterCountB(event.target.value.length);
+	};
+	const handleTextAreaChange = (
+		event: React.ChangeEvent<HTMLTextAreaElement>
+	) => {
+		setCharacterCountC(event.target.value.length);
+	};
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -284,12 +308,21 @@ export default function Home() {
 										Enterlink, Enterverse, and more.
 									</p>
 
-									<form className="pointer-events-none flex h-16 w-full items-center overflow-hidden rounded-l-xl rounded-r-full border-2 xl:w-96">
+									<form
+										className="flex h-16 w-full items-center overflow-hidden rounded-l-xl rounded-r-full border-2 xl:w-96"
+										onSubmit={emailListSubmission}
+									>
 										<input
 											className="flex-1 rounded-l-xl bg-transparent px-4 py-2"
-											placeholder="Email your email to join"
+											maxLength={maxEmailCharacterCount}
+											name="email"
+											placeholder="Enter your email to join"
 											type="email"
+											onChange={handleInputChange}
 										/>
+										<div className="text-sm text-gray-500">
+											{characterCountA}/{maxEmailCharacterCount}
+										</div>
 										<button
 											className="m-1 flex size-12 items-center justify-center rounded-full bg-pink text-white"
 											type="submit"
@@ -297,6 +330,7 @@ export default function Home() {
 											<ArrowRight className="size-6" />
 										</button>
 									</form>
+									<ToastContainer />
 								</div>
 							</div>
 						</div>
@@ -541,17 +575,34 @@ export default function Home() {
 							<p className="font-geist text-white">
 								We look forward to staying in touch!
 							</p>
-							<form className="pointer-events-none flex flex-col gap-8 pt-6 xl:w-2/3">
+							<form
+								className="flex flex-col gap-2 pt-6 xl:w-2/3"
+								onSubmit={handleFormSubmission}
+							>
 								<input
 									required
 									className="h-16 rounded-xl bg-gray-700 px-4 py-2"
+									maxLength={maxEmailCharacterCount}
+									name="email"
 									placeholder="Email"
 									type="email"
+									onChange={handleInputChangeB}
 								/>
+								<div className="flex justify-end text-sm text-gray-500">
+									{characterCountB}/{maxEmailCharacterCount}
+								</div>
+
 								<textarea
+									required
 									className="h-40 rounded-xl bg-gray-700 px-4 py-2"
+									maxLength={maxCharacterCount}
+									name="feedback"
 									placeholder="Share your thoughts, interest or feedback (optional)"
+									onChange={handleTextAreaChange}
 								/>
+								<div className="flex justify-end text-sm text-gray-500">
+									{characterCountC}/{maxCharacterCount}
+								</div>
 								<button
 									className="h-16 w-full rounded-xl bg-pink px-4 py-2 text-white xl:w-64"
 									type="submit"
