@@ -23,8 +23,11 @@ export async function handleFormSubmission(
 		feedback: formData.get("feedback") as string | undefined
 	};
 
+	const url = `${API_BASE_URL}/contact`;
+	console.log("URL:", url);
+
 	try {
-		const response = await fetch(`${API_BASE_URL}/contact`, {
+		const response = await fetch(url, {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json"
@@ -54,8 +57,11 @@ export async function emailListSubmission(
 		email: formData.get("email") as string
 	};
 
+	const url = `${API_BASE_URL}/email-list`;
+	console.log("URL:", url);
+
 	try {
-		const response = await fetch(`${API_BASE_URL}/email-list`, {
+		const response = await fetch(url, {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json"
