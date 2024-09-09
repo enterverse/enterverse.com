@@ -1,14 +1,15 @@
 import { toast } from "react-toastify";
 
+import { API_BASE_URL } from "../constants";
+
 import type { FormEvent } from "react";
+
 import "react-toastify/dist/ReactToastify.css";
 
 interface FormData {
 	email: string;
 	feedback?: string;
 }
-
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export async function handleFormSubmission(
 	event: FormEvent<HTMLFormElement>

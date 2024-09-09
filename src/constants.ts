@@ -214,3 +214,5 @@ export const AssociatedImages: Array<ImageInfoAssociated> = [
 		name: "Hash Studios"
 	}
 ] as const;
+
+export const API_BASE_URL = "https://collections.enterverse.com";
