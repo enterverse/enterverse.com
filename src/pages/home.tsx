@@ -210,13 +210,12 @@ export default function Home() {
 					<div className="relative flex max-w-[120rem] flex-col justify-center gap-16 pt-32 xl:w-full xl:pt-24">
 						<div className="flex w-full flex-col gap-4 xl:w-2/3">
 							<h1 className="mb-4 w-full text-balance font-dm-sans text-4xl font-bold leading-tight text-white drop-shadow-section1 md:text-5xl xl:text-7xl">
-								Find Meetups and Events in all your Virtual Realities
+								Find and Create events in all your Virtual Realities
 							</h1>
 							<p className="w-full text-balance font-geist text-lg leading-8 text-white drop-shadow-section1 xl:w-2/3 xl:text-xl">
 								We know how hard it is to plan your hangouts in virtual spaces.
-								Enterverse&apos;s soon-to-launch service, Enterlink, makes
-								virtual social games and experiences accessible, connecting you
-								to events, experiences, worlds, and communities.
+								Enterlink makes virtual social games and experiences accessible,
+								connecting you to events, experiences, worlds, and communities.
 							</p>
 						</div>
 						<div className="mb-16 flex w-full flex-col gap-8 text-lg xl:mb-0 xl:w-2/3">
@@ -296,9 +295,9 @@ export default function Home() {
 										Make plans and share with friends
 									</h2>
 									<p className="text-balance font-geist text-lg leading-9 text-white xl:text-xl">
-										Enterlink is our soon-to-launch service that makes virtual
-										social games and experiences accessible, connecting you to
-										events, experiences, worlds and communities.
+										Enterlink makes managing and marketing events in virtual
+										spaces easy so you and your community can focus on
+										what&apos;s important.
 									</p>
 								</div>
 								<div className="flex h-72 flex-col gap-8">
@@ -348,12 +347,11 @@ export default function Home() {
 								Here&apos;s the issue we saw
 							</p>
 							<h1 className="text-balance font-dm-sans text-3xl font-bold leading-relaxed text-white xl:text-4xl xl:leading-tight">
-								It&apos;s not easy finding events, worlds, and experiences
+								It&apos;s not easy getting the word out
 							</h1>
 							<p className="text-balance font-geist text-base leading-7 text-white">
-								VR platforms offer exciting spaces but finding events, worlds,
-								experiences and communities is like navigating the early,
-								chaotic internet.
+								Communities organizing events in virtual spaces lack the right
+								tools to effectively publicize and manage their events.
 							</p>
 						</div>
 						<div className="flex flex-col gap-4  font-dm-sans">
@@ -361,12 +359,13 @@ export default function Home() {
 								Here&apos;s our solution{" "}
 							</p>
 							<h1 className="text-balance font-dm-sans text-3xl font-bold leading-relaxed text-white xl:text-4xl xl:leading-tight">
-								An easy-to-navigate platform for VR events and community
-								building
+								An event platform designed specifically for virtual spaces
 							</h1>
 							<p className="text-balance font-geist text-base leading-7 text-white">
-								Enterlink maps and organizes virtual worlds, making it easy to
-								find and join events across different platforms.
+								Enterlink streamlines the creation, management, and sharing of
+								event details in virtual environments, reducing attendee
+								confusion and empowering organizers to focus on growing their
+								communities.
 							</p>
 						</div>
 					</div>
@@ -536,11 +535,11 @@ export default function Home() {
 								<h3 className="mb-4 font-dm-sans text-4xl font-bold leading-7 text-white xl:mb-0">
 									Join the adventure
 								</h3>
-								<p className="text-balance font-geist leading-7 text-white">
+								{/* <p className="text-balance font-geist leading-7 text-white">
 									VR platforms offer exciting spaces but finding events, worlds,
 									experiences and communities is like navigating the early,
 									chaotic internet.
-								</p>
+								</p> */}
 								<p className="text-balance font-geist leading-7 text-white">
 									Interested in collaborating, want to learn more, or want to
 									make a recommendation?
@@ -607,7 +606,7 @@ export default function Home() {
 									className="h-16 w-full rounded-xl bg-pink px-4 py-2 text-white xl:w-64"
 									type="submit"
 								>
-									Join
+									Submit
 								</button>
 							</form>
 						</div>
