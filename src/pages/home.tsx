@@ -305,8 +305,8 @@ export default function Home() {
 								</div>
 								<div className="flex h-72 flex-col gap-8">
 									<p className="text-balance font-geist text-lg leading-9 text-white xl:text-xl">
-										Stay updated with our latest developments! Join our
-										community and receive exclusive news and updates on
+										Stay updated with our latest developments! Subscribe to our
+										newsletter and receive exclusive news and updates on
 										Enterlink, Enterverse, and more.
 									</p>
 
@@ -318,7 +318,7 @@ export default function Home() {
 											className="flex-1 rounded-l-xl bg-transparent px-4 py-2 focus:outline-none "
 											maxLength={maxEmailCharacterCount}
 											name="email"
-											placeholder="Enter your email to join"
+											placeholder="Enter your email to subscribe"
 											type="email"
 											onChange={handleInputChange}
 										/>
@@ -330,7 +330,7 @@ export default function Home() {
 											type="submit"
 										>
 											{/* <ArrowRight className="size-6" /> */}
-											Submit
+											Subscribe
 										</button>
 									</form>
 									<ToastContainer />
@@ -573,11 +573,12 @@ export default function Home() {
 							<p className="text-balance font-geist text-base font-normal leading-7 text-white">
 								Stay updated with our latest developments! Enter your email to
 								join our community and receive exclusive news and updates on
-								Enterlink, Enterverse, and more.
+								Enterlink, Enterverse, and more. Use the form below to contact
+								us. We look forward to staying in touch!
 							</p>
-							<p className="font-geist text-white">
+							{/* <p className="font-geist text-white">
 								We look forward to staying in touch!
-							</p>
+							</p> */}
 							<form
 								className="flex flex-col gap-2 pt-6 xl:w-2/3 "
 								onSubmit={handleFormSubmission}
