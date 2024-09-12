@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import {
 	AlignRight,
-	ArrowRight,
+	/* ArrowRight, */
 	ChevronLeft,
 	ChevronRight,
 	X
@@ -311,7 +311,7 @@ export default function Home() {
 									</p>
 
 									<form
-										className="flex h-16 w-full items-center overflow-hidden rounded-l-xl rounded-r-full border-2 xl:w-96"
+										className="flex h-16 w-full items-center overflow-hidden rounded-l-xl rounded-r-full border-2 xl:w-[26rem]"
 										onSubmit={emailListSubmission}
 									>
 										<input
@@ -326,10 +326,11 @@ export default function Home() {
 											{characterCountA}/{maxEmailCharacterCount}
 										</div>
 										<button
-											className="m-1 flex size-12 items-center justify-center rounded-full bg-pink text-white"
+											className="m-1 flex h-12 w-20 items-center justify-center rounded-full bg-pink text-white"
 											type="submit"
 										>
-											<ArrowRight className="size-6" />
+											{/* <ArrowRight className="size-6" /> */}
+											Submit
 										</button>
 									</form>
 									<ToastContainer />
