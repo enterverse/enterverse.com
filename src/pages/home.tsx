@@ -311,7 +311,7 @@ export default function Home() {
 										Make plans and share with friends
 									</h2>
 									<p className="text-balance font-geist text-lg leading-9 text-white xl:text-xl">
-										Enterlink makes managing and marketing events in virtual
+										Enterlink makes managingg and marketing events in virtual
 										spaces easy so you and your community can focus on
 										what&apos;s important.
 									</p>
