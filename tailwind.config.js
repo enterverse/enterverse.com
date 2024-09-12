@@ -91,7 +91,9 @@ export default {
 					800: "#991b1b",
 					900: "#7f1d1d",
 					950: "#450a0a"
-				}
+				},
+				'toast-dark':'#333',
+				'toast-light':'#f4f4f4',
 			},
 			keyframes: {
 				"accordion-down": {
@@ -117,7 +119,8 @@ export default {
 				'8000': '8000ms',
 				'9000': '9000ms',
 				'10000': '10000ms'
-			}
+			},
+			
 		}
 	},
 	plugins: [

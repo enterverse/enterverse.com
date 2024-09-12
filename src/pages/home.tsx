@@ -43,7 +43,6 @@ import Medium from "../icons/medium.tsx";
 
 // add max-w for paragraph elements for pages bigger than 1080p*
 // look for matts new sentence
-// remove blue borders which appear when clicking on the input fields
 // clear text in the input fields after submission
 // toast dark mode styling
 
@@ -333,7 +332,7 @@ export default function Home() {
 											Subscribe
 										</button>
 									</form>
-									<ToastContainer />
+									<ToastContainer theme="dark" />
 								</div>
 							</div>
 						</div>
