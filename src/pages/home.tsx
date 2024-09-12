@@ -58,6 +58,8 @@ export default function Home() {
 	const maxCharacterCount = 2048;
 	const maxEmailCharacterCount = 256;
 
+	const formReference = useRef<HTMLFormElement>(null);
+
 	const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		setCharacterCountA(event.target.value.length);
 	};
@@ -110,6 +112,18 @@ export default function Home() {
 		}, 1000);
 	};
 
+	const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+		await handleFormSubmission(event);
+		if (formReference.current) {
+			formReference.current.reset();
+		}
+	};
+	const emailListSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+		await emailListSubmission(event);
+		if (formReference.current) {
+			formReference.current.reset();
+		}
+	};
 	return (
 		<main className="bg-overall-gradient ">
 			<div className="flex min-h-screen flex-col items-center justify-between">
@@ -311,7 +325,7 @@ export default function Home() {
 
 									<form
 										className="flex h-16 w-full items-center overflow-hidden rounded-l-xl rounded-r-full border-2 xl:w-[26rem]"
-										onSubmit={emailListSubmission}
+										onSubmit={emailListSubmit}
 									>
 										<input
 											className="flex-1 rounded-l-xl bg-transparent px-4 py-2 focus:outline-none "
@@ -580,7 +594,7 @@ export default function Home() {
 							</p> */}
 							<form
 								className="flex flex-col gap-2 pt-6 xl:w-2/3 "
-								onSubmit={handleFormSubmission}
+								onSubmit={handleFormSubmit}
 							>
 								<input
 									required
