@@ -43,6 +43,9 @@ import Medium from "../icons/medium.tsx";
 
 // add max-w for paragraph elements for pages bigger than 1080p*
 // look for matts new sentence
+// remove blue borders which appear when clicking on the input fields
+// clear text in the input fields after submission
+// toast dark mode styling
 
 export default function Home() {
 	const [isScrolled, setIsScrolled] = useState(false);
@@ -312,7 +315,7 @@ export default function Home() {
 										onSubmit={emailListSubmission}
 									>
 										<input
-											className="flex-1 rounded-l-xl bg-transparent px-4 py-2"
+											className="flex-1 rounded-l-xl bg-transparent px-4 py-2 focus:outline-none "
 											maxLength={maxEmailCharacterCount}
 											name="email"
 											placeholder="Enter your email to join"
@@ -575,12 +578,12 @@ export default function Home() {
 								We look forward to staying in touch!
 							</p>
 							<form
-								className="flex flex-col gap-2 pt-6 xl:w-2/3"
+								className="flex flex-col gap-2 pt-6 xl:w-2/3 "
 								onSubmit={handleFormSubmission}
 							>
 								<input
 									required
-									className="h-16 rounded-xl bg-gray-700 px-4 py-2"
+									className="h-16 rounded-xl bg-gray-700 px-4 py-2 focus:outline-none"
 									maxLength={maxEmailCharacterCount}
 									name="email"
 									placeholder="Email"
@@ -593,7 +596,7 @@ export default function Home() {
 
 								<textarea
 									required
-									className="h-40 rounded-xl bg-gray-700 px-4 py-2"
+									className="h-40 rounded-xl bg-gray-700 px-4 py-2 focus:outline-none "
 									maxLength={maxCharacterCount}
 									name="feedback"
 									placeholder="Share your thoughts, interest or feedback (optional)"
@@ -609,6 +612,7 @@ export default function Home() {
 									Submit
 								</button>
 							</form>
+							<ToastContainer />
 						</div>
 					</div>
 
