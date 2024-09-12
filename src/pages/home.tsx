@@ -325,6 +325,7 @@ export default function Home() {
 
 									<form
 										className="flex h-16 w-full items-center overflow-hidden rounded-l-xl rounded-r-full border-2 xl:w-[26rem]"
+										ref={formReference}
 										onSubmit={emailListSubmit}
 									>
 										<input
@@ -594,6 +595,7 @@ export default function Home() {
 							</p> */}
 							<form
 								className="flex flex-col gap-2 pt-6 xl:w-2/3 "
+								ref={formReference}
 								onSubmit={handleFormSubmit}
 							>
 								<input
