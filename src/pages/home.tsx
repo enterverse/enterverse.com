@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import {
 	AlignRight,
-	/* ArrowRight, */
+	ArrowRight,
 	ChevronLeft,
 	ChevronRight,
 	X
@@ -45,6 +45,7 @@ import Medium from "../icons/medium.tsx";
 // look for matts new sentence
 // clear text in the input fields after submission
 // toast dark mode styling
+// input field text background white when pasting suggested
 
 export default function Home() {
 	const [isScrolled, setIsScrolled] = useState(false);
@@ -340,11 +341,10 @@ export default function Home() {
 											{characterCountA}/{maxEmailCharacterCount}
 										</div>
 										<button
-											className="m-1 flex h-12 w-20 items-center justify-center rounded-full bg-pink text-white"
+											className="m-1 flex size-12 items-center justify-center rounded-full bg-pink text-white"
 											type="submit"
 										>
-											{/* <ArrowRight className="size-6" /> */}
-											Subscribe
+											<ArrowRight className="size-6" />
 										</button>
 									</form>
 									<ToastContainer theme="dark" />
@@ -585,10 +585,8 @@ export default function Home() {
 								Stay Connected
 							</h1>
 							<p className="text-balance font-geist text-base font-normal leading-7 text-white">
-								Stay updated with our latest developments! Enter your email to
-								join our community and receive exclusive news and updates on
-								Enterlink, Enterverse, and more. Use the form below to contact
-								us. We look forward to staying in touch!
+								Use the form below to contact us. We look forward to staying in
+								touch!
 							</p>
 							{/* <p className="font-geist text-white">
 								We look forward to staying in touch!
@@ -616,7 +614,7 @@ export default function Home() {
 									className="h-40 rounded-xl bg-gray-700 px-4 py-2 focus:outline-none "
 									maxLength={maxCharacterCount}
 									name="feedback"
-									placeholder="Share your thoughts, interest or feedback (optional)"
+									placeholder="Share your thoughts, interest or feedback"
 									onChange={handleTextAreaChange}
 								/>
 								<div className="flex justify-end text-sm text-gray-500">
