@@ -92,8 +92,8 @@ export default {
 					900: "#7f1d1d",
 					950: "#450a0a"
 				},
-				'toast-dark':'#333',
-				'toast-light':'#f4f4f4',
+				/* 'toast-dark':'#333',
+				'toast-light':'#f4f4f4', */
 			},
 			keyframes: {
 				"accordion-down": {

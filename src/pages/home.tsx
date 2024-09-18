@@ -347,7 +347,18 @@ export default function Home() {
 											<ArrowRight className="size-6" />
 										</button>
 									</form>
-									<ToastContainer theme="dark" />
+									<ToastContainer
+										closeOnClick
+										draggable
+										pauseOnFocusLoss
+										pauseOnHover
+										autoClose={5000}
+										hideProgressBar={false}
+										newestOnTop={false}
+										position="top-right"
+										rtl={false}
+										theme="dark"
+									/>
 								</div>
 							</div>
 						</div>
@@ -627,7 +638,18 @@ export default function Home() {
 									Submit
 								</button>
 							</form>
-							<ToastContainer />
+							<ToastContainer
+								closeOnClick
+								draggable
+								pauseOnFocusLoss
+								pauseOnHover
+								autoClose={2000}
+								hideProgressBar={false}
+								newestOnTop={false}
+								position="top-right"
+								rtl={false}
+								theme="dark"
+							/>
 						</div>
 					</div>
 
