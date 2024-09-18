@@ -43,10 +43,7 @@ import LinkedIn from "../icons/linkedin.tsx";
 import Medium from "../icons/medium.tsx";
 
 // add max-w for paragraph elements for pages bigger than 1080p*
-// look for matts new sentence
-// clear text in the input fields after submission (fixed? form worked, emaillist did not)
-// toast dark mode styling (fixed?)
-// input field text background white when pasting suggested      Update: Cannot duplicate this
+// toast leaves notification on screen after closing. Then crashes app
 
 export default function Home() {
 	const [isScrolled, setIsScrolled] = useState(false);
@@ -359,8 +356,8 @@ export default function Home() {
 									<ToastContainer
 										closeOnClick
 										draggable
-										pauseOnFocusLoss
-										pauseOnHover
+										/* pauseOnFocusLoss
+										pauseOnHover */
 										autoClose={5000}
 										hideProgressBar={false}
 										newestOnTop={false}
@@ -650,8 +647,8 @@ export default function Home() {
 							<ToastContainer
 								closeOnClick
 								draggable
-								pauseOnFocusLoss
-								pauseOnHover
+								/* 	pauseOnFocusLoss
+								pauseOnHover */
 								autoClose={2000}
 								hideProgressBar={false}
 								newestOnTop={false}
