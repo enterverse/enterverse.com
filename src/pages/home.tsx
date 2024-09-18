@@ -9,6 +9,7 @@ import {
 import { cn } from "@udecode/cn";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "react-toastify/dist/ReactToastify.minimal.css";
 
 import {
 	Carousel,
@@ -43,9 +44,9 @@ import Medium from "../icons/medium.tsx";
 
 // add max-w for paragraph elements for pages bigger than 1080p*
 // look for matts new sentence
-// clear text in the input fields after submission
-// toast dark mode styling
-// input field text background white when pasting suggested
+// clear text in the input fields after submission (fixed? form worked, emaillist did not)
+// toast dark mode styling (fixed?)
+// input field text background white when pasting suggested      Update: Cannot duplicate this
 
 export default function Home() {
 	const [isScrolled, setIsScrolled] = useState(false);
@@ -115,11 +116,15 @@ export default function Home() {
 	};
 
 	const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-		await handleFormSubmission(event);
-		if (feedbackFormReference.current) {
-			feedbackFormReference.current.reset();
-			setCharacterCountB(0);
-			setCharacterCountC(0);
+		try {
+			await handleFormSubmission(event);
+			if (feedbackFormReference.current) {
+				feedbackFormReference.current.reset();
+				setCharacterCountB(0);
+				setCharacterCountC(0);
+			}
+		} catch (reason) {
+			console.error("Error during emailListSubmit:", reason);
 		}
 	};
 	const emailListSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
