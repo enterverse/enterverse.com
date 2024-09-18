@@ -59,7 +59,8 @@ export default function Home() {
 	const maxCharacterCount = 2048;
 	const maxEmailCharacterCount = 256;
 
-	const formReference = useRef<HTMLFormElement>(null);
+	const emailFormReference = useRef<HTMLFormElement>(null);
+	const feedbackFormReference = useRef<HTMLFormElement>(null);
 
 	const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		setCharacterCountA(event.target.value.length);
@@ -115,14 +116,17 @@ export default function Home() {
 
 	const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
 		await handleFormSubmission(event);
-		if (formReference.current) {
-			formReference.current.reset();
+		if (feedbackFormReference.current) {
+			feedbackFormReference.current.reset();
+			setCharacterCountB(0);
+			setCharacterCountC(0);
 		}
 	};
 	const emailListSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
 		await emailListSubmission(event);
-		if (formReference.current) {
-			formReference.current.reset();
+		if (emailFormReference.current) {
+			emailFormReference.current.reset();
+			setCharacterCountA(0);
 		}
 	};
 	return (
@@ -326,7 +330,7 @@ export default function Home() {
 
 									<form
 										className="flex h-16 w-full items-center overflow-hidden rounded-l-xl rounded-r-full border-2 xl:w-[26rem]"
-										ref={formReference}
+										ref={emailFormReference}
 										onSubmit={emailListSubmit}
 									>
 										<input
@@ -604,7 +608,7 @@ export default function Home() {
 							</p> */}
 							<form
 								className="flex flex-col gap-2 pt-6 xl:w-2/3 "
-								ref={formReference}
+								ref={feedbackFormReference}
 								onSubmit={handleFormSubmit}
 							>
 								<input
