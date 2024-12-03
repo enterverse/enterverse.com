@@ -43,6 +43,7 @@ import RethSoganWebp from "./assets/associate/reth-sogan.webp";
 import VirtualillyWebp from "./assets/associate/virtualilly.webp";
 import ShopowWebp from "./assets/associate/shopow.webp";
 import HashStudiosWebp from "./assets/associate/hash-studios.webp";
+import CamTemporaryWebp from "./assets/associate/cam-optimized.webp";
 
 export interface ImageInfoExecutive {
 	img: string;
@@ -212,6 +213,10 @@ export const AssociatedImages: Array<ImageInfoAssociated> = [
 	{
 		img: HashStudiosWebp,
 		name: "Hash Studios"
+	},
+	{
+		img: CamTemporaryWebp,
+		name: "Cameron Belo"
 	}
 ] as const;
 
