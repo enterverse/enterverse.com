@@ -277,7 +277,7 @@ export default function Home() {
 				</section>
 				<section className="flex w-full flex-col items-center justify-center gap-16 pb-12 xl:min-h-screen">
 					<Carousel className="relative mb-6 h-fit w-full bg-black xl:h-[48rem] xl:bg-transparent">
-						<CarouselBackButton className="absolute left-0 top-0 z-20 flex h-full w-20 flex-col items-center justify-center bg-gradient-to-r from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
+						<CarouselBackButton className="absolute left-0 top-0 z-20 flex h-full w-20 flex-col items-center justify-center bg-gradient-to-r from-neutral-950/0 to-transparent opacity-25 transition-opacity hover:from-neutral-950/45 hover:opacity-100">
 							<ChevronLeft className="size-8" />
 						</CarouselBackButton>
 						<CarouselItems className="relative z-10 flex gap-6 px-6 duration-500 xl:px-32">
@@ -294,7 +294,7 @@ export default function Home() {
 								</CarouselItem>
 							))}
 						</CarouselItems>
-						<CarouselNextButton className="absolute right-0 top-0 z-20 flex h-full w-20 flex-col items-center justify-center bg-gradient-to-l from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
+						<CarouselNextButton className="absolute right-0 top-0 z-20 flex h-full w-20 flex-col items-center justify-center bg-gradient-to-l from-neutral-950/0 to-transparent opacity-25 transition-opacity hover:from-neutral-950/45 hover:opacity-100">
 							<ChevronRight className="size-8" />
 						</CarouselNextButton>
 					</Carousel>
@@ -424,7 +424,7 @@ export default function Home() {
 						</div>
 						<div className="flex flex-col justify-center gap-8 pb-16 xl:pb-32">
 							<Carousel className="relative h-fit xl:h-[32rem]">
-								<CarouselBackButton className="absolute left-0 top-0 z-20 flex h-full w-20 flex-col items-center justify-center bg-gradient-to-r from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
+								<CarouselBackButton className="absolute left-0 top-0 z-20 flex h-full w-20 flex-col items-center justify-center bg-gradient-to-r from-neutral-950/0 to-transparent opacity-25 transition-opacity hover:from-neutral-950/45 hover:opacity-100">
 									<ChevronLeft className="size-8" />
 								</CarouselBackButton>
 								<CarouselItems className="relative z-10 gap-6 object-cover px-6 duration-500 xl:px-32">
@@ -441,7 +441,7 @@ export default function Home() {
 										</CarouselItem>
 									))}
 								</CarouselItems>
-								<CarouselNextButton className="absolute right-0 top-0 z-20 flex h-full w-20 flex-col items-center justify-center bg-gradient-to-l from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
+								<CarouselNextButton className="absolute right-0 top-0 z-20 flex h-full w-20 flex-col items-center justify-center bg-gradient-to-l from-neutral-950/0 to-transparent opacity-25 transition-opacity hover:from-neutral-950/45 hover:opacity-100">
 									<ChevronRight className="size-8" />
 								</CarouselNextButton>
 							</Carousel>
@@ -462,7 +462,7 @@ export default function Home() {
 								Founders
 							</h1>
 							<Carousel className="relative flex h-fit w-full gap-12 xl:mb-16">
-								<CarouselBackButton className="absolute left-0 top-0 z-20 flex h-full w-20 flex-col items-center justify-center bg-gradient-to-r from-neutral-950 to-transparent opacity-0 transition-opacity hover:opacity-100">
+								<CarouselBackButton className="absolute left-0 top-0 z-20 flex h-full w-20 flex-col items-center justify-center bg-gradient-to-r from-neutral-950/0 to-transparent opacity-0 transition-opacity hover:from-neutral-950/45 hover:opacity-100">
 									<ChevronLeft className="size-8" />
 								</CarouselBackButton>
 								<CarouselItems className="relative z-10 gap-12 px-6 duration-500 xl:px-32">
@@ -488,7 +488,7 @@ export default function Home() {
 										</CarouselItem>
 									))}
 								</CarouselItems>
-								<CarouselNextButton className="absolute right-0 top-0 z-20 flex h-full w-20 flex-col items-center justify-center bg-gradient-to-l from-neutral-950 to-transparent opacity-0 transition-opacity hover:opacity-100">
+								<CarouselNextButton className="absolute right-0 top-0 z-20 flex h-full w-20 flex-col items-center justify-center bg-gradient-to-l from-neutral-950/0 to-transparent opacity-0 transition-opacity hover:from-neutral-950/45 hover:opacity-100">
 									<ChevronRight className="size-8" />
 								</CarouselNextButton>
 							</Carousel>
@@ -497,7 +497,7 @@ export default function Home() {
 								Core Team
 							</h1>
 							<Carousel className="relative h-fit w-full xl:mb-16">
-								<CarouselBackButton className="absolute left-0 top-0 z-20 flex h-full w-20 flex-col items-center justify-center bg-gradient-to-r from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
+								<CarouselBackButton className="absolute left-0 top-0 z-20 flex h-full w-20 flex-col items-center justify-center bg-gradient-to-r from-neutral-950/0 to-transparent opacity-25 transition-opacity hover:from-neutral-950/45 hover:opacity-100">
 									<ChevronLeft className="size-8" />
 								</CarouselBackButton>
 								<CarouselItems className="relative z-10 gap-6 px-6 duration-500 xl:px-32">
@@ -520,7 +520,7 @@ export default function Home() {
 										</CarouselItem>
 									))}
 								</CarouselItems>
-								<CarouselNextButton className="absolute right-0 top-0 z-20 flex h-full w-20 flex-col items-center justify-center bg-gradient-to-l from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
+								<CarouselNextButton className="absolute right-0 top-0 z-20 flex h-full w-20 flex-col items-center justify-center bg-gradient-to-l from-neutral-950/0 to-transparent opacity-25 transition-opacity hover:from-neutral-950/45 hover:opacity-100">
 									<ChevronRight className="size-8" />
 								</CarouselNextButton>
 							</Carousel>
@@ -529,7 +529,7 @@ export default function Home() {
 								Associate developers and creators
 							</h1>
 							<Carousel className="relative mb-24 h-fit w-full xl:mb-32">
-								<CarouselBackButton className="absolute left-0 top-0 z-20 flex h-full w-20 flex-col items-center justify-center bg-gradient-to-r from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
+								<CarouselBackButton className="absolute left-0 top-0 z-20 flex h-full w-20 flex-col items-center justify-center bg-gradient-to-r from-neutral-950/0 to-transparent opacity-25 transition-opacity hover:from-neutral-950/45 hover:opacity-100">
 									<ChevronLeft className="size-8" />
 								</CarouselBackButton>
 								<CarouselItems className="relative z-10 gap-6 px-6 duration-500 xl:px-32">
@@ -549,7 +549,7 @@ export default function Home() {
 										</CarouselItem>
 									))}
 								</CarouselItems>
-								<CarouselNextButton className="absolute right-0 top-0 z-20 flex h-full w-20 flex-col items-center justify-center bg-gradient-to-l from-neutral-950 to-transparent opacity-15 transition-opacity hover:opacity-100">
+								<CarouselNextButton className="absolute right-0 top-0 z-20 flex h-full w-20 flex-col items-center justify-center bg-gradient-to-l from-neutral-950/0 to-transparent opacity-25 transition-opacity hover:from-neutral-950/45 hover:opacity-100">
 									<ChevronRight className="size-8" />
 								</CarouselNextButton>
 							</Carousel>

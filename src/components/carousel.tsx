@@ -19,6 +19,7 @@ interface CarouselContext {
 	containerRef: RefObject<HTMLDivElement>;
 	scrollerRef: RefObject<HTMLDivElement>;
 	state: [number | undefined, (value: number | undefined) => void];
+	disableButtons: [boolean, (value: boolean) => void];
 }
 
 const CarouselContext = createContext<CarouselContext | null>(null);
@@ -45,6 +46,7 @@ export const Carousel = withRef<
 			onChange: onValueChange,
 			defaultProp: defaultValue
 		});
+		const disableButtons = useState(false);
 
 		const itemReferences = useRef<Array<HTMLDivElement>>([]);
 
@@ -56,7 +58,8 @@ export const Carousel = withRef<
 					backRef: backReference,
 					nextRef: nextReference,
 					itemRefs: itemReferences,
-					state: [state, setState]
+					state: [state, setState],
+					disableButtons
 				}}
 			>
 				<div
@@ -75,7 +78,8 @@ export const CarouselItems = withRef<"div">(
 			itemRefs,
 			scrollerRef,
 			containerRef,
-			state: [value, setValue]
+			state: [value, setValue],
+			disableButtons: [, setDisableButtons]
 		} = useCarousel();
 		const [scrollPx, setScrollPx] = useState(0);
 
@@ -91,7 +95,8 @@ export const CarouselItems = withRef<"div">(
 			const totalWidth = scroller.getBoundingClientRect().width;
 
 			// If all items fit then no further action is needed.
-			if (maxWidth >= totalWidth) return;
+			if (maxWidth >= totalWidth) return setDisableButtons(true);
+			setDisableButtons(false);
 
 			const computedGap = Number.parseFloat(getComputedStyle(scroller).gap);
 
@@ -110,7 +115,14 @@ export const CarouselItems = withRef<"div">(
 			} else {
 				setScrollPx(accumulatedWidth);
 			}
-		}, [containerRef, scrollerRef, itemRefs, value, setValue]);
+		}, [
+			containerRef,
+			scrollerRef,
+			itemRefs,
+			value,
+			setValue,
+			setDisableButtons
+		]);
 
 		useEffect(() => {
 			window.addEventListener("resize", render);
@@ -161,13 +173,14 @@ export const CarouselBackButton = withRef<"button", { asChild?: boolean }>(
 			state: [state, setState],
 			itemRefs,
 			containerRef,
-			scrollerRef
+			scrollerRef,
+			disableButtons: [disabled]
 		} = useCarousel();
 
 		const Comp = asChild ? Slot : "button";
 		return (
 			<Comp
-				className={cn("shrink-0", className)}
+				className={cn("shrink-0", disabled && "!hidden", className)}
 				ref={reference}
 				onClick={() => {
 					if (state === undefined) return;
@@ -218,13 +231,14 @@ export const CarouselNextButton = withRef<"button", { asChild?: boolean }>(
 			state: [state, setState],
 			itemRefs,
 			containerRef,
-			scrollerRef
+			scrollerRef,
+			disableButtons: [disabled]
 		} = useCarousel();
 
 		const Comp = asChild ? Slot : "button";
 		return (
 			<Comp
-				className={cn("shrink-0", className)}
+				className={cn("shrink-0", disabled && "!hidden", className)}
 				ref={reference}
 				onClick={() => {
 					if (state === undefined) return;
