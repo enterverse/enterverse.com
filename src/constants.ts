@@ -199,6 +199,10 @@ export const AssociatedImages: Array<ImageInfoAssociated> = [
 		name: "Todd Casey"
 	},
 	{
+		img: CamTemporaryWebp,
+		name: "Cameron Belo"
+	},
+	{
 		img: RethSoganWebp,
 		name: "Reth Sogen"
 	},
@@ -209,10 +213,6 @@ export const AssociatedImages: Array<ImageInfoAssociated> = [
 	{
 		img: ShopowWebp,
 		name: "Shopow"
-	},
-	{
-		img: CamTemporaryWebp,
-		name: "Cameron Belo"
 	},
 	{
 		img: HashStudiosWebp,

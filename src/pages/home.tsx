@@ -216,9 +216,9 @@ function EnterlinkSection() {
 							required
 							className="h-fit w-full rounded-l-[16px] rounded-r-[40px] border-neutral-200 bg-transparent p-4 pr-16 !text-lg sm:!text-xl"
 							maxLength={256}
+							name="email"
 							placeholder="Enter your email to join"
 							type="email"
-							name="email"
 						/>
 						<Button
 							className="absolute right-2 top-1/2 size-12 -translate-y-1/2 rounded-full"
