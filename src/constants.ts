@@ -211,13 +211,15 @@ export const AssociatedImages: Array<ImageInfoAssociated> = [
 		name: "Shopow"
 	},
 	{
-		img: HashStudiosWebp,
-		name: "Hash Studios"
-	},
-	{
 		img: CamTemporaryWebp,
 		name: "Cameron Belo"
+	},
+	{
+		img: HashStudiosWebp,
+		name: "Hash Studios"
 	}
 ] as const;
 
-export const API_BASE_URL = "https://collections.enterverse.com";
+export const ApiBaseURL = new URL("https://collections.enterverse.com");
+export const ApiEndpoint = (path: string) =>
+	new URL(path, ApiBaseURL).toString();

@@ -1,20 +1,24 @@
-import { toast } from "react-toastify";
+import { toast } from "sonner";
 
-import { API_BASE_URL } from "../constants";
+import { ApiEndpoint } from "@/constants";
 
 import type { FormEvent } from "react";
-
-import "react-toastify/dist/ReactToastify.css";
 
 interface FormData {
 	email: string;
 	feedback?: string;
 }
 
+let isSubmitting = false;
 export async function handleFormSubmission(
 	event: FormEvent<HTMLFormElement>
 ): Promise<void> {
 	event.preventDefault(); // Prevent the default form submission
+
+	if (isSubmitting) {
+		return;
+	}
+	isSubmitting = true;
 
 	const form = event.currentTarget;
 	const formData = new FormData(form);
@@ -22,12 +26,10 @@ export async function handleFormSubmission(
 		email: formData.get("email") as string,
 		feedback: formData.get("feedback") as string | undefined
 	};
-
-	const url = `${API_BASE_URL}/contact`;
-	console.log("URL:", url);
+	const id = toast.loading("Submitting...");
 
 	try {
-		const response = await fetch(url, {
+		const response = await fetch(ApiEndpoint("/contact"), {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json"
@@ -36,41 +38,39 @@ export async function handleFormSubmission(
 		});
 
 		if (response.ok) {
-			toast.success("Submitted", {
-				position: "top-right",
-				autoClose: 2000,
-				hideProgressBar: false,
-				closeOnClick: true,
-				pauseOnHover: false,
-				draggable: true,
-				progress: undefined,
-				theme: "dark"
-			});
-			console.log("Contact request sent to Slack.");
+			toast.success("Contact form submitted!", { id });
+			form.reset();
 		} else {
-			console.error("Error sending contact request.");
+			toast.error("You are submitting too many!", { id });
 		}
 	} catch (reason) {
+		toast.error("An error occurred! Check logs!", { id });
 		console.error("Error:", reason);
 	}
+
+	isSubmitting = false;
 }
 
+let isSubmitting2 = false;
 export async function emailListSubmission(
 	event: FormEvent<HTMLFormElement>
 ): Promise<void> {
 	event.preventDefault();
+
+	if (isSubmitting2) {
+		return;
+	}
+	isSubmitting2 = true;
 
 	const form = event.currentTarget;
 	const formData = new FormData(form);
 	const data: FormData = {
 		email: formData.get("email") as string
 	};
-
-	const url = `${API_BASE_URL}/email-list`;
-	console.log("URL:", url);
+	const id = toast.loading("Adding to email list...");
 
 	try {
-		const response = await fetch(url, {
+		const response = await fetch(ApiEndpoint("/email-list"), {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json"
@@ -79,21 +79,15 @@ export async function emailListSubmission(
 		});
 
 		if (response.ok) {
-			toast.success("Submitted", {
-				position: "top-right",
-				autoClose: 2000,
-				hideProgressBar: false,
-				closeOnClick: true,
-				pauseOnHover: true,
-				draggable: true,
-				progress: undefined,
-				theme: "dark"
-			});
-			console.log("Contact request sent to Slack.");
+			toast.success("Added to email list!", { id });
+			form.reset();
 		} else {
-			console.error("Error sending contact request.");
+			toast.error("You are already on the email list!", { id });
 		}
 	} catch (reason) {
+		toast.error("An error occurred! Check logs!", { id });
 		console.error("Error:", reason);
 	}
+
+	isSubmitting2 = false;
 }

@@ -11,24 +11,6 @@
   	-moz-osx-font-smoothing: grayscale;
     
     font-size: 16px;
-    
-    // @screen xl {
-    //   font-size: 18px;
-    // }
-    
-    // @screen 2xl {
-    //   font-size: 22px;
-    // }
-  
-    
-    // ul {
-    //   margin-left: -1.5rem !important;
-    // }
-    // @screen sm {
-    //   ul {
-    //     margin-left: -0.35rem !important;
-    //   }
-    // }
   }
 
   * {
@@ -36,9 +18,52 @@
     @apply scrollbar-thin scrollbar-track-transparent scrollbar-thumb-neutral-800 scrollbar-corner-transparent;
     scroll-behavior: smooth;
   }
-  /* .Toastify__toast--dark {
-    @apply bg-toast-dark text-white;
-  } */
+  :root {
+		--radius: 0.5rem;
+	}
 }
 
-
+@layer components {
+  .bg-gradient-overall {
+    background: linear-gradient(148deg, rgba(13, 13, 13, 0.30) 0%, rgba(41, 127, 139, 0.30) 100%), linear-gradient(225deg, rgba(13, 13, 13, 0.30) 0%, rgba(239, 62, 114, 0.24) 100%);
+  
+    // Alternate Darker
+    // background: linear-gradient(148deg, rgba(13, 13, 13, 0.30) 0%, rgba(41, 127, 139, 0.20) 100%), linear-gradient(225deg, rgba(13, 13, 13, 0.30) 0%, rgba(239, 62, 114, 0.18) 100%);
+  }
+  
+  .header-video-mask {
+    mask-image: linear-gradient(180deg, #FFF 45%, rgba(0, 0, 0, 0.00) 100%);
+  }
+  
+  .header-video-mask-mobile {
+    mask-image: linear-gradient(180deg, #FFF 10%, rgba(0, 0, 0, 0.00) 100%);
+  }
+  
+  .header-video-gradient {
+    background: radial-gradient(41.31% 89.17% at 50% 50%, rgba(0, 0, 0, 0.00) 0%, #000 100%);
+  }
+  
+  .header-video-gradient-mobile {
+    background: radial-gradient(60% 89.17% at 50% 50%,#0000004d,#000);
+  }
+  
+  .bg-gradient-mobile-nav {
+    background: radial-gradient(170.67% 69.43% at 31.99% 26.99%, rgba(99, 43, 137, 0.32) 0%, rgba(13, 13, 13, 0.40) 100%), #1A1A1A;
+  }
+  
+  .enterlink-section-gradient {
+    background: radial-gradient(83.58% 89.17% at 50% 50%, rgba(0, 0, 0, 0.00) 0%, #000 100%);
+  }
+  
+  .enterlink-section-gradient-mobile {
+    background: radial-gradient(257.01% 89.17% at 50% 50%, rgba(0, 0, 0, 0.00) 0%, #000 100%);
+  }
+  
+  .about-section-gradient {
+    background: linear-gradient(148deg, rgba(41, 127, 139, 0.30) 0%, rgba(13, 13, 13, 0.30) 100%), linear-gradient(340deg, rgba(239, 62, 114, 0.24) 23.37%, rgba(13, 13, 13, 0.30) 76.63%), radial-gradient(69.43% 69.43% at 31.99% 26.99%, rgba(99, 43, 137, 0.40) 0%, rgba(13, 13, 13, 0.50) 100%);
+  }
+  
+  .contact-section-gradient {
+    background: radial-gradient(257.01% 89.17% at 50% 50%, rgba(0, 0, 0, 0.00) 0%, #000 100%);
+  }
+}
