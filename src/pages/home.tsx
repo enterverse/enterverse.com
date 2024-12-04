@@ -218,6 +218,7 @@ function EnterlinkSection() {
 							maxLength={256}
 							placeholder="Enter your email to join"
 							type="email"
+							name="email"
 						/>
 						<Button
 							className="absolute right-2 top-1/2 size-12 -translate-y-1/2 rounded-full"
