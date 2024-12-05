@@ -5,7 +5,7 @@ import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import Layout from "@/layout";
 import Home from "@/pages/home";
 import P404 from "@/pages/404";
-
+import Team from "@/pages/team";
 import "./index.scss";
 import { Toaster } from "@/components/ui/sonner";
 
@@ -24,6 +24,10 @@ const router = createBrowserRouter([
 			{
 				path: "/",
 				element: <Home />
+			},
+			{
+				path: "/team",
+				element: <Team />
 			},
 			{
 				path: "*",

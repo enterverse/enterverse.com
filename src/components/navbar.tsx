@@ -7,10 +7,12 @@ import {
 } from "react";
 import { cn } from "@udecode/cn";
 import { AlignRight, X } from "lucide-react";
+import { useLocation } from "react-router-dom";
 
 import EnterverseLogo from "@/assets/logos/enterverse-white-logo.webp";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/components/ui/link";
+import { useEffectAfterMounted } from "@/hooks/use-effect-after-mounted";
 
 export default function Navbar() {
 	const [collapsed, _setCollapsed] = useState(false);
@@ -81,6 +83,21 @@ export default function Navbar() {
 		[setMenu]
 	);
 
+	const { hash } = useLocation();
+	useEffectAfterMounted(() => {
+		blockCollapse.current = true;
+
+		if (hash.length > 1) {
+			// eslint-disable-next-line unicorn/prefer-query-selector
+			const element = document.getElementById(hash.slice(1));
+			if (element) {
+				element.scrollIntoView({ behavior: "smooth" });
+			}
+		}
+
+		setMenu(false);
+	}, [hash]);
+
 	return (
 		<nav
 			className={cn(
@@ -101,28 +118,28 @@ export default function Navbar() {
 			<div className="ml-auto hidden h-full flex-row items-center *:flex *:h-full *:items-center *:justify-center *:px-7 *:transition-colors last:*:pr-0 xl:flex">
 				<Link
 					className="hover:text-pink-400"
-					to="#home"
+					to="/#home"
 					onClick={onScrollToHash}
 				>
 					Home
 				</Link>
 				<Link
 					className="hover:text-pink-400"
-					to="#enterlink"
+					to="/#enterlink"
 					onClick={onScrollToHash}
 				>
 					Enterlink
 				</Link>
 				<Link
 					className="hover:text-pink-400"
-					to="#about"
+					to="/#about"
 					onClick={onScrollToHash}
 				>
 					About
 				</Link>
 				<Link
 					className="hover:text-pink-400"
-					to="#contact"
+					to="/#contact"
 					onClick={onScrollToHash}
 				>
 					Contact
@@ -148,28 +165,28 @@ export default function Navbar() {
 			>
 				<Link
 					className="hover:text-pink-400"
-					to="#home"
+					to="/#home"
 					onClick={onScrollToHash}
 				>
 					Home
 				</Link>
 				<Link
 					className="hover:text-pink-400"
-					to="#enterlink"
+					to="/#enterlink"
 					onClick={onScrollToHash}
 				>
 					Enterlink
 				</Link>
 				<Link
 					className="hover:text-pink-400"
-					to="#about"
+					to="/#about"
 					onClick={onScrollToHash}
 				>
 					About
 				</Link>
 				<Link
 					className="hover:text-pink-400"
-					to="#contact"
+					to="/#contact"
 					onClick={onScrollToHash}
 				>
 					Contact
