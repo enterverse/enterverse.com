@@ -174,6 +174,11 @@ export const TeamImages: Array<ImageInfoTeam> = [
 		img: GiorgiKoridzeWebp,
 		name: "Giorgi Koridze",
 		position: "Lead Unreal Technical Artist"
+	},
+	{
+		img: CamTemporaryWebp,
+		name: "Cameron Belo",
+		position: "Associate Developer"
 	}
 ] as const;
 
@@ -197,10 +202,6 @@ export const AssociatedImages: Array<ImageInfoAssociated> = [
 	{
 		img: ToddCaseyWebp,
 		name: "Todd Casey"
-	},
-	{
-		img: CamTemporaryWebp,
-		name: "Cameron Belo"
 	},
 	{
 		img: RethSoganWebp,
