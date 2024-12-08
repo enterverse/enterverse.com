@@ -540,7 +540,21 @@ function ContactSection() {
 						</div>
 						<div className="flex flex-col">
 							<p className="font-dm-sans text-sm text-gray-500">
-								Terms of Service and Privacy Policy
+								<ExternalLink
+									className="text-pink-600 hover:text-pink-500"
+									href="https://policies.enterlink.app/terms"
+									target="_blank"
+								>
+									Terms of Service
+								</ExternalLink>{" "}
+								and{" "}
+								<ExternalLink
+									className="text-pink-600 hover:text-pink-500"
+									href="https://policies.enterlink.app/"
+									target="_blank"
+								>
+									Privacy Policy
+								</ExternalLink>
 							</p>
 						</div>
 					</div>
