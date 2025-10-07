@@ -39,7 +39,6 @@ import AdamJonesWebp from "./assets/associate/adam-jones.webp";
 import TaiLeWebp from "./assets/associate/tai-le.webp";
 import OliverBeckWebp from "./assets/associate/oliver-b.webp";
 import ToddCaseyWebp from "./assets/associate/todd-casey.webp";
-import RethSoganWebp from "./assets/associate/reth-sogan.webp";
 import VirtualillyWebp from "./assets/associate/virtualilly.webp";
 import ShopowWebp from "./assets/associate/shopow.webp";
 import HashStudiosWebp from "./assets/associate/hash-studios.webp";
@@ -202,10 +201,6 @@ export const AssociatedImages: Array<ImageInfoAssociated> = [
 	{
 		img: ToddCaseyWebp,
 		name: "Todd Casey"
-	},
-	{
-		img: RethSoganWebp,
-		name: "Reth Sogen"
 	},
 	{
 		img: VirtualillyWebp,
